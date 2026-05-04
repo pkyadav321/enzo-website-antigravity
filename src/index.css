@@ -227,7 +227,102 @@ h1, h2, h3, h4 {
 }
 .navbar-cta:hover { opacity: 0.7; }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0a0a0a;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.mobile-menu-links a {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: -0.04em;
+  transition: color 0.3s;
+}
+
+.mobile-menu-links a:hover {
+  color: #e8352a;
+}
+
+.mobile-cta {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background: #e8352a;
+  font-size: 1rem !important;
+}
+
+.hide-mobile {
+  display: inline-flex;
+}
+
 /* ─── BUTTONS ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .hide-mobile { display: none; }
+  .navbar-logo img { height: 28px !important; }
+}
+
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.6rem;
   padding: 1.1rem 2.5rem;
@@ -590,6 +685,16 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   padding: 3rem; background: rgba(232,53,42,0.06);
   border: 1px solid rgba(232,53,42,0.2);
   text-align: center; color: #fff; font-weight: 700; font-size: 1.1rem;
+}
+
+/* ─── SECTION HEADER ─────────────────────────────────────────── */
+.section-header { margin-bottom: 5rem; }
+.section-header h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 8vw, 6rem); /* Reduced minimum for mobile */
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
 }
 
 /* ─── PLANS ──────────────────────────────────────────────────── */
