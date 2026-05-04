@@ -40,8 +40,8 @@ const Hero = () => (
         margin: '0 auto 3.5rem',
         maxWidth: '1300px'
       }}>
-        Creative<br />
-        <span className="text-italic-accent">Marketing Agency.</span>
+        Building Scalable Brands<br />
+        with <span className="text-italic-accent">Creative Strategy.</span>
       </h1>
 
       {/* Sub row — centered */}
