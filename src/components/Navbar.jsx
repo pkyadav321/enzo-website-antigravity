@@ -28,19 +28,39 @@ const Navbar = () => {
         className={`nav-dropdown-wrapper ${mobile ? 'mobile-dropdown' : ''}`}
         onMouseEnter={() => !mobile && setIsServicesOpen(true)}
         onMouseLeave={() => !mobile && setIsServicesOpen(false)}
-        onClick={() => mobile && setIsServicesOpen(!isServicesOpen)}
         style={mobile ? { '--i': 2 } : {}}
       >
-        <a href="#services" className="nav-dropdown-trigger">
-          Services {mobile && <span className={`arrow ${isServicesOpen ? 'up' : ''}`}>↓</span>}
-        </a>
+        <div 
+          className="nav-dropdown-trigger" 
+          onClick={() => mobile && setIsServicesOpen(!isServicesOpen)}
+          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+        >
+          {mobile ? (
+            <>
+              <span>Services</span>
+              <span className={`arrow ${isServicesOpen ? 'up' : ''}`} style={{ transition: 'transform 0.3s', transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>↓</span>
+            </>
+          ) : (
+            <a href="#services">Services</a>
+          )}
+        </div>
         <div className={`nav-dropdown ${isServicesOpen ? 'open' : ''}`}>
+          {mobile && (
+            <a 
+              href="#services" 
+              className="nav-dropdown-item" 
+              onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}
+              style={{ fontWeight: 800, color: '#fff' }}
+            >
+              All Services
+            </a>
+          )}
           {servicesLinks.map((s, idx) => (
             <a 
               key={s.id} 
               href={`#/services/${s.id}`}
               className="nav-dropdown-item"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}
               style={mobile ? { '--j': idx } : {}}
             >
               {s.label}
@@ -110,11 +130,11 @@ const Navbar = () => {
           
           <div className="sidebar-footer">
             <div className="social-mini">
-              <a href="#">IG</a>
-              <a href="#">TW</a>
-              <a href="#">LI</a>
+              <a href="https://www.instagram.com/theenzomedia" target="_blank" rel="noopener noreferrer">IG</a>
+              <a href="https://www.facebook.com/theenzomedia" target="_blank" rel="noopener noreferrer">FB</a>
+              <a href="mailto:theenzomedia@gmail.com">EMAIL</a>
             </div>
-            <p>© 2024 ENZO MEDIA</p>
+            <p>© {new Date().getFullYear()} ENZO MEDIA</p>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ const ServiceDetail = ({ serviceId }) => {
   return (
     <main style={{ background: 'transparent' }}>
       {/* Hero */}
-      <section style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '160px 0 80px' }}>
+      <section className="service-detail-hero" style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', padding: '160px 0 80px' }}>
         <div className="container">
           <span className="section-label reveal">Service Expertise</span>
           <h1 className="reveal stagger-1" style={{ 
@@ -38,7 +38,7 @@ const ServiceDetail = ({ serviceId }) => {
 
       {/* Stats/Intro Section */}
       <section style={{ padding: '80px 0', borderTop: '1px solid #1a1a1a' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '4rem', textAlign: 'center' }}>
+        <div className="container service-detail-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '4rem', textAlign: 'center' }}>
           <div className="reveal stagger-1">
             <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff' }}>95%</div>
             <div style={{ fontSize: '0.7rem', color: '#444', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '1rem' }}>Client Retention</div>
@@ -57,7 +57,7 @@ const ServiceDetail = ({ serviceId }) => {
       {/* Why & How */}
       <section style={{ padding: '120px 0', borderTop: '1px solid #1a1a1a' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', textAlign: 'left' }}>
+          <div className="service-detail-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', textAlign: 'left' }}>
             <div className="reveal-left">
               <h2 style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', marginBottom: '2.5rem' }}>The <span className="text-accent">Rationale.</span></h2>
               <p style={{ color: '#666', fontSize: '1.15rem', lineHeight: 1.9, marginBottom: '3rem' }}>{service.why}</p>
@@ -74,7 +74,7 @@ const ServiceDetail = ({ serviceId }) => {
               <h2 style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', marginBottom: '2.5rem' }}>Our <span className="text-accent">Framework.</span></h2>
               <p style={{ color: '#666', fontSize: '1.15rem', lineHeight: 1.9, marginBottom: '4rem' }}>{service.how}</p>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+              <div className="framework-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                 {service.steps.map((step, i) => (
                   <div key={i} className="card" style={{ padding: '2rem', textAlign: 'left' }}>
                     <div style={{ fontSize: '0.7rem', fontWeight: 800, color: '#e8352a', marginBottom: '1rem' }}>0{i+1}</div>
@@ -89,13 +89,13 @@ const ServiceDetail = ({ serviceId }) => {
       </section>
 
       {/* Full Width Impact Section */}
-      <section style={{ padding: '160px 0', background: '#070707', position: 'relative', overflow: 'hidden' }}>
+      <section className="impact-section" style={{ padding: '160px 0', background: '#070707', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontSize: '15vw', fontWeight: 900, color: 'rgba(255,255,255,0.02)', whiteSpace: 'nowrap', pointerEvents: 'none', zIndex: 0, textTransform: 'uppercase' }}>
           {service.title}
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <h2 className="reveal" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#fff', marginBottom: '4rem' }}>Turning Potential into <span className="text-accent">Power.</span></h2>
-          <div className="reveal stagger-1" style={{ maxWidth: '900px', margin: '0 auto', padding: '4rem', border: '1px solid rgba(232,53,42,0.2)', borderRadius: '40px', background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(20px)' }}>
+          <div className="reveal stagger-1 impact-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '4rem', border: '1px solid rgba(232,53,42,0.2)', borderRadius: '40px', background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(20px)' }}>
             <p style={{ fontSize: '1.4rem', color: '#aaa', lineHeight: 1.8 }}>
               {service.tagline} We don't just provide services; we build growth engines. Every {service.title} campaign we launch is a calculated move toward market dominance.
             </p>

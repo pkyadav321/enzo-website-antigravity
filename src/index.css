@@ -383,10 +383,14 @@ h1, h2, h3, h4 {
 }
 
 .mobile-dropdown .nav-dropdown-item {
-  font-size: 1.1rem;
-  padding: 0.5rem 0;
-  color: #888;
+  font-size: 1.2rem;
+  padding: 0.8rem 0;
+  color: #bbb;
   display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.mobile-dropdown .nav-dropdown-item:last-child {
+  border-bottom: none;
 }
 
 .sidebar-cta-btn {
@@ -431,6 +435,39 @@ h1, h2, h3, h4 {
   .hero-main-title {
     font-size: 2.2rem !important;
     line-height: 1.15 !important;
+  }
+  
+  .service-detail-hero {
+    min-height: 60vh !important;
+    padding: 120px 0 60px !important;
+  }
+  
+  .service-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  
+  .service-detail-stats {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .framework-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .impact-section {
+    padding: 80px 0 !important;
+  }
+  
+  .impact-card {
+    padding: 2rem !important;
+    border-radius: 20px !important;
+  }
+
+  .impact-card p {
+    font-size: 1.1rem !important;
   }
 }
 
@@ -639,7 +676,8 @@ a.btn-primary { text-decoration: none; }
   font-weight: 800; color: #fff; letter-spacing: -0.02em;
 }
 .service-list-desc { font-size: 0.9rem; color: #666; line-height: 1.6; }
-.service-list-icon { font-size: 1rem; color: #333; transition: color 0.3s; text-align: right; }
+.service-list-icon { font-size: 1rem; color: #333; transition: all 0.3s; text-align: right; }
+.service-list-item:hover .service-list-icon { transform: rotate(-45deg); color: #e8352a; }
 
 /* ─── TESTIMONIALS ────────────────────────────────────────────── */
 .testimonials-grid {
@@ -843,8 +881,10 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   .container { padding: 0 1.5rem; }
   section { padding: 80px 0; }
   .footer-grid { grid-template-columns: 1fr; }
-  .service-list-item { grid-template-columns: 40px 1fr; }
-  .service-list-desc, .service-list-icon { display: none; }
+  .service-list-item { grid-template-columns: 30px 1fr 40px; gap: 1rem; padding: 1.5rem 0; }
+  .service-list-desc { display: none; }
+  .service-list-icon { display: block; color: #e8352a; opacity: 0.6; }
+  .service-list-title { font-size: 1.1rem; }
   .form-row { grid-template-columns: 1fr; }
 }
 
@@ -1038,6 +1078,7 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   .about-sub-title { font-size: 1.8rem; }
   .stat-value { font-size: 2rem; }
   .big-quote { font-size: 1.6rem; }
+  .stats-grid { grid-template-columns: 1fr; }
 }
 
 /* ─── GALLERY GRID ───────────────────────────────────────────── */
@@ -1105,4 +1146,15 @@ textarea.form-control { resize: vertical; min-height: 150px; }
 
 @media (max-width: 600px) {
   .gallery-grid { columns: 1; }
+}
+
+@media (max-width: 768px) {
+  .contact-links-container {
+    gap: 2rem !important;
+    padding-top: 3rem !important;
+    margin-top: 3rem !important;
+  }
+  .contact-links-container a {
+    min-width: 100% !important;
+  }
 }
