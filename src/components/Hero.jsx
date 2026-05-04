@@ -1,4 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
+const CountUp = ({ end, duration = 2000, suffix = "" }) => {
+  const [count, setCount] = useState(0);
+  const countRef = useRef(null);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setStarted(true);
+      },
+      { threshold: 0.1 }
+    );
+    if (countRef.current) observer.observe(countRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * end));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [started, end, duration]);
+
+  return <span ref={countRef}>{count}{suffix}</span>;
+};
 
 const Hero = () => (
   <section id="hero" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0', background: 'transparent', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
@@ -62,13 +95,15 @@ const Hero = () => (
       {/* Stats row — centered */}
       <div className="reveal stagger-4" style={{ display: 'flex', gap: '6rem', padding: '4rem 0', flexWrap: 'wrap', justifyContent: 'center' }}>
         {[
-          { value: '50+', label: 'Clients Served' },
-          { value: '3×', label: 'Avg ROI Delivered' },
-          { value: '4', label: 'Cities Active' },
-          { value: '3+', label: 'Years in Market' },
+          { end: 50, suffix: '+', label: 'Clients Served' },
+          { end: 3, suffix: '×', label: 'Avg ROI Delivered' },
+          { end: 4, suffix: '', label: 'Cities Active' },
+          { end: 3, suffix: '+', label: 'Years in Market' },
         ].map((s) => (
           <div key={s.label}>
-            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, lineHeight: 1, color: '#fff', letterSpacing: '-0.04em' }}>{s.value}</div>
+            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, lineHeight: 1, color: '#fff', letterSpacing: '-0.04em' }}>
+              <CountUp end={s.end} suffix={s.suffix} />
+            </div>
             <div style={{ fontSize: '0.65rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#444', marginTop: '0.4rem' }}>{s.label}</div>
           </div>
         ))}
