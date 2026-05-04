@@ -319,8 +319,36 @@ h1, h2, h3, h4 {
 /* ─── BUTTONS ────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
-  .hide-mobile { display: none; }
+  .hide-mobile { display: none !important; }
   .navbar-logo img { height: 28px !important; }
+  
+  /* Mobile Menu Alignment Fix */
+  .mobile-menu-links {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  .mobile-menu-links a {
+    font-size: 2rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 1rem 0;
+  }
+  .mobile-cta {
+    width: 80%;
+    margin-top: 3rem;
+    justify-content: center;
+  }
+
+  /* Force Hero Heading Fix */
+  .hero-main-title {
+    font-size: 2.4rem !important;
+    line-height: 1.2 !important;
+    padding: 0 10px;
+  }
+  .hero-stats-row {
+    gap: 2rem !important;
+    padding: 2rem 0 !important;
+  }
 }
 
 .btn-primary {

@@ -62,10 +62,10 @@ const Hero = () => (
     </div>
 
     {/* Giant headline — 2 lines */}
-    <div className="container" style={{ paddingTop: '100px' }}>
-      <h1 className="reveal stagger-2" style={{
+    <div className="container" style={{ paddingTop: '80px' }}>
+      <h1 className="reveal stagger-2 hero-main-title" style={{
         fontFamily: "'Inter', sans-serif",
-        fontSize: 'clamp(3rem, 8vw, 6.5rem)',
+        fontSize: 'clamp(2.2rem, 8vw, 6.5rem)',
         fontWeight: 900,
         lineHeight: 1.1,
         letterSpacing: '-0.04em',
@@ -73,7 +73,7 @@ const Hero = () => (
         margin: '0 auto 2.5rem',
         maxWidth: '1250px'
       }}>
-        Building Scalable Brands<br />
+        Building Scalable Brands <span className="hide-mobile"><br /></span>
         with <span className="text-italic-accent">Creative Strategy.</span>
       </h1>
 
@@ -93,7 +93,7 @@ const Hero = () => (
       </div>
 
       {/* Stats row — centered */}
-      <div className="reveal stagger-4" style={{ display: 'flex', gap: '6rem', padding: '4rem 0', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div className="reveal stagger-4 hero-stats-row" style={{ display: 'flex', gap: '6rem', padding: '4rem 0', flexWrap: 'wrap', justifyContent: 'center' }}>
         {[
           { end: 50, suffix: '+', label: 'Clients Served' },
           { end: 3, suffix: '×', label: 'Avg ROI Delivered' },
