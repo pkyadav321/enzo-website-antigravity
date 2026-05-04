@@ -62,7 +62,7 @@ const ServiceDetail = ({ serviceId }) => {
               <h2 style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', marginBottom: '2.5rem' }}>The <span className="text-accent">Rationale.</span></h2>
               <p style={{ color: '#666', fontSize: '1.15rem', lineHeight: 1.9, marginBottom: '3rem' }}>{service.why}</p>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div className="deliverables-grid" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {service.deliverables.map((d, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: '#fff', fontSize: '0.9rem', fontWeight: 600 }}>
                     <span style={{ color: '#e8352a' }}>—</span> {d}
