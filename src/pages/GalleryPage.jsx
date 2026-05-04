@@ -1,38 +1,42 @@
-import React from 'react';
-import { CircularGallery } from "../components/ui/circular-gallery-2";
-
-const galleryItems = [
-  { image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop", text: "Abstract Form" },
-  { image: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?q=80&w=800&auto=format&fit=crop", text: "Cyber Reality" },
-  { image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=800&auto=format&fit=crop", text: "Liquid Flow" },
-  { image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop", text: "Neon Pulse" },
-  { image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=800&auto=format&fit=crop", text: "Digital Core" },
-  { image: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=800&auto=format&fit=crop", text: "Strategy" },
-  { image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop", text: "High Tech" },
-  { image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800&auto=format&fit=crop", text: "Creative" },
-];
+import React, { useState } from 'react';
+import { portfolioCategories } from '../data/portfolio';
 
 export default function GalleryPage() {
+  // Flatten all images from all categories into one array for the gallery
+  const allImages = portfolioCategories.flatMap(category => 
+    category.images.map(img => ({
+      src: img,
+      category: category.name,
+      color: category.color
+    }))
+  );
+
   return (
     <main className="sub-page">
       <div className="container">
         <div className="section-header-centered">
-          <span className="section-label reveal">Visual Showcase</span>
+          <span className="section-label reveal">Portfolio Gallery</span>
           <h1 className="reveal page-title">
-            Interactive <span className="text-accent">Gallery.</span>
+            Our <span className="text-accent">Creative</span> Archive.
           </h1>
           <p className="page-description reveal">
-            Drag or scroll to explore our creative universe. Built with OGL for high-performance 3D interactions.
+            A curated collection of our best work across branding, digital, and print design.
           </p>
         </div>
 
-        <div className="relative h-[600px] w-full rounded-3xl overflow-hidden border border-[#1a1a1a]">
-          <CircularGallery
-            items={galleryItems}
-            bend={3}
-            borderRadius={0.05}
-            scrollEase={0.02}
-          />
+        <div className="gallery-grid">
+          {allImages.map((item, index) => (
+            <div key={index} className={`gallery-item reveal stagger-${(index % 5) + 1}`}>
+              <div className="gallery-card">
+                <img src={item.src} alt={`${item.category} work`} loading="lazy" />
+                <div className="gallery-overlay">
+                  <span className="gallery-tag" style={{ background: item.color || '#e8352a' }}>
+                    {item.category}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </main>
