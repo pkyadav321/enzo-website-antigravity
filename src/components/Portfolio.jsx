@@ -38,7 +38,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" style={{ background: 'transparent', padding: '60px 0 30px' }}>
       <div className="reveal container" style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
-        <span className="section-label" style={{ display: 'inline-block' }}>OUR WORK</span>
+        <span className="section-label" style={{ display: 'inline-block' }}>CASE STUDIES</span>
         <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2rem,4vw,3.5rem)', fontWeight: 900, lineHeight: 1.15 }}>
           Results we're <em className="text-italic-accent" style={{ textTransform: 'lowercase' }}>proud of.</em>
         </h2>

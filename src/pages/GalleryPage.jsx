@@ -15,12 +15,12 @@ export default function GalleryPage() {
     <main className="sub-page">
       <div className="container">
         <div className="section-header-centered">
-          <span className="section-label reveal">Portfolio Gallery</span>
+          <span className="section-label reveal">Portfolio</span>
           <h1 className="reveal page-title">
-            Our <span className="text-accent">Creative</span> Archive.
+            Our <span className="text-accent">Work.</span>
           </h1>
           <p className="page-description reveal">
-            A curated collection of our best work across branding, digital, and print design.
+            A curated archive of our most impactful creative solutions.
           </p>
         </div>
 

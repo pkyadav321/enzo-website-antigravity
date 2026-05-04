@@ -49,8 +49,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <a href="#portfolio" style={mobile ? { '--i': 3 } : {}} onClick={() => setIsMenuOpen(false)}>Work</a>
-      <a href="#gallery" style={mobile ? { '--i': 4 } : {}} onClick={() => setIsMenuOpen(false)}>Gallery</a>
+      <a href="#portfolio" style={mobile ? { '--i': 3 } : {}} onClick={() => setIsMenuOpen(false)}>Case Studies</a>
+      <a href="#gallery" style={mobile ? { '--i': 4 } : {}} onClick={() => setIsMenuOpen(false)}>Work</a>
       <a href="#/blog" style={mobile ? { '--i': 5 } : {}} onClick={() => setIsMenuOpen(false)}>Blog</a>
     </>
   );
