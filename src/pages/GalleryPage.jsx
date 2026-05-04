@@ -14,14 +14,14 @@ const galleryItems = [
 
 export default function GalleryPage() {
   return (
-    <main style={{ background: '#050505', minHeight: '100vh', padding: '100px 0' }}>
+    <main className="sub-page">
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div className="section-header-centered">
           <span className="section-label reveal">Visual Showcase</span>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', fontWeight: 900, color: '#fff', marginBottom: '1.5rem', letterSpacing: '-0.04em' }}>
+          <h1 className="reveal page-title">
             Interactive <span className="text-accent">Gallery.</span>
           </h1>
-          <p style={{ color: '#666', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
+          <p className="page-description reveal">
             Drag or scroll to explore our creative universe. Built with OGL for high-performance 3D interactions.
           </p>
         </div>

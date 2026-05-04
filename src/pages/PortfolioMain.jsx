@@ -5,15 +5,15 @@ const PortfolioMain = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <main style={{ paddingTop: '120px', minHeight: '100vh', padding: '120px 2rem 80px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <a href="#/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#9ca3af', marginBottom: '2.5rem', fontSize: '0.9rem', fontWeight: 600 }}>
+    <main className="sub-page">
+      <div className="container">
+        <a href="#/" className="back-link">
           ← Back to Home
         </a>
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div className="section-header-centered">
           <span className="section-label">FULL PORTFOLIO</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, marginBottom: '1rem' }}>Our Complete Work</h2>
-          <p style={{ color: '#9ca3af' }}>Explore all our creative projects across multiple disciplines.</p>
+          <h1 className="reveal page-title">Our Complete Work</h1>
+          <p className="page-description">Explore all our creative projects across multiple disciplines.</p>
         </div>
         {portfolioCategories.map((category, ci) => (
           <div key={ci} style={{ marginBottom: '5rem' }}>
