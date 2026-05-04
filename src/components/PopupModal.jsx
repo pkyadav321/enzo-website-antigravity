@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const PopupModal = () => {
+  const [open, setOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
