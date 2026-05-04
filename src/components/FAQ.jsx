@@ -77,7 +77,7 @@ const FAQ = () => {
     <div className="container">
       
       {/* Centered header */}
-      <div className="reveal" style={{ marginBottom: '6rem', textAlign: 'center' }}>
+      <div className="reveal section-header" style={{ textAlign: 'center' }}>
         <span className="section-label">Questions</span>
         <h2 style={{ 
           fontFamily: "'Inter', sans-serif", 

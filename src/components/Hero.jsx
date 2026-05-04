@@ -62,7 +62,7 @@ const Hero = () => (
     </div>
 
     {/* Giant headline — 2 lines */}
-    <div className="container" style={{ paddingTop: '80px' }}>
+    <div className="container hero-container" style={{ paddingTop: '80px' }}>
       <h1 className="reveal stagger-2 hero-main-title" style={{
         fontFamily: "'Inter', sans-serif",
         fontSize: 'clamp(2.2rem, 8vw, 6.5rem)',

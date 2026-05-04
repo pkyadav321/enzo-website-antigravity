@@ -17,7 +17,7 @@ const Services = () => {
     <div className="container">
 
       {/* Centered header */}
-      <div className="reveal" style={{ marginBottom: '6rem', textAlign: 'center' }}>
+      <div className="reveal section-header" style={{ textAlign: 'center' }}>
         <span className="section-label">Our Services</span>
         <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(3rem, 7vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
           What We <span className="text-italic-accent">Do.</span>

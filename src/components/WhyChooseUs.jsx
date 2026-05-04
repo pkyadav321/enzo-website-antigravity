@@ -3,7 +3,7 @@ import React from 'react';
 const WhyChooseUs = () => (
   <section id="why-us" style={{ background: 'transparent', padding: '120px 0' }}>
     <div className="container">
-      <div className="reveal" style={{ textAlign: 'center', marginBottom: '6rem' }}>
+      <div className="reveal section-header" style={{ textAlign: 'center' }}>
         <span className="section-label">Why The Enzo Media</span>
         <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 5rem)', fontWeight: 900, lineHeight: 0.95, letterSpacing: '-0.04em', color: '#fff', marginBottom: '2rem', maxWidth: '800px', margin: '0 auto 2rem' }}>
           Tired of agencies that overpromise and <span className="text-accent">underdeliver?</span>

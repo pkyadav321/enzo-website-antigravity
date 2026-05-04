@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => (
   <footer className="footer" style={{ overflowX: 'hidden' }}>
     {/* Big footer marquee - Full Width (Edge to Edge) */}
-    <div style={{ borderBottom: '1px solid #1a1a1a', padding: '3rem 0', marginBottom: '5rem', overflow: 'hidden', background: '#050505' }}>
+    <div className="footer-marquee-container" style={{ borderBottom: '1px solid #1a1a1a', padding: '3rem 0', marginBottom: '5rem', overflow: 'hidden', background: '#050505' }}>
       <div className="marquee-container" style={{ position: 'relative', opacity: 1 }}>
         <div className="marquee-content" style={{ fontSize: 'clamp(2rem, 8vw, 10rem)', fontWeight: 900, lineHeight: 1 }}>
           {[...Array(5)].map((_, i) => (
