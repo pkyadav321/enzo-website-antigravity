@@ -350,7 +350,7 @@ h1, h2, h3, h4 {
   gap: 1.5rem;
 }
 
-.sidebar-links > a, .nav-dropdown-trigger {
+.sidebar-links > a, .sidebar-links .nav-dropdown-trigger {
   font-size: 2.2rem;
   font-weight: 800;
   color: #fff;
@@ -362,7 +362,7 @@ h1, h2, h3, h4 {
 }
 
 .sidebar-nav.open .sidebar-links > a, 
-.sidebar-nav.open .nav-dropdown-wrapper {
+.sidebar-nav.open .sidebar-links .nav-dropdown-trigger {
   opacity: 1;
   transform: translateY(0);
 }
