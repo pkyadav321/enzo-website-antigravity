@@ -24,6 +24,10 @@ const PopupModal = () => {
       });
       if (response.ok) {
         setIsSubmitted(true);
+        // Automatically close the modal after 3 seconds
+        setTimeout(() => {
+          setOpen(false);
+        }, 3000);
       } else {
         alert("Oops! There was a problem submitting your form.");
       }
