@@ -1,0 +1,28 @@
+# EnZo Media — Creative Performance Agency that Drives Growth
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnZo Media — Creative Performance Agency that Drives Growth</title>
+    <meta name="description" content="EnZo Media is a creative performance agency. Strategy, creative, and data to scale brands. Real results for real businesses." />
+    <meta name="author" content="EnZo Media" />
+    <link rel="canonical" href="https://www.theenzomedia.com" />
+
+    <meta property="og:title" content="EnZo Media — We Drive Growth That Delivers Results" />
+    <meta property="og:description" content="Data-driven strategies. Creative execution. Real results for real businesses." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script type="module" crossorigin src="/assets/index-DiJ2Zqbj.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-bSb88x6N.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
