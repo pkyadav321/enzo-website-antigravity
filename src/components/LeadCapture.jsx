@@ -4,12 +4,29 @@ import { Send, Check } from 'lucide-react';
 
 const LeadCapture = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTimeout(() => {
-      setIsSubmitted(true);
-    }, 1000);
+    setIsSubmitting(true);
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/theenzomedia@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    } catch {
+      alert("Oops! There was a problem submitting your form.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -40,9 +57,8 @@ const LeadCapture = () => {
             <p>Your request has been received. We'll be in touch shortly.</p>
           </div>
         ) : (
-          <form action="https://formsubmit.co/theenzomedia@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://www.theenzomedia.com" />
             <input type="hidden" name="_subject" value="New Lead from Website" />
 
             <div>
@@ -60,8 +76,13 @@ const LeadCapture = () => {
               <input type="tel" name="phone" required placeholder="+91 00000 00000" className="form-input" />
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
-              Submit Request <Send size={18} />
+            <div>
+              <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', color: 'var(--text-secondary)' }}>Message</label>
+              <textarea name="message" required placeholder="Tell us about your project..." className="form-input" style={{ minHeight: '100px', resize: 'vertical' }}></textarea>
+            </div>
+
+            <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }} disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : <>Submit Request <Send size={18} /></>}
             </button>
           </form>
         )}
