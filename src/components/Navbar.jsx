@@ -20,23 +20,28 @@ const Navbar = () => {
     { label: 'Ecommerce Listing Designs', id: 'ecommerce-listing' },
   ];
 
-  const NavLinks = () => (
+  const NavLinks = ({ mobile = false }) => (
     <>
-      <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+      <a href="#about" style={mobile ? { '--i': 1 } : {}} onClick={() => setIsMenuOpen(false)}>About</a>
       
       <div 
-        className="nav-dropdown-wrapper"
-        onMouseEnter={() => setIsServicesOpen(true)}
-        onMouseLeave={() => setIsServicesOpen(false)}
+        className={`nav-dropdown-wrapper ${mobile ? 'mobile-dropdown' : ''}`}
+        onMouseEnter={() => !mobile && setIsServicesOpen(true)}
+        onMouseLeave={() => !mobile && setIsServicesOpen(false)}
+        onClick={() => mobile && setIsServicesOpen(!isServicesOpen)}
+        style={mobile ? { '--i': 2 } : {}}
       >
-        <a href="#services" className="nav-dropdown-trigger">Services</a>
+        <a href="#services" className="nav-dropdown-trigger">
+          Services {mobile && <span className={`arrow ${isServicesOpen ? 'up' : ''}`}>↓</span>}
+        </a>
         <div className={`nav-dropdown ${isServicesOpen ? 'open' : ''}`}>
-          {servicesLinks.map(s => (
+          {servicesLinks.map((s, idx) => (
             <a 
               key={s.id} 
               href={`#/services/${s.id}`}
               className="nav-dropdown-item"
               onClick={() => setIsMenuOpen(false)}
+              style={mobile ? { '--j': idx } : {}}
             >
               {s.label}
             </a>
@@ -44,14 +49,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      <a href="#/work" onClick={() => setIsMenuOpen(false)}>Work</a>
-      <a href="#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</a>
-      <a href="#/blog" onClick={() => setIsMenuOpen(false)}>Blog</a>
+      <a href="#portfolio" style={mobile ? { '--i': 3 } : {}} onClick={() => setIsMenuOpen(false)}>Work</a>
+      <a href="#gallery" style={mobile ? { '--i': 4 } : {}} onClick={() => setIsMenuOpen(false)}>Gallery</a>
+      <a href="#/blog" style={mobile ? { '--i': 5 } : {}} onClick={() => setIsMenuOpen(false)}>Blog</a>
     </>
   );
 
+  // Lock scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMenuOpen]);
+
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-active' : ''}`}>
       <div className="navbar-logo">
         <a href="/">
           <img src="/images/logodarktheme/logo.png" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
@@ -63,40 +77,45 @@ const Navbar = () => {
         <NavLinks />
       </div>
 
-      {/* Get in Touch CTA */}
+      {/* Action Area */}
       <div className="nav-actions">
-        <a
-          href="#contact"
-          className="navbar-cta hide-mobile"
-          onClick={e => {
-            const el = document.getElementById('contact');
-            if (el) {
-              e.preventDefault();
-              el.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-        >
-          Get in touch →
-        </a>
+        <a href="#contact" className="navbar-cta hide-mobile">Get in touch →</a>
 
-        {/* Hamburger Menu Icon */}
+        {/* Premium Hamburger Icon */}
         <button 
-          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          className={`hamburger-v2 ${isMenuOpen ? 'is-active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
+          aria-label="Menu"
         >
-          <span></span>
-          <span></span>
+          <div className="hamburger-box">
+            <div className="hamburger-inner"></div>
+          </div>
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-        <div className="mobile-menu-links">
-          <NavLinks />
-          <a href="#contact" className="mobile-cta" onClick={() => setIsMenuOpen(false)}>
-            Get in touch
-          </a>
+      {/* Premium Sidebar Overlay */}
+      <div className={`sidebar-overlay ${isMenuOpen ? 'show' : ''}`} onClick={() => setIsMenuOpen(false)} />
+      
+      <div className={`sidebar-nav ${isMenuOpen ? 'open' : ''}`}>
+        <div className="sidebar-content">
+          <div className="sidebar-header">
+            <span>Navigation</span>
+          </div>
+          <div className="sidebar-links">
+            <NavLinks mobile={true} />
+            <a href="#contact" className="sidebar-cta-btn" style={{ '--i': 6 }} onClick={() => setIsMenuOpen(false)}>
+              Start a Project
+            </a>
+          </div>
+          
+          <div className="sidebar-footer">
+            <div className="social-mini">
+              <a href="#">IG</a>
+              <a href="#">TW</a>
+              <a href="#">LI</a>
+            </div>
+            <p>© 2024 ENZO MEDIA</p>
+          </div>
         </div>
       </div>
     </nav>
