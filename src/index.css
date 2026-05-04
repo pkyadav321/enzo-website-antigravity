@@ -459,6 +459,19 @@ h1, h2, h3, h4 {
   .service-detail-grid {
     grid-template-columns: 1fr !important;
     gap: 3rem !important;
+    text-align: center !important;
+  }
+
+  .service-detail-grid h2, .service-detail-grid p {
+    text-align: center !important;
+  }
+  
+  .deliverables-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    text-align: left !important; /* Keep the actual list items left aligned for readability */
+    justify-content: center !important;
   }
   
   .service-detail-stats {
@@ -605,6 +618,13 @@ h1, h2, h3, h4 {
 
 /* ─── SECTION HEADER ─────────────────────────────────────────── */
 .section-header { margin-bottom: 5rem; }
+.section-header-centered { margin-bottom: 5rem; text-align: center; }
+@media (max-width: 768px) {
+  .section-header, .section-header-centered { 
+    margin-bottom: 2.5rem !important; 
+    text-align: center !important; 
+  }
+}
 .section-header h2 {
   font-family: 'Inter', sans-serif;
   font-size: clamp(3rem, 6vw, 6rem);
@@ -880,6 +900,13 @@ textarea.form-control { resize: vertical; min-height: 150px; }
 
 /* ─── SECTION HEADER ─────────────────────────────────────────── */
 .section-header { margin-bottom: 5rem; }
+.section-header-centered { margin-bottom: 5rem; text-align: center; }
+@media (max-width: 768px) {
+  .section-header, .section-header-centered { 
+    margin-bottom: 2.5rem !important; 
+    text-align: center !important; 
+  }
+}
 .section-header h2 {
   font-family: 'Inter', sans-serif;
   font-size: clamp(2rem, 8vw, 6rem); /* Reduced minimum for mobile */
@@ -984,8 +1011,19 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   .reveal {
     margin-bottom: 2rem !important;
   }
-  .hero-container {
-    padding-top: 40px !important;
+  .page-description, .section-header p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .about-grid, .mission-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+  
+  .about-sub-title {
+    text-align: center !important;
   }
 }
 
