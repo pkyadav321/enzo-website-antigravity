@@ -47,7 +47,7 @@ const Hero = () => (
       {/* Sub row — centered */}
       <div className="reveal stagger-3" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3rem', paddingBottom: '5rem', borderBottom: '1px solid #1a1a1a' }}>
         <p style={{ fontSize: '1.2rem', color: '#666', lineHeight: 1.7, maxWidth: '600px', fontWeight: 400 }}>
-          We turn ad spend into measurable profit using data-driven funnels and scroll-stopping creative. Stop guessing. Start scaling.
+          The leading creative performance agency scaling brands across <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b>. We turn ad spend into measurable profit. Stop guessing. Start scaling.
         </p>
         <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>

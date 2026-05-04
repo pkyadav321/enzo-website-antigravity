@@ -22,7 +22,7 @@ const Footer = () => (
             <img src="/images/logodarktheme/logo.png" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
           </a>
           <p style={{ color: '#666', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
-            A premium creative marketing agency helping local businesses across Varanasi, Ayodhya, Gonda, and Ghaziabad grow with data-driven marketing.
+            A premium creative performance agency helping brands across <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b> scale with data-driven marketing and creative excellence.
           </p>
           <div className="footer-socials" style={{ display: 'flex', gap: '1rem' }}>
             <a href="https://www.instagram.com/theenzomedia" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
@@ -50,10 +50,13 @@ const Footer = () => (
         </div>
 
         <div className="footer-col">
-          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Legal</h4>
+          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Serving In</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Privacy Policy</a></li>
-            <li style={{ marginBottom: '0.75rem' }}><a href="#" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Terms of Service</a></li>
+            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Varanasi, UP</li>
+            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Gonda, UP</li>
+            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Ayodhya, UP</li>
+            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Delhi NCR</li>
+            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Mumbai (Remote)</li>
           </ul>
         </div>
 

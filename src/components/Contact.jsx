@@ -38,7 +38,7 @@ const Contact = () => {
             <span className="text-accent">Dominate Your Market?</span>
           </h2>
           <p style={{ color: '#666', fontSize: '1.2rem', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
-            Reaching out is free. You'll walk away with a clear growth roadmap — even if we don't end up working together.
+            Reaching out is free. We're currently helping businesses in <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b> scale. You'll walk away with a clear growth roadmap — even if we don't end up working together.
           </p>
         </div>
 
