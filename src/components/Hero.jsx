@@ -32,13 +32,13 @@ const Hero = () => (
     <div className="container" style={{ paddingTop: '100px' }}>
       <h1 className="reveal stagger-2" style={{
         fontFamily: "'Inter', sans-serif",
-        fontSize: 'clamp(2.5rem, 7vw, 5.5rem)',
+        fontSize: 'clamp(3rem, 8vw, 6.5rem)',
         fontWeight: 900,
         lineHeight: 1.1,
         letterSpacing: '-0.04em',
         color: '#fff',
         margin: '0 auto 2.5rem',
-        maxWidth: '1200px'
+        maxWidth: '1250px'
       }}>
         Building Scalable Brands<br />
         with <span className="text-italic-accent">Creative Strategy.</span>
