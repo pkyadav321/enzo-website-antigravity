@@ -88,7 +88,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-active' : ''}`}>
       <div className="navbar-logo">
         <a href="/">
-          <img src="/images/logodarktheme/logo.png" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
+          <img src="/images/logodarktheme/logo.webp" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
         </a>
       </div>
 

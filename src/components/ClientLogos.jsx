@@ -1,12 +1,12 @@
 import React from 'react';
 
 const clients = [
-  { src: '/images/client/client1.png', alt: 'Client 1' },
+  { src: '/images/client/client1.webp', alt: 'Client 1' },
   { src: '/images/client/client2.webp', alt: 'Client 2' },
   { src: '/images/client/client3.webp', alt: 'Client 3' },
-  { src: '/images/client/client4.png', alt: 'Client 4' },
-  { src: '/images/client/client5.png', alt: 'Client 5' },
-  { src: '/images/client/client6.png', alt: 'Client 6' },
+  { src: '/images/client/client4.webp', alt: 'Client 4' },
+  { src: '/images/client/client5.webp', alt: 'Client 5' },
+  { src: '/images/client/client6.webp', alt: 'Client 6' },
 ];
 
 const ClientLogos = () => (

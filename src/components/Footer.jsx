@@ -19,7 +19,7 @@ const Footer = () => (
       <div className="footer-grid">
         <div className="footer-brand">
           <a href="#" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>
-            <img src="/images/logodarktheme/logo.png" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
+            <img src="/images/logodarktheme/logo.webp" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
           </a>
           <p style={{ color: '#666', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
             A premium creative performance agency helping brands across <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b> scale with data-driven marketing and creative excellence.
