@@ -33,23 +33,24 @@ const Services = () => {
       {/* List */}
       <div className="services-list-container">
         {services.map((s, i) => {
-          const serviceIds = {
-            '01': 'performance-ads',
-            '02': 'social-media',
-            '03': 'high-converting-video',
-            '04': 'conversion-web-design',
-            '05': 'brand-creative',
-            '06': 'ecommerce-listing',
-            '07': 'ecommerce-listing', // fallback
-            '08': 'ecommerce-listing'
+          const servicePaths = {
+            '01': '/digital-marketing-varanasi',
+            '02': '/social-media-marketing',
+            '03': '/google-ads-agency', // Mapping High-Converting Video to Google Ads or keeping it? Actually let's map it to its own or keep specific SEO pages.
+            // Let's stick to the user's new pages for the most important ones.
+            '04': '/services/conversion-web-design',
+            '05': '/services/brand-creative',
+            '06': '/services/ecommerce-listing',
+            '07': '/services/ecommerce-listing', // Fallback for OOH for now
+            '08': '/services/ecommerce-listing'
           };
-          const sid = serviceIds[s.num] || 'performance-ads';
+          const path = servicePaths[s.num] || `/services/performance-ads`;
           
           return (
             <div 
               key={s.num} 
               className={`service-list-item reveal stagger-${i + 1}`}
-              onClick={() => navigate(`/services/${sid}`)}
+              onClick={() => navigate(path)}
               style={{ cursor: 'pointer' }}
             >
               <span className="service-list-num">{s.num}</span>
