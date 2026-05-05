@@ -1,18 +1,29 @@
 import React, { useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { portfolioCategories } from '../data/portfolio';
 
-const CategoryPage = ({ category }) => {
+const CategoryPage = () => {
+  const { category } = useParams();
+  const navigate = useNavigate();
+  
   useEffect(() => { window.scrollTo(0, 0); }, [category]);
 
   const current = portfolioCategories.find(c => c.id === category);
-  if (!current) { window.location.hash = '#/work'; return null; }
+  
+  useEffect(() => {
+    if (!current) {
+      navigate('/work');
+    }
+  }, [current, navigate]);
+
+  if (!current) return null;
 
   return (
     <main style={{ paddingTop: '100px', minHeight: '100vh', padding: '120px 2rem 80px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <a href="#/work" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#9ca3af', marginBottom: '2.5rem', fontSize: '0.9rem', fontWeight: 600 }}>
+        <Link to="/work" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#9ca3af', marginBottom: '2.5rem', fontSize: '0.9rem', fontWeight: 600 }}>
           ← Back to Portfolio
-        </a>
+        </Link>
         <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, marginBottom: '0.75rem' }}>
           {current.name}
         </h2>
@@ -30,3 +41,4 @@ const CategoryPage = ({ category }) => {
 };
 
 export default CategoryPage;
+

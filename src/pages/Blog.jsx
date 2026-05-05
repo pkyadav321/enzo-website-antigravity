@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const blogPosts = [
   {
@@ -17,33 +18,40 @@ const blogPosts = [
   }
 ];
 
-const Blog = () => (
-  <main style={{ background: 'transparent', padding: '160px 0' }}>
-    <div className="container">
-      <div className="reveal" style={{ textAlign: 'center', marginBottom: '8rem' }}>
-        <span className="section-label">Editorial Blog</span>
-        <h1 style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff' }}>
-          Thoughts on <span className="text-accent">Growth.</span>
-        </h1>
-      </div>
+const Blog = () => {
+  const navigate = useNavigate();
+  
+  return (
+    <main style={{ background: 'transparent', padding: '160px 0' }}>
+      <div className="container">
+        <div className="reveal" style={{ textAlign: 'center', marginBottom: '8rem' }}>
+          <span className="section-label">Editorial Blog</span>
+          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff' }}>
+            Thoughts on <span className="text-accent">Growth.</span>
+          </h1>
+        </div>
 
-      <div className="reveal stagger-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem' }}>
-        {blogPosts.map((post) => (
-          <div key={post.id} className="card" style={{ padding: '0', overflow: 'hidden', textAlign: 'left', cursor: 'pointer' }} onClick={() => window.location.hash = `#/blog/${post.id}`}>
-            <div style={{ height: '300px', width: '100%', overflow: 'hidden' }}>
-              <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
+        <div className="reveal stagger-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem' }}>
+          {blogPosts.map((post) => (
+            <div key={post.id} className="card" style={{ padding: '0', overflow: 'hidden', textAlign: 'left', cursor: 'pointer' }} onClick={() => navigate(`/blog/${post.id}`)}>
+              <div style={{ height: '300px', width: '100%', overflow: 'hidden' }}>
+                <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
+              </div>
+              <div style={{ padding: '2.5rem' }}>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#444', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{post.date}</div>
+                <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: '1.5rem', lineHeight: 1.2 }}>{post.title}</h2>
+                <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '2rem' }}>{post.excerpt}</p>
+                <span style={{ color: '#e8352a', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Read Post ↗</span>
+              </div>
             </div>
-            <div style={{ padding: '2.5rem' }}>
-              <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#444', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{post.date}</div>
-              <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: '1.5rem', lineHeight: 1.2 }}>{post.title}</h2>
-              <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '2rem' }}>{post.excerpt}</p>
-              <span style={{ color: '#e8352a', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Read Post ↗</span>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </main>
-);
+    </main>
+  );
+};
+
+export default Blog;
+
 
 export default Blog;

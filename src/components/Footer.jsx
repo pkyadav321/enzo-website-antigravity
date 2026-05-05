@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => (
   <footer className="footer" style={{ overflowX: 'hidden' }}>
@@ -18,9 +19,9 @@ const Footer = () => (
     <div className="container">
       <div className="footer-grid">
         <div className="footer-brand">
-          <a href="#" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>
+          <Link to="/" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>
             <img src="/images/logodarktheme/logo.webp" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
-          </a>
+          </Link>
           <p style={{ color: '#666', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
             A premium creative performance agency helping brands across <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b> scale with data-driven marketing and creative excellence.
           </p>
@@ -39,24 +40,23 @@ const Footer = () => (
         </div>
 
         <div className="footer-col">
-          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Navigation</h4>
+          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Quick Links</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li style={{ marginBottom: '0.75rem' }}><a href="#services" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Services</a></li>
-            <li style={{ marginBottom: '0.75rem' }}><a href="#portfolio" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Portfolio</a></li>
-            <li style={{ marginBottom: '0.75rem' }}><a href="#about" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>About Us</a></li>
-            <li style={{ marginBottom: '0.75rem' }}><a href="#gallery" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Gallery</a></li>
-            <li style={{ marginBottom: '0.75rem' }}><a href="#/blog" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Blog</a></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/#services" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>All Services</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/work" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Case Studies</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/about" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>About Us</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/gallery" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Work Gallery</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/blog" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Blog Insights</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Serving In</h4>
+          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Core Solutions</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Varanasi, UP</li>
-            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Gonda, UP</li>
-            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Ayodhya, UP</li>
-            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Delhi NCR</li>
-            <li style={{ marginBottom: '0.5rem', color: '#666', fontSize: '0.9rem' }}>Mumbai (Remote)</li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/digital-marketing-varanasi" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Digital Marketing</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/google-ads-agency" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Google Ads</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/social-media-marketing" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Social Media</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/services/performance-ads" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Performance Ads</Link></li>
           </ul>
         </div>
 
@@ -79,3 +79,4 @@ const Footer = () => (
 );
 
 export default Footer;
+

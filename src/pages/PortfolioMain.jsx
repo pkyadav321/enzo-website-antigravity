@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { portfolioCategories } from '../data/portfolio';
 
 const PortfolioMain = () => {
@@ -7,9 +8,9 @@ const PortfolioMain = () => {
   return (
     <main className="sub-page">
       <div className="container">
-        <a href="#/" className="back-link">
+        <Link to="/" className="back-link">
           ← Back to Home
-        </a>
+        </Link>
         <div className="section-header-centered">
           <span className="section-label">FULL PORTFOLIO</span>
           <h1 className="reveal page-title">Our Complete Work</h1>
@@ -19,7 +20,7 @@ const PortfolioMain = () => {
           <div key={ci} style={{ marginBottom: '5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
               <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>{category.name}</h3>
-              <a href={`#/work/${category.id}`} style={{ fontSize: '0.85rem', color: '#dc2626', fontWeight: 600 }}>View All →</a>
+              <Link to={`/work/${category.id}`} style={{ fontSize: '0.85rem', color: '#dc2626', fontWeight: 600 }}>View All →</Link>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
               {category.images.slice(0, 3).map((img, i) => (

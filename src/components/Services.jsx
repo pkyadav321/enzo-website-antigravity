@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const services = [
   { num: '01', title: 'Performance Ads', desc: 'Turn ad spend into profit. Meta & Google campaigns engineered for high-intent lead generation.' },
@@ -12,6 +13,8 @@ const services = [
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="services" style={{ background: 'transparent', padding: '120px 0' }}>
     <div className="container">
@@ -46,7 +49,7 @@ const Services = () => {
             <div 
               key={s.num} 
               className={`service-list-item reveal stagger-${i + 1}`}
-              onClick={() => window.location.hash = `#/services/${sid}`}
+              onClick={() => navigate(`/services/${sid}`)}
               style={{ cursor: 'pointer' }}
             >
               <span className="service-list-num">{s.num}</span>
@@ -69,3 +72,4 @@ const Services = () => {
 };
 
 export default Services;
+

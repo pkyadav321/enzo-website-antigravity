@@ -14,11 +14,11 @@ export function SplineScene({ scene, className, style, onLoad }) {
   };
 
   return (
-    <div style={{ 
-      width: '100%', 
-      height: '100%', 
+    <div style={{
+      width: '100%',
+      height: '100%',
       position: 'relative',
-      ...style 
+      ...style
     }}>
       {/* Loading Placeholder */}
       {!isLoaded && (
@@ -34,21 +34,22 @@ export function SplineScene({ scene, className, style, onLoad }) {
       )}
 
       <Suspense fallback={null}>
-        <div style={{ 
-          opacity: isLoaded ? 1 : 0, 
+        <div style={{
+          opacity: isLoaded ? 1 : 0,
           transition: 'opacity 0.8s ease',
           width: '100%',
           height: '100%'
         }}>
-          <Spline 
-            scene={scene} 
-            className={className} 
-            onLoad={handleLoad} 
+          <Spline
+            scene={scene}
+            className={className}
+            onLoad={handleLoad}
           />
         </div>
       </Suspense>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .spline-spinner {
           width: 40px;
           height: 40px;

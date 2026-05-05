@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 
-const ServiceDetail = ({ serviceId }) => {
+const ServiceDetail = () => {
+  const { serviceId } = useParams();
   const service = servicesData[serviceId];
 
   useEffect(() => {
@@ -107,9 +109,9 @@ const ServiceDetail = ({ serviceId }) => {
       <section style={{ padding: '120px 0', textAlign: 'center', borderTop: '1px solid #1a1a1a' }}>
         <div className="container">
           <h2 className="reveal" style={{ fontSize: '3.5rem', fontWeight: 900, marginBottom: '3.5rem' }}>Ready to Scale <span className="text-accent">{service.title}?</span></h2>
-          <button className="btn-primary reveal stagger-1" onClick={() => window.location.hash = '#contact'}>
+          <Link to="/#contact" className="btn-primary reveal stagger-1">
             Book a Strategy Call ↗
-          </button>
+          </Link>
         </div>
       </section>
     </main>

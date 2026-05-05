@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 
-const BlogPost = ({ postId }) => {
+const BlogPost = () => {
+  const { postId } = useParams();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [postId]);
@@ -10,6 +13,9 @@ const BlogPost = ({ postId }) => {
   return (
     <main style={{ background: 'transparent', padding: '160px 0' }}>
       <div className="container" style={{ maxWidth: '900px' }}>
+        <Link to="/blog" className="back-link" style={{ marginBottom: '2rem', display: 'inline-block', color: '#666', textDecoration: 'none' }}>
+          ← Back to Blog
+        </Link>
         <div className="reveal" style={{ marginBottom: '4rem' }}>
           <span className="section-label">Editorial // AI & Strategy</span>
           <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.04em', color: '#fff', marginTop: '2rem' }}>
