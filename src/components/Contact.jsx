@@ -84,9 +84,9 @@ const Contact = () => {
         {/* Contact links */}
         <div className="reveal stagger-3 contact-links-container" style={{ display: 'flex', justifyContent: 'center', gap: '6rem', flexWrap: 'wrap', paddingTop: '6rem', marginTop: '6rem', borderTop: '1px solid #1a1a1a', textAlign: 'center' }}>
           {[
-            { label: 'Call Us', value: '+91 9220797941', href: 'tel:+919220797941' },
+            { label: 'Call Us', value: '+91 8076450844', href: 'tel:+918076450844' },
             { label: 'Email', value: 'theenzomedia@gmail.com', href: 'mailto:theenzomedia@gmail.com' },
-            { label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/919220797941' },
+            { label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/918076450844' },
           ].map((c) => (
             <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', minWidth: '200px' }}>
               <div style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#444', marginBottom: '0.75rem' }}>{c.label}</div>

@@ -18,6 +18,29 @@ function App() {
   useScrollReveal(currentPath);
 
   useEffect(() => {
+    const titles = {
+      '': 'Enzo Media | Best Digital Marketing Agency in Varanasi, Gonda, Ayodhya & Delhi NCR',
+      '#': 'Enzo Media | Best Digital Marketing Agency in Varanasi, Gonda, Ayodhya & Delhi NCR',
+      '#about': 'About Us | Enzo Media',
+      '#gallery': 'Work Gallery | Enzo Media',
+      '#/blog': 'Insights & Blog | Enzo Media',
+      '#/work': 'Portfolio | Enzo Media'
+    };
+
+    if (currentPath.startsWith('#/services/')) {
+      const serviceId = currentPath.split('/')[2];
+      const serviceName = serviceId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      document.title = `${serviceName} | Enzo Media`;
+    } else if (currentPath.startsWith('#/blog/')) {
+      document.title = 'Blog Post | Enzo Media';
+    } else if (currentPath.startsWith('#/work/')) {
+      document.title = 'Category | Enzo Media';
+    } else {
+      document.title = titles[currentPath] || 'Enzo Media';
+    }
+  }, [currentPath]);
+
+  useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
       setCurrentPath(hash);
