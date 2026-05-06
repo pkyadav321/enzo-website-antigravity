@@ -15,6 +15,7 @@ import DigitalMarketing from './pages/DigitalMarketing';
 import GoogleAds from './pages/GoogleAds';
 import SocialMedia from './pages/SocialMedia';
 import CityLandingPage from './pages/CityLandingPage';
+import BrandingCaseStudy from './pages/BrandingCaseStudy';
 import CursorTrail from './components/CursorTrail';
 import useScrollReveal from './hooks/useScrollReveal';
 
@@ -122,6 +123,9 @@ function AppContent() {
         
         {/* Hyper-Local SEO Pages */}
         <Route path="/marketing-agency-:cityId" element={<CityLandingPage />} />
+        
+        {/* Case Studies */}
+        <Route path="/casestudy/sambhala-orchard" element={<BrandingCaseStudy />} />
         
         {/* Fallback to Home for hash routes or 404s */}
         <Route path="*" element={<Home />} />

@@ -16,6 +16,23 @@ const PortfolioMain = () => {
           <h1 className="reveal page-title">Our Complete Work</h1>
           <p className="page-description">Explore all our creative projects across multiple disciplines.</p>
         </div>
+
+        {/* Featured Case Study */}
+        <section className="featured-case-study reveal" style={{ marginBottom: '8rem', padding: '0' }}>
+          <div className="card featured-card-grid" style={{ overflow: 'hidden' }}>
+            <div className="featured-content" style={{ padding: '4rem' }}>
+              <span className="section-label" style={{ marginBottom: '1rem' }}>Featured Case Study</span>
+              <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '1.5rem', lineHeight: '1.1' }}>Sambhala <span className="text-accent">Orchard & Agro.</span></h2>
+              <p style={{ color: '#666', marginBottom: '2rem', lineHeight: '1.6' }}>
+                A premium branding exercise for a traditional agricultural brand, reimagined for the modern era.
+              </p>
+              <Link to="/casestudy/sambhala-orchard" className="btn-primary">View Case Study ↗</Link>
+            </div>
+            <div style={{ background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+              <img src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png" alt="Sambhala Branding" style={{ width: '80%', height: 'auto', objectFit: 'contain' }} />
+            </div>
+          </div>
+        </section>
         {portfolioCategories.map((category, ci) => (
           <div key={ci} style={{ marginBottom: '5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
