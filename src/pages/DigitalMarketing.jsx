@@ -15,8 +15,9 @@ const DigitalMarketing = () => {
       <section className="about-hero">
         <div className="container">
           <span className="section-label reveal">Growth Engine // 2026</span>
-          <h1 className="reveal stagger-1 page-title">
-            Top-Tier <span className="text-accent">Digital Marketing</span> Agency in Varanasi.
+          <h1 className="reveal stagger-1 page-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', maxWidth: '1400px', margin: '0 auto 2rem' }}>
+            Top-Tier Digital Marketing <br className="hide-mobile" />
+            Agency in <span className="text-accent">Varanasi.</span>
           </h1>
           <p className="reveal stagger-2 about-description">
             We don't just "post" or "rank." We engineer growth engines. The Enzo Media helps businesses in Varanasi, Gonda, and Ayodhya scale using data-driven SEO, performance marketing, and high-impact strategy.

@@ -124,5 +124,70 @@ export const servicesData = {
       { title: 'Infographics', desc: 'Designing slides that highlight key benefits.' },
       { title: 'Upload', desc: 'Integrating content into your marketplace listing.' }
     ]
+  },
+  'commercial-photography': {
+    title: 'Commercial Photography',
+    what: 'Studio-grade product and lifestyle photography that captures every detail.',
+    why: 'High-end imagery is the foundation of a premium brand. We provide professional studio shoots that make your products shine.',
+    how: 'Using industry-leading cameras, lighting, and art direction to create raw, authentic, and powerful visuals.',
+    accent: '#ff574b',
+    tagline: 'Authentic Visual Storytelling.',
+    deliverables: [
+      'Product Studio Shoots',
+      'Lifestyle Brand Photography',
+      'Model & Fashion Shoots',
+      'Food & Beverage Styling',
+      'Industrial & Real Estate Shoots'
+    ],
+    steps: [
+      { title: 'Pre-Production', desc: 'Planning the set, lighting, and mood board.' },
+      { title: 'Shoot Day', desc: 'Executing the production with premium gear.' },
+      { title: 'Retouching', desc: 'Standard color correction and skin retouching.' },
+      { title: 'Delivery', desc: 'Providing high-res assets for print and web.' }
+    ]
+  },
+  'ai-product-imagery': {
+    title: 'AI-Powered Product Imagery',
+    what: 'Creating hyper-realistic product environments using advanced AI models.',
+    why: 'Traditional shoots are expensive and limited by physics. AI photography cuts your production costs by 70% while offering unlimited creative freedom.',
+    how: 'We take simple product shots and place them in premium, impossible environments using custom-trained AI architectures.',
+    accent: '#e8352a',
+    tagline: 'Infinite Creativity, Zero Limits.',
+    deliverables: [
+      'AI Product Studio Shoots',
+      'AI Lifestyle Brand Imagery',
+      'AI Model & Fashion Visuals',
+      'Impossible Environment Synthesis',
+      'Seasonal Background Swapping',
+      'Rapid Content Scaling'
+    ],
+    steps: [
+      { title: 'Asset Capture', desc: 'Simple, clean product shots are all we need.' },
+      { title: 'AI Synthesis', desc: 'Generating 100+ premium backgrounds for your product.' },
+      { title: 'Benefit: Cost', desc: 'Saving lakhs on set design, travel, and logistics.' },
+      { title: 'Refinement', desc: 'Polishing AI outputs for perfect realism and lighting.' }
+    ]
+  },
+  'ooh-advertising': {
+    title: 'OOH Advertising',
+    shortTitle: 'OOH Advertising',
+    what: 'Strategic outdoor campaigns and high-impact hoardings.',
+    why: 'Offline dominance is key to local brand authority. We design hoardings that cannot be ignored.',
+    how: 'High-contrast design and placement strategy that targets high-traffic zones in North India.',
+    accent: '#e8352a',
+    tagline: 'Dominate the Streets.',
+    deliverables: [
+      'Hording & Billboard Design',
+      'Transit Advertising (Buses/Cabs)',
+      'Strategic Placement Planning',
+      'Print-Ready Large Format Assets',
+      'Local Territory Blitzing'
+    ],
+    steps: [
+      { title: 'Zone Selection', desc: 'Identifying the most effective outdoor locations.' },
+      { title: 'Creative Hook', desc: 'Designing high-impact visuals for large formats.' },
+      { title: 'Production', desc: 'Overseeing high-quality large scale printing.' },
+      { title: 'Monitoring', desc: 'Ensuring your ads stay clean and visible.' }
+    ]
   }
 };

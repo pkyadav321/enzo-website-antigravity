@@ -89,7 +89,7 @@ const BlogPost = () => {
         </Link>
         <div className="reveal" style={{ marginBottom: '4rem' }}>
           <span className="section-label">{post.tagline}</span>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.04em', color: '#fff', marginTop: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.04em', color: '#fff', marginTop: '2rem' }}>
             {post.title.split(' ').map((word, i) => i > 4 ? <span key={i} className="text-accent">{word} </span> : word + ' ')}
           </h1>
           <div style={{ marginTop: '2rem', fontSize: '0.9rem', color: '#444', fontWeight: 700 }}>

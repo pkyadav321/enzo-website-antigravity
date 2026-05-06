@@ -13,87 +13,102 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', fn);
   }, []);
 
+  // Full services list — all 10 links restored
   const servicesLinks = [
-    { label: 'Digital Marketing (Varanasi)', path: '/digital-marketing-varanasi' },
-    { label: 'Google Ads Agency', path: '/google-ads-agency' },
-    { label: 'Social Media Marketing', path: '/social-media-marketing' },
     { label: 'Performance Ads', path: '/services/performance-ads' },
     { label: 'Social Media Growth', path: '/services/social-media' },
     { label: 'High-Converting Video', path: '/services/high-converting-video' },
     { label: 'Conversion Web Design', path: '/services/conversion-web-design' },
     { label: 'Brand & Creative Design', path: '/services/brand-creative' },
-    { label: 'Case Study: Sambhala Agro', path: '/casestudy/sambhala-orchard' },
+    { label: 'Commercial Photography', path: '/services/commercial-photography' },
+    { label: 'AI-Powered Imagery', path: '/services/ai-product-imagery' },
+    { label: 'OOH Advertising', path: '/services/ooh-advertising' },
     { label: 'Ecommerce Listing Designs', path: '/services/ecommerce-listing' },
+    { label: 'Case Study: Sambhala Agro', path: '/casestudy/sambhala-orchard' },
   ];
 
   const NavLinks = ({ mobile = false }) => (
     <>
-      <Link to="/about" style={mobile ? { '--i': 1 } : {}} onClick={() => setIsMenuOpen(false)}>About</Link>
-      
-      <div 
+      <Link to="/" style={mobile ? { '--i': 0 } : {}} onClick={() => { window.scrollTo(0,0); setIsMenuOpen(false); }}>Home</Link>
+      <Link to="/about" style={mobile ? { '--i': 1 } : {}} onClick={() => { window.scrollTo(0,0); setIsMenuOpen(false); }}>About</Link>
+
+      <div
         className={`nav-dropdown-wrapper ${mobile ? 'mobile-dropdown' : ''}`}
+        style={mobile ? { '--i': 2, flexShrink: 0, width: '100%' } : {}}
         onMouseEnter={() => !mobile && setIsServicesOpen(true)}
         onMouseLeave={() => !mobile && setIsServicesOpen(false)}
-        style={mobile ? { '--i': 2 } : {}}
       >
-        <div 
-          className="nav-dropdown-trigger" 
+        <div
+          className="nav-dropdown-trigger"
           onClick={() => mobile && setIsServicesOpen(!isServicesOpen)}
-          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+          style={mobile ? { 
+            cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            height: 'auto', flexShrink: 0
+          } : { 
+            cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+          }}
         >
-          {mobile ? (
-            <>
-              <span>Services</span>
-              <span className={`arrow ${isServicesOpen ? 'up' : ''}`} style={{ transition: 'transform 0.3s', transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>↓</span>
-            </>
-          ) : (
-            <span style={{ cursor: 'pointer' }}>Services</span>
-          )}
+          <span>Services</span>
+          <span style={{ 
+            fontSize: mobile ? '1rem' : '0.8rem',
+            transition: 'transform 0.4s ease', 
+            transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            color: isServicesOpen ? '#ff4d00' : 'inherit'
+          }}>
+            ↓
+          </span>
         </div>
-        <div className={`nav-dropdown ${isServicesOpen ? 'open' : ''}`}>
-          <Link 
-            to="/#services" 
-            className="nav-dropdown-item" 
-            onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}
-            style={{ fontWeight: 800, color: '#fff' }}
-          >
-            All Services
-          </Link>
-          {servicesLinks.map((s, idx) => (
-            <Link 
-              key={s.path} 
-              to={s.path}
-              className="nav-dropdown-item"
-              onClick={() => { setIsMenuOpen(false); setIsServicesOpen(false); }}
-              style={mobile ? { '--j': idx } : {}}
-            >
-              {s.label}
+        
+        {/* Desktop Dropdown */}
+        {!mobile && (
+          <div className={`nav-dropdown ${isServicesOpen ? 'open' : ''}`}>
+            <Link to="/#services" className="nav-dropdown-item" onClick={() => { window.scrollTo(0, 0); setIsMenuOpen(false); setIsServicesOpen(false); }} style={{ fontWeight: 800, color: '#fff' }}>
+              All Services
             </Link>
-          ))}
-        </div>
+            {servicesLinks.map((s) => (
+              <Link key={s.path} to={s.path} className="nav-dropdown-item" onClick={() => { window.scrollTo(0, 0); setIsMenuOpen(false); setIsServicesOpen(false); }}>
+                {s.label}
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* Mobile Dropdown - Explicitly Rendered for Reliability */}
+        {mobile && isServicesOpen && (
+          <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '1rem', marginTop: '1rem', gap: '1rem', flexShrink: 0, width: '100%' }}>
+            <Link to="/#services" className="nav-dropdown-item" onClick={() => { window.scrollTo(0, 0); setIsMenuOpen(false); setIsServicesOpen(false); }} style={{ fontWeight: 800, color: '#ff4d00', padding: 0 }}>
+              All Services
+            </Link>
+            {servicesLinks.map((s) => (
+              <Link key={s.path} to={s.path} className="nav-dropdown-item" onClick={() => { window.scrollTo(0, 0); setIsMenuOpen(false); setIsServicesOpen(false); }} style={{ padding: 0 }}>
+                {s.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
-      <Link to="/work" style={mobile ? { '--i': 3 } : {}} onClick={() => setIsMenuOpen(false)}>Case Studies</Link>
-      <Link to="/gallery" style={mobile ? { '--i': 4 } : {}} onClick={() => setIsMenuOpen(false)}>Work</Link>
-      <Link to="/blog" style={mobile ? { '--i': 5 } : {}} onClick={() => setIsMenuOpen(false)}>Blog</Link>
+      <Link to="/work" style={mobile ? { '--i': 3 } : {}} onClick={() => { window.scrollTo(0,0); setIsMenuOpen(false); }}>Case Studies</Link>
+      <Link to="/gallery" style={mobile ? { '--i': 4 } : {}} onClick={() => { window.scrollTo(0,0); setIsMenuOpen(false); }}>Work</Link>
+      <Link to="/blog" style={mobile ? { '--i': 5 } : {}} onClick={() => { window.scrollTo(0,0); setIsMenuOpen(false); }}>Blog</Link>
     </>
   );
 
-  // Lock scroll when menu is open
+  // Lock scroll when sidebar is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
     return () => { document.body.style.overflow = 'unset'; };
   }, [isMenuOpen]);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-active' : ''}`}>
       <div className="navbar-logo">
-        <Link to="/">
-          <img src="/images/logodarktheme/logo.webp" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+          <img
+            src="/images/logodarktheme/logo.webp"
+            alt="The Enzo Media"
+            style={{ height: '34px', width: 'auto', objectFit: 'contain' }}
+          />
         </Link>
       </div>
 
@@ -106,8 +121,8 @@ const Navbar = () => {
       <div className="nav-actions">
         <Link to="/#contact" className="navbar-cta hide-mobile">Get in touch →</Link>
 
-        {/* Premium Hamburger Icon */}
-        <button 
+        {/* Hamburger */}
+        <button
           className={`hamburger-v2 ${isMenuOpen ? 'is-active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Menu"
@@ -118,28 +133,16 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Premium Sidebar Overlay */}
+      {/* Sidebar Overlay */}
       <div className={`sidebar-overlay ${isMenuOpen ? 'show' : ''}`} onClick={() => setIsMenuOpen(false)} />
-      
+
       <div className={`sidebar-nav ${isMenuOpen ? 'open' : ''}`}>
-        <div className="sidebar-content">
-          <div className="sidebar-header">
-            <span>Navigation</span>
-          </div>
+        <div className="sidebar-content" style={{ justifyContent: 'center', padding: '0 40px' }}>
           <div className="sidebar-links">
             <NavLinks mobile={true} />
-            <Link to="/#contact" className="sidebar-cta-btn" style={{ '--i': 6 }} onClick={() => setIsMenuOpen(false)}>
+            <Link to="/#contact" className="sidebar-cta-btn" style={{ '--i': 6, marginTop: '2rem' }} onClick={() => setIsMenuOpen(false)}>
               Start a Project
             </Link>
-          </div>
-          
-          <div className="sidebar-footer">
-            <div className="social-mini">
-              <a href="https://www.instagram.com/theenzomedia" target="_blank" rel="noopener noreferrer">IG</a>
-              <a href="https://www.facebook.com/theenzomedia" target="_blank" rel="noopener noreferrer">FB</a>
-              <a href="mailto:theenzomedia@gmail.com">EMAIL</a>
-            </div>
-            <p>© {new Date().getFullYear()} ENZO MEDIA</p>
           </div>
         </div>
       </div>
@@ -148,4 +151,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

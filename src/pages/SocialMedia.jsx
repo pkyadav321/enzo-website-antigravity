@@ -15,8 +15,9 @@ const SocialMedia = () => {
       <section className="about-hero">
         <div className="container">
           <span className="section-label reveal">Brand Amplification // 2026</span>
-          <h1 className="reveal stagger-1 page-title">
-            Dynamic <span className="text-accent">Social Media</span> Marketing.
+          <h1 className="reveal stagger-1 page-title" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 4rem)', maxWidth: 'none', width: '100%', margin: '0 auto 2rem' }}>
+            Dynamic Social Media <br className="hide-mobile" />
+            Marketing.
           </h1>
           <p className="reveal stagger-2 about-description">
             Your brand deserves more than just likes. We create viral content and high-growth social strategies that build community, drive engagement, and convert followers into loyal customers.

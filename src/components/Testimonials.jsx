@@ -3,39 +3,39 @@ import React from 'react';
 const testimonials = [
   {
     stars: 5,
-    quote: '"Foot traffic doubled in 2 months. 80+ qualified leads. They truly understand the local market."',
+    quote: '"The Enzo Media truly understands the local market and our customer psychology. Highly recommended."',
     name: 'Rajesh Sharma', role: 'Owner, Sharma Electronics, Varanasi',
     initials: 'RS', color: '#e8352a',
   },
   {
     stars: 5,
-    quote: '"Admission inquiries went up 3x after The Enzo Media handled our Google Ads and landing pages."',
+    quote: '"The team is incredibly professional. They handled our digital presence and landing pages with great detail."',
     name: 'Priya Agarwal', role: 'Director, Agarwal Institute, Ghaziabad',
     initials: 'PA', color: '#1a1a1a',
   },
   {
     stars: 5,
-    quote: '"Clean branding, strong ad campaigns, transparent weekly reports. The Enzo Media is the real deal."',
+    quote: '"Clean branding and strong campaigns. Their transparent reporting makes them the real deal in the industry."',
     name: 'Mohit Verma', role: 'Founder, Verma Buildtech, Ayodhya',
     initials: 'MV', color: '#111',
   },
   {
     stars: 5,
-    quote: '"500 to 12,000 followers in 4 months. Online orders tripled. Creative, responsive, results-driven."',
-    name: 'Sunita Mishra', role: 'Owner, Mishra Sweets, Gonda',
-    initials: 'SM', color: '#e8352a',
+    quote: '"Very thoughtful and creative logo designs. They reflect our brand appropriately and creatively."',
+    name: 'Varsha', role: 'Founder, Digital PromoBuddy',
+    initials: 'V', color: '#00a884',
   },
 ];
 
 const Testimonials = () => (
-  <section id="testimonials" style={{ background: 'transparent', padding: '120px 0' }}>
+  <section id="testimonials" style={{ background: 'transparent', padding: '60px 0 120px' }}>
     <div className="container">
 
       {/* Centered header */}
-      <div className="reveal" style={{ marginBottom: '6rem', textAlign: 'center' }}>
+      <div className="reveal" style={{ marginBottom: '5rem', textAlign: 'center' }}>
         <span className="section-label">Client Stories</span>
-        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(3rem, 7vw, 7rem)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2rem' }}>
-          What<br />They Say.
+        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 6rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
+          What They Say.
         </h2>
         <p style={{ color: '#666', fontSize: '1.1rem', lineHeight: 1.7, maxWidth: '500px', margin: '0 auto' }}>
           Real results, real feedback from businesses across Uttar Pradesh.
@@ -46,7 +46,7 @@ const Testimonials = () => (
       <div className="testimonials-grid reveal-scale">
         {testimonials.map((t, i) => (
           <div key={i} className={`testimonial-card reveal stagger-${i + 1}`}>
-            <div className="stars">{Array.from({ length: t.stars }).map((_, j) => <span key={j} className="star">★</span>)}</div>
+            <div className="stars">{Array.from({ length: 5 }).map((_, j) => <span key={j} className="star">★</span>)}</div>
             <p>{t.quote}</p>
             <div className="testimonial-author">
               <div className="author-avatar" style={{ background: t.color }}>{t.initials}</div>

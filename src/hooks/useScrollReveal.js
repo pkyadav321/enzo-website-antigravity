@@ -10,14 +10,21 @@ const useScrollReveal = (path) => {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      // lowered threshold to 0.05 and increased root margin so it triggers earlier
+      { threshold: 0.05, rootMargin: '0px 0px 100px 0px' } 
     );
 
-    // Give the DOM a tiny moment to render the new page
+    // Wait a bit longer for framer-motion page transitions to finish and layout to settle
     const timer = setTimeout(() => {
       const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
-      elements.forEach((el) => observer.observe(el));
-    }, 100);
+      elements.forEach((el) => {
+        // If it's already near the top of the page, reveal immediately
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+        observer.observe(el);
+      });
+    }, 400); // 400ms is after framer motion's 0.4s transition
 
     return () => {
       observer.disconnect();

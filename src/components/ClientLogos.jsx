@@ -21,7 +21,11 @@ const ClientLogos = () => (
       <div style={{ position: 'absolute', top: 0, right: 0, width: '120px', height: '100%', background: 'linear-gradient(to left,#0a0a0a,transparent)', zIndex: 2, pointerEvents: 'none' }} />
       <div style={{ display: 'flex', gap: '4rem', alignItems: 'center', width: 'max-content', animation: 'scroll-left 28s linear infinite' }}>
         {[...clients, ...clients, ...clients].map((c, i) => (
-          <img key={i} src={c.src} alt={c.alt} style={{ height: '40px', maxWidth: '120px', objectFit: 'contain', filter: 'grayscale(100%) brightness(0.45)', transition: 'filter 0.3s' }}
+          <img
+            key={i}
+            src={c.src}
+            alt={c.alt}
+            style={{ height: '40px', maxWidth: '120px', objectFit: 'contain', filter: 'grayscale(100%) brightness(0.45)', transition: 'filter 0.3s', cursor: 'none' }}
             onMouseEnter={e => e.currentTarget.style.filter = 'grayscale(0%) brightness(1)'}
             onMouseLeave={e => e.currentTarget.style.filter = 'grayscale(100%) brightness(0.45)'}
           />

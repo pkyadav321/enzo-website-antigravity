@@ -33,9 +33,9 @@ const Contact = () => {
         {/* Centered editorial CTA */}
         <div className="reveal section-header" style={{ textAlign: 'center' }}>
           <span className="section-label">Let's Talk</span>
-          <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(4rem, 10vw, 10rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
-            Ready to<br />
-            <span className="text-accent">Dominate Your Market?</span>
+          <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(1.5rem, 6vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
+            <span style={{ whiteSpace: 'nowrap' }}>Ready to</span><br />
+            <span className="text-accent" style={{ whiteSpace: 'nowrap' }}>Dominate Your Market?</span>
           </h2>
           <p style={{ color: '#666', fontSize: '1.2rem', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
             Reaching out is free. We're currently helping businesses in <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b> scale. You'll walk away with a clear growth roadmap — even if we don't end up working together.

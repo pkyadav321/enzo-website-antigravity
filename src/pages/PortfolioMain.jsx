@@ -1,59 +1,215 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { portfolioCategories } from '../data/portfolio';
 
 const PortfolioMain = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <main className="sub-page">
-      <div className="container">
-        <Link to="/" className="back-link">
+    <main style={{ background: '#02040a', minHeight: '100vh', paddingTop: '80px' }}>
+      {/* ─── HEADER ─── */}
+      <section style={{ padding: '6rem 2rem 5rem', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+        <Link to="/" style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          color: '#666',
+          fontSize: '0.85rem',
+          textDecoration: 'none',
+          marginBottom: '3rem',
+          fontFamily: "'Space Grotesk', sans-serif",
+          letterSpacing: '0.05em',
+          transition: 'color 0.2s'
+        }}
+          onMouseEnter={e => e.currentTarget.style.color = '#ff4d00'}
+          onMouseLeave={e => e.currentTarget.style.color = '#666'}
+        >
           ← Back to Home
         </Link>
-        <div className="section-header-centered">
-          <span className="section-label">FULL PORTFOLIO</span>
-          <h1 className="reveal page-title">Our Complete Work</h1>
-          <p className="page-description">Explore all our creative projects across multiple disciplines.</p>
-        </div>
 
-        {/* Featured Case Study */}
-        <section className="featured-case-study reveal" style={{ marginBottom: '8rem', padding: '0' }}>
-          <div className="card featured-card-grid" style={{ overflow: 'hidden' }}>
-            <div className="featured-content" style={{ padding: '4rem' }}>
-              <span className="section-label" style={{ marginBottom: '1rem' }}>Featured Case Study</span>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '1.5rem', lineHeight: '1.1' }}>Sambhala <span className="text-accent">Orchard & Agro.</span></h2>
-              <p style={{ color: '#666', marginBottom: '2rem', lineHeight: '1.6' }}>
-                A premium branding exercise for a traditional agricultural brand, reimagined for the modern era.
-              </p>
-              <Link to="/casestudy/sambhala-orchard" className="btn-primary">View Case Study ↗</Link>
-            </div>
-            <div style={{ background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-              <img src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png" alt="Sambhala Branding" style={{ width: '80%', height: 'auto', objectFit: 'contain' }} />
-            </div>
-          </div>
-        </section>
-        {portfolioCategories.map((category, ci) => (
-          <div key={ci} style={{ marginBottom: '5rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>{category.name}</h3>
-              <Link to={`/work/${category.id}`} style={{ fontSize: '0.85rem', color: '#dc2626', fontWeight: 600 }}>View All →</Link>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
-              {category.images.slice(0, 3).map((img, i) => (
-                <div key={i} className="glass-card" style={{ padding: 0, overflow: 'hidden', borderRadius: '12px' }}>
-                  <img src={img} alt={`${category.name} ${i + 1}`} style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
-                </div>
+        <h1 style={{
+          fontFamily: "'Outfit', sans-serif",
+          fontSize: 'clamp(2.5rem, 5vw, 5rem)',
+          fontWeight: 800,
+          lineHeight: 1.05,
+          color: '#fff',
+          letterSpacing: '-0.03em',
+          marginBottom: '1.5rem',
+          textTransform: 'uppercase'
+        }}>
+          Brand <span style={{ color: '#ff4d00' }}>Case Study.</span>
+        </h1>
+      </section>
+
+      {/* ─── SAMBHALA CASE STUDY CARD ─── */}
+      <section style={{ padding: '0 2rem 8rem', maxWidth: '1300px', margin: '0 auto' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          borderRadius: '24px',
+          overflow: 'hidden',
+          border: '1px solid rgba(255,255,255,0.06)',
+          boxShadow: '0 40px 100px rgba(0,0,0,0.6)',
+          background: '#0a0a0a',
+          minHeight: '520px'
+        }}>
+          {/* Left — Text */}
+          <div style={{
+            padding: '5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: '1.5rem'
+          }}>
+            <span style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: '0.7rem',
+              fontWeight: 600,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: '#ff4d00'
+            }}>
+              Featured Case Study · 2025
+            </span>
+
+            <h2 style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
+              fontWeight: 800,
+              lineHeight: 1.1,
+              color: '#fff',
+              letterSpacing: '-0.02em'
+            }}>
+              Sambhala <span style={{ color: '#ff4d00' }}>Orchard & Agro.</span>
+            </h2>
+
+            <p style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '1.05rem',
+              color: '#777',
+              lineHeight: 1.7
+            }}>
+              A full brand identity system for a premium agricultural brand — from logo design and color systems to brand guidelines and packaging identity.
+            </p>
+
+            {/* Tags */}
+            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+              {['Logo Design', 'Brand Identity', 'Guidelines', 'Packaging'].map(tag => (
+                <span key={tag} style={{
+                  padding: '0.35rem 0.9rem',
+                  borderRadius: '100px',
+                  border: '1px solid rgba(255,77,0,0.25)',
+                  background: 'rgba(255,77,0,0.06)',
+                  fontSize: '0.75rem',
+                  color: '#ccc',
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  letterSpacing: '0.05em'
+                }}>
+                  {tag}
+                </span>
               ))}
             </div>
+
+            <Link
+              to="/casestudy/sambhala-orchard"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.9rem 2rem',
+                background: 'linear-gradient(135deg, #ff2200, #ff4d00, #ff8c00)',
+                color: '#fff',
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: '0.75rem',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                borderRadius: '100px',
+                textDecoration: 'none',
+                width: 'fit-content',
+                marginTop: '1rem',
+                boxShadow: '0 8px 24px rgba(255,77,0,0.35)',
+                transition: 'transform 0.3s, box-shadow 0.3s'
+              }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(255,77,0,0.5)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(255,77,0,0.35)'; }}
+            >
+              View Full Case Study ↗
+            </Link>
           </div>
-        ))}
-        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          <a href="https://www.behance.net/prdpcrts" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            View Full Portfolio on Behance ↗
-          </a>
+
+          {/* Right — Logo visual */}
+          <div style={{
+            background: '#0e0e0e',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '4rem',
+            borderLeft: '1px solid rgba(255,255,255,0.04)'
+          }}>
+            <img
+              src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png"
+              alt="Sambhala Orchard & Agro Logo"
+              style={{
+                width: '85%',
+                maxWidth: '420px',
+                filter: 'drop-shadow(0 20px 50px rgba(0,0,0,0.7))'
+              }}
+            />
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* ─── MORE COMING SOON ─── */}
+      <section style={{
+        padding: '5rem 2rem 8rem',
+        textAlign: 'center',
+        borderTop: '1px solid rgba(255,255,255,0.04)'
+      }}>
+        <p style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: '0.8rem',
+          letterSpacing: '0.2em',
+          textTransform: 'uppercase',
+          color: '#333',
+          marginBottom: '1.5rem'
+        }}>
+          More Case Studies Coming Soon
+        </p>
+        <h3 style={{
+          fontFamily: "'Outfit', sans-serif",
+          fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+          fontWeight: 700,
+          color: '#222',
+          marginBottom: '3rem'
+        }}>
+          Ready to build your brand?
+        </h3>
+        <Link
+          to="/#contact"
+          onClick={() => window.scrollTo(0, 0)}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            padding: '0.9rem 2.5rem',
+            border: '1px solid rgba(255,77,0,0.3)',
+            background: 'rgba(255,77,0,0.06)',
+            color: '#ff4d00',
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 700,
+            fontSize: '0.75rem',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            borderRadius: '100px',
+            textDecoration: 'none',
+            transition: 'all 0.3s'
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,77,0,0.12)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,77,0,0.06)'; }}
+        >
+          Start a Project →
+        </Link>
+      </section>
     </main>
   );
 };

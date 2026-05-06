@@ -8,8 +8,8 @@ const Footer = () => (
       <div className="marquee-container" style={{ position: 'relative', opacity: 1 }}>
         <div className="marquee-content" style={{ fontSize: 'clamp(2rem, 8vw, 10rem)', fontWeight: 900, lineHeight: 1 }}>
           {[...Array(5)].map((_, i) => (
-            <span key={i} style={{ color: '#fff', display: 'inline-block', paddingRight: '6rem' }}>
-              <span style={{ color: 'rgba(255,255,255,0.3)', textShadow: '0 0 15px rgba(255,255,255,0.1)' }}>THE ENZO</span> <span style={{ color: '#111' }}>MEDIA.</span>
+            <span key={i} className="marquee-brand-text" style={{ display: 'inline-block', paddingRight: '6rem' }}>
+              THE ENZO MEDIA.
             </span>
           ))}
         </div>

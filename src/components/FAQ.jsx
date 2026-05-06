@@ -81,7 +81,7 @@ const FAQ = () => {
         <span className="section-label">Questions</span>
         <h2 style={{ 
           fontFamily: "'Inter', sans-serif", 
-          fontSize: 'clamp(3rem, 7vw, 7rem)', 
+          fontSize: 'clamp(2.5rem, 5vw, 6rem)', 
           fontWeight: 900, 
           lineHeight: 1.15, 
           letterSpacing: '-0.05em', 

@@ -9,15 +9,14 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" style={{ background: '#050505', padding: '120px 0' }}>
+    <section id="process" style={{ background: '#050505', padding: '60px 0 120px' }}>
     <div className="container">
 
       {/* Centered header */}
-      <div className="reveal" style={{ marginBottom: '6rem', textAlign: 'center' }}>
+      <div className="reveal" style={{ marginBottom: '5rem', textAlign: 'center' }}>
         <span className="section-label">Our Process</span>
-        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(3rem, 7vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
-          How<br />
-          <span className="text-italic-accent">It Works.</span>
+        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 6rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
+          How <span className="text-italic-accent">It Works.</span>
         </h2>
         <p style={{ color: '#666', fontSize: '1.1rem', lineHeight: 1.7, maxWidth: '500px', margin: '0 auto' }}>
           A proven four-step system that takes businesses from invisible to dominant in their market.

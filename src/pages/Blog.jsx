@@ -26,7 +26,7 @@ const Blog = () => {
       <div className="container">
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '8rem' }}>
           <span className="section-label">Editorial Blog</span>
-          <h1 style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff' }}>
             Thoughts on <span className="text-accent">Growth.</span>
           </h1>
         </div>

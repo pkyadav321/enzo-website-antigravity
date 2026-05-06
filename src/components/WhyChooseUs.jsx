@@ -5,8 +5,9 @@ const WhyChooseUs = () => (
     <div className="container">
       <div className="reveal section-header" style={{ textAlign: 'center' }}>
         <span className="section-label">Why The Enzo Media</span>
-        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 5rem)', fontWeight: 900, lineHeight: 0.95, letterSpacing: '-0.04em', color: '#fff', marginBottom: '2rem', maxWidth: '800px', margin: '0 auto 2rem' }}>
-          Tired of agencies that overpromise and <span className="text-accent">underdeliver?</span>
+        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2rem, 4vw, 4rem)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.04em', color: '#fff', marginBottom: '2rem', maxWidth: '1200px', margin: '0 auto 2rem' }}>
+          Tired of agencies that overpromise <br className="hide-mobile" />
+          and <span className="text-accent">underdeliver?</span>
         </h2>
         <p style={{ color: '#666', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
           You don't need another report showing "impressions". You need qualified leads, foot traffic, and measurable revenue. We exist to fix the broken agency model.

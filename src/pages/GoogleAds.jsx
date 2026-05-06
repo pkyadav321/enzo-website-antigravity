@@ -15,8 +15,9 @@ const GoogleAds = () => {
       <section className="about-hero">
         <div className="container">
           <span className="section-label reveal">Paid Search // ROI</span>
-          <h1 className="reveal stagger-1 page-title">
-            The Premier <span className="text-accent">Google Ads</span> Agency.
+          <h1 className="reveal stagger-1 page-title" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 4rem)', maxWidth: 'none', width: '100%', margin: '0 auto 2rem' }}>
+            The Premier Google Ads <br className="hide-mobile" />
+            Agency.
           </h1>
           <p className="reveal stagger-2 about-description">
             Stop wasting budget on clicks that don't convert. Our Google Ads experts engineer high-performance campaigns that target intent, maximize ROI, and scale your business with surgical precision.
