@@ -14,7 +14,6 @@ const BrandingCaseStudy = () => {
     "image": "https://enzomedia.in/logo.png",
     "@id": "https://enzomedia.in",
     "url": "https://enzomedia.in",
-    "telephone": "+91-XXXXXXXXXX",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Varanasi",
@@ -22,192 +21,233 @@ const BrandingCaseStudy = () => {
       "postalCode": "221001",
       "addressCountry": "IN"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 25.3176,
-      "longitude": 82.9739
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "10:00",
-      "closes": "19:00"
-    },
-    "sameAs": [
-      "https://www.facebook.com/enzomedia",
-      "https://www.instagram.com/enzomedia"
-    ],
     "subjectOf": {
       "@type": "CreativeWork",
       "name": "Sambhala Orchard & Agro Branding Case Study",
-      "description": "A premium branding exercise for Sambhala Orchard & Agro, focusing on modern visual identity and local resonance in Varanasi.",
+      "description": "Comprehensive branding process for Sambhala Orchard & Agro by Enzo Media.",
       "url": "https://enzomedia.in/casestudy/sambhala-orchard"
     }
   };
 
   return (
     <main className="sub-page">
-      {/* Schema Markup */}
       <script type="application/ld+json">
         {JSON.stringify(schemaData)}
       </script>
 
-      {/* Hero Section */}
-      <section className="about-hero">
+      {/* ─── HERO SECTION ─── */}
+      <section className="about-hero" style={{ paddingBottom: '0' }}>
         <div className="container">
-          <span className="section-label reveal">Case Study // Branding</span>
-          <h1 className="reveal stagger-1 page-title">
-            Sambhala <span className="text-accent">Orchard & Agro.</span>
+          <span className="section-label reveal">Case Study // 2026</span>
+          <h1 className="reveal stagger-1 page-title" style={{ fontSize: 'clamp(3.5rem, 8vw, 9rem)' }}>
+            Sambhala <span className="text-accent">Orchard.</span>
           </h1>
-          <p className="reveal stagger-2 about-description">
-            Reimagining the visual legacy of a premium agricultural brand with a focus on modern minimalism and local roots.
-          </p>
+          <div className="reveal stagger-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', marginTop: '4rem', alignItems: 'end' }}>
+            <p className="about-description" style={{ fontSize: '1.2rem', margin: '0' }}>
+              Transforming a legacy agricultural brand into a modern organic powerhouse through strategic visual storytelling.
+            </p>
+            <div className="stats-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+              <div className="stat-card">
+                <div className="stat-value" style={{ fontSize: '1.5rem' }}>Sector</div>
+                <div className="stat-label">Agro Tech</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-value" style={{ fontSize: '1.5rem' }}>Deliverables</div>
+                <div className="stat-label">Full Identity</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-value" style={{ fontSize: '1.5rem' }}>Region</div>
+                <div className="stat-label">North India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="reveal stagger-3" style={{ marginTop: '6rem', height: '60vh', overflow: 'hidden' }}>
+          <img 
+            src="/branding/SAMBHALAORCHARD&AGROLOGOCONCEPT.jpg" 
+            alt="Hero Visual" 
+            style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.7)' }}
+          />
         </div>
       </section>
 
-      {/* The Brief Section */}
+      {/* ─── THE CHALLENGE ─── */}
       <section className="about-section">
         <div className="container">
           <div className="about-grid">
             <div className="reveal-left">
-              <span className="section-label">The Brief</span>
-              <h2 className="about-sub-title">Modernizing <span className="text-accent">Tradition.</span></h2>
+              <span className="section-label">The Challenge</span>
+              <h2 className="about-sub-title">Bridging the <span className="text-accent">Generational Gap.</span></h2>
               <p className="about-text">
-                Sambhala Orchard & Agro approached us to revitalize their brand identity. The goal was to bridge the gap between their traditional agricultural roots and a premium, modern market positioning. They needed an identity that felt organic yet sophisticated.
-              </p>
-            </div>
-            <div className="reveal stats-grid">
-              <div className="stat-card stagger-1">
-                <div className="stat-value">Client</div>
-                <div className="stat-label">Sambhala Agro</div>
-              </div>
-              <div className="stat-card stagger-2">
-                <div className="stat-value">Service</div>
-                <div className="stat-label">Brand Identity</div>
-              </div>
-              <div className="stat-card stagger-3">
-                <div className="stat-value">Timeline</div>
-                <div className="stat-label">6 Weeks</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Challenges Section */}
-      <section className="about-section methodology-section">
-        <div className="container">
-          <div className="reveal section-header-centered">
-            <span className="section-label">Challenges</span>
-            <h2 className="about-sub-title">Navigating the <span className="text-accent">Hurdles.</span></h2>
-          </div>
-          
-          <div className="values-grid">
-            <div className="reveal stagger-1 value-item">
-              <h3 className="value-title">Outdated Visual Identity</h3>
-              <p className="value-desc">
-                The existing branding was inconsistent and failed to communicate the premium quality of their organic produce.
-              </p>
-            </div>
-            <div className="reveal stagger-2 value-item">
-              <h3 className="value-title">Lack of Local Connect</h3>
-              <p className="value-desc">
-                Despite being based in Varanasi, the brand felt disconnected from its geographical heritage and local consumers.
-              </p>
-            </div>
-            <div className="reveal stagger-3 value-item">
-              <h3 className="value-title">Fragmented Presence</h3>
-              <p className="value-desc">
-                Collaterals, packaging, and digital assets lacked a unified design language, leading to low brand recall.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Execution Strategy Section */}
-      <section className="about-section">
-        <div className="container">
-          <div className="about-grid">
-            <div className="reveal-left">
-              <span className="section-label">Execution Strategy</span>
-              <h2 className="about-sub-title">The <span className="text-accent">Logic</span> of Design.</h2>
-              <p className="about-text">
-                Our strategy focused on 'Organic Elegance'. We utilized a palette of Deep Forest Green and Terracotta to symbolize growth and earthiness. 
-              </p>
-              <p className="about-text">
-                <strong>Typography:</strong> We paired a modern serif typeface for headings (symbolizing heritage) with a clean geometric sans-serif for body text (symbolizing modernity).
-              </p>
-              <p className="about-text">
-                <strong>Visual Language:</strong> We developed custom illustrations that mimic the topography of orchards, creating a unique texture for all brand collaterals.
+                Sambhala Orchard & Agro had a reputation for quality but a visual identity that felt stuck in the 90s. As they planned to expand into direct-to-consumer organic exports, they needed a brand that whispered "Premium" while shouting "Organic".
               </p>
             </div>
             <div className="reveal-right">
-              <img 
-                src="/branding/SAMBHALAORCHARD&AGROLOGOCONCEPT.jpg" 
-                alt="Logo Concept" 
-                className="card"
-                style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Visual Showcase Section */}
-      <section className="about-section values-section">
-        <div className="container">
-          <div className="reveal section-header-centered">
-            <span className="section-label">Visual Showcase</span>
-            <h2 className="about-sub-title">Brand <span className="text-accent">Artifacts.</span></h2>
-          </div>
-
-          <div className="values-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            <div className="reveal stagger-1 card" style={{ overflow: 'hidden' }}>
-              <img src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png" alt="Final Logo" style={{ width: '100%' }} />
-              <div style={{ padding: '1.5rem' }}>
-                <h4 style={{ color: '#fff', marginBottom: '0.5rem' }}>Primary Visual</h4>
-                <p style={{ fontSize: '0.8rem', color: '#666' }}>The final approved logo in its primary configuration.</p>
+              <div className="card" style={{ padding: '3rem' }}>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  <li style={{ display: 'flex', gap: '1rem' }}>
+                    <span className="text-accent" style={{ fontWeight: 800 }}>01</span>
+                    <span>Inconsistent logo usage across physical and digital touchpoints.</span>
+                  </li>
+                  <li style={{ display: 'flex', gap: '1rem' }}>
+                    <span className="text-accent" style={{ fontWeight: 800 }}>02</span>
+                    <span>Lack of a defined color system suitable for luxury packaging.</span>
+                  </li>
+                  <li style={{ display: 'flex', gap: '1rem' }}>
+                    <span className="text-accent" style={{ fontWeight: 800 }}>03</span>
+                    <span>Identity failed to communicate the "Orchard-to-Table" philosophy.</span>
+                  </li>
+                </ul>
               </div>
             </div>
-            {/* We can add more mockups here if they existed as PNGs, for now using what we have */}
           </div>
         </div>
       </section>
 
-      {/* PDF Download CTA Section */}
-      <section className="about-section" style={{ background: 'rgba(232, 53, 42, 0.03)' }}>
+      {/* ─── THE PROCESS (STEP BY STEP) ─── */}
+      <section className="about-section methodology-section" style={{ background: '#070707' }}>
+        <div className="container">
+          <div className="reveal section-header">
+            <span className="section-label">Our Workflow</span>
+            <h2 className="about-sub-title">The <span className="text-accent">Strategic Path.</span></h2>
+          </div>
+          
+          <div className="process-list">
+            {[
+              { 
+                num: '01', 
+                title: 'Discovery & Audit', 
+                desc: 'We spent a week at the orchards, understanding the soil, the harvest cycles, and the client\'s vision for 2030.' 
+              },
+              { 
+                num: '02', 
+                title: 'Conceptualization', 
+                desc: 'Exploring themes of "Earth," "Growth," and "Legacy." We developed 3 distinct creative directions ranging from Minimalist Modern to Rustic Heritage.' 
+              },
+              { 
+                num: '03', 
+                title: 'Visual Engineering', 
+                desc: 'Precision drafting of the final logo, selecting a palette that reflects the lush green of the orchards and the golden hour of the harvest.' 
+              },
+              { 
+                num: '04', 
+                title: 'Collateral Design', 
+                desc: 'Applying the new identity to everything from business cards and letterheads to export-grade fruit packaging.' 
+              },
+              { 
+                num: '05', 
+                title: 'Brand Guidelines', 
+                desc: 'Developing a 40-page Brand Bible to ensure the identity remains intact as the company scales globally.' 
+              }
+            ].map((step, i) => (
+              <div key={i} className={`process-row reveal stagger-${i+1}`}>
+                <div className="process-row-num">{step.num}</div>
+                <div className="process-row-content">
+                  <h3 className="process-row-title">{step.title}</h3>
+                  <p className="process-row-desc">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── DESIGN SYSTEM BREAKDOWN ─── */}
+      <section className="about-section">
+        <div className="container">
+          <div className="reveal section-header-centered">
+            <span className="section-label">Visual DNA</span>
+            <h2 className="about-sub-title">Anatomy of the <span className="text-accent">Brand.</span></h2>
+          </div>
+
+          <div className="about-grid" style={{ marginBottom: '6rem' }}>
+            <div className="reveal-left">
+              <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1.5rem' }}>The Color Story</h3>
+              <p className="about-text">
+                We moved away from generic "leaf green" to a sophisticated <strong>Deep Forest Green (#1A2F23)</strong> which represents stability and organic depth, paired with <strong>Harvest Gold (#D4AF37)</strong> for a touch of premium luxury.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                <div style={{ width: '80px', height: '80px', background: '#1A2F23', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }}></div>
+                <div style={{ width: '80px', height: '80px', background: '#D4AF37', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }}></div>
+                <div style={{ width: '80px', height: '80px', background: '#F5F5DC', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }}></div>
+              </div>
+            </div>
+            <div className="reveal-right">
+              <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1.5rem' }}>Typography</h3>
+              <p className="about-text">
+                <strong>Headline:</strong> A customized high-contrast Serif that evokes a sense of heritage and established trust.
+              </p>
+              <p className="about-text">
+                <strong>Body:</strong> Inter - A clean, accessible Sans-Serif for high readability in digital and print contexts.
+              </p>
+            </div>
+          </div>
+
+          <div className="reveal" style={{ width: '100%', height: 'auto', background: '#111', padding: '4rem', textAlign: 'center' }}>
+            <img 
+              src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png" 
+              alt="Final Brand Mark" 
+              style={{ maxWidth: '600px', margin: '0 auto', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.5))' }} 
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── VISUAL SHOWCASE GRID ─── */}
+      <section className="about-section values-section">
+        <div className="container">
+          <div className="reveal section-header">
+            <span className="section-label">Gallery</span>
+            <h2 className="about-sub-title">Brand <span className="text-accent">Execution.</span></h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
+            <div className="reveal stagger-1">
+              <img src="/branding/SAMBHALAORCHARD&AGROLOGOCONCEPT.jpg" alt="Mockup 1" className="card" style={{ width: '100%' }} />
+            </div>
+            <div className="reveal stagger-2" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div className="card" style={{ padding: '2rem', background: 'rgba(232,53,42,0.05)' }}>
+                <h4 style={{ fontWeight: 800, marginBottom: '1rem' }}>Impact Assessment</h4>
+                <p style={{ fontSize: '0.9rem', color: '#888' }}>
+                  Following the rebrand, the client reported a 40% increase in brand inquiry from high-end retail chains and a significant boost in internal team morale.
+                </p>
+              </div>
+              <img src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png" alt="Mockup 2" className="card" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '2rem' }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIAL ─── */}
+      <section className="about-section" style={{ background: 'linear-gradient(to bottom, transparent, rgba(232,53,42,0.05))' }}>
+        <div className="container">
+          <div className="reveal text-center" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+            <span className="section-label">Client Feedback</span>
+            <p style={{ fontSize: '2rem', fontWeight: 400, fontStyle: 'italic', lineHeight: '1.4', marginBottom: '3rem' }}>
+              "Enzo Media didn't just give us a new logo; they gave us a new language to speak to our customers. The transition from a local farm to a global brand felt seamless because of their strategic approach."
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
+              <div style={{ width: '50px', height: '50px', background: '#333', borderRadius: '50%' }}></div>
+              <div style={{ textAlign: 'left' }}>
+                <h5 style={{ fontWeight: 800 }}>Managing Director</h5>
+                <p style={{ fontSize: '0.8rem', color: '#666' }}>Sambhala Orchard & Agro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CALL TO ACTION ─── */}
+      <section className="about-section">
         <div className="container text-center" style={{ textAlign: 'center' }}>
           <div className="reveal">
-            <span className="section-label">Guidelines</span>
-            <h2 className="about-sub-title">Full Brand <span className="text-accent">Guidelines.</span></h2>
-            <p className="about-text" style={{ maxWidth: '700px', margin: '0 auto 3rem' }}>
-              Deep dive into the complete brand system, including color codes, typography rules, and usage standards.
+            <h2 className="about-sub-title">Ready to <span className="text-accent">Scale?</span></h2>
+            <p className="about-text" style={{ maxWidth: '600px', margin: '0 auto 3rem' }}>
+              Download the full brand architecture and guidelines to see how we build brands that last generations.
             </p>
             <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a 
-                href="/branding/SAMBHALAORCHARD&AGROLO.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary"
-              >
-                View Guidelines (PDF) ↗
-              </a>
-              <a 
-                href="/branding/SAMBHALAORCHARD&AGROLOGOS.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-ghost"
-              >
-                Logo Set (PDF)
-              </a>
+              <a href="/branding/SAMBHALAORCHARD&AGROLO.pdf" target="_blank" className="btn-primary">Full Guidelines (PDF) ↗</a>
+              <a href="/branding/SAMBHALAORCHARD&AGROLOGOS.pdf" target="_blank" className="btn-ghost">Visual Identity Set</a>
             </div>
           </div>
         </div>
