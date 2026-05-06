@@ -14,6 +14,7 @@ import GalleryPage from './pages/GalleryPage';
 import DigitalMarketing from './pages/DigitalMarketing';
 import GoogleAds from './pages/GoogleAds';
 import SocialMedia from './pages/SocialMedia';
+import CityLandingPage from './pages/CityLandingPage';
 import CursorTrail from './components/CursorTrail';
 import useScrollReveal from './hooks/useScrollReveal';
 
@@ -49,7 +50,12 @@ function TitleManager() {
       '/work': 'Portfolio | Enzo Media',
       '/digital-marketing-varanasi': 'Digital Marketing Agency in Varanasi | The Enzo Media',
       '/google-ads-agency': 'Google Ads Agency | High ROI PPC Management',
-      '/social-media-marketing': 'Social Media Marketing Services | Brand Growth'
+      '/social-media-marketing': 'Social Media Marketing Services | Brand Growth',
+      '/marketing-agency-varanasi': 'Top Digital Marketing Agency in Varanasi | Enzo Media',
+      '/marketing-agency-ayodhya': 'Real Estate Marketing in Ayodhya | Enzo Media',
+      '/marketing-agency-gonda': 'Lead Gen for Schools in Gonda | Enzo Media',
+      '/marketing-agency-prayagraj': 'Premium Marketing Agency in Prayagraj | Enzo Media',
+      '/marketing-agency-ghaziabad': 'Marketing Agency in Ghaziabad (Delhi NCR) | Enzo Media'
     };
 
     const path = location.pathname;
@@ -62,6 +68,10 @@ function TitleManager() {
       document.title = 'Blog Post | Enzo Media';
     } else if (path.startsWith('/work/')) {
       document.title = 'Category | Enzo Media';
+    } else if (path.startsWith('/marketing-agency-')) {
+      const cityId = path.replace('/marketing-agency-', '');
+      const cityName = cityId.charAt(0).toUpperCase() + cityId.slice(1);
+      document.title = `${cityName} Marketing Agency | Enzo Media`;
     } else {
       document.title = titles[path] || 'Enzo Media';
     }
@@ -109,6 +119,9 @@ function AppContent() {
         <Route path="/digital-marketing-varanasi" element={<DigitalMarketing />} />
         <Route path="/google-ads-agency" element={<GoogleAds />} />
         <Route path="/social-media-marketing" element={<SocialMedia />} />
+        
+        {/* Hyper-Local SEO Pages */}
+        <Route path="/marketing-agency-:cityId" element={<CityLandingPage />} />
         
         {/* Fallback to Home for hash routes or 404s */}
         <Route path="*" element={<Home />} />
