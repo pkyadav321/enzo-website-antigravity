@@ -22,6 +22,7 @@ const Navbar = () => {
     { label: 'High-Converting Video', path: '/services/high-converting-video' },
     { label: 'Conversion Web Design', path: '/services/conversion-web-design' },
     { label: 'Brand & Creative Design', path: '/services/brand-creative' },
+    { label: 'Case Study: Sambhala Agro', path: '/casestudy/sambhala-orchard' },
     { label: 'Ecommerce Listing Designs', path: '/services/ecommerce-listing' },
   ];
 
