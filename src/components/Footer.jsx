@@ -61,6 +61,16 @@ const Footer = () => (
         </div>
 
         <div className="footer-col">
+          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Service Areas</h4>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-varanasi" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Varanasi</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-ayodhya" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Ayodhya</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-gonda" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Gonda</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-delhi" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Delhi NCR</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
           <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Location</h4>
           <div className="footer-location" style={{ color: '#666' }}>
             <div className="loc-label" style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#444', marginBottom: '0.3rem' }}>Headquarters</div>

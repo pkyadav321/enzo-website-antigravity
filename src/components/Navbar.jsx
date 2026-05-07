@@ -49,14 +49,7 @@ const Navbar = () => {
           }}
         >
           <span>Services</span>
-          <span style={{ 
-            fontSize: mobile ? '1rem' : '0.8rem',
-            transition: 'transform 0.4s ease', 
-            transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            color: isServicesOpen ? '#ff4d00' : 'inherit'
-          }}>
-            ↓
-          </span>
+          {/* Removed arrow icon */}
         </div>
         
         {/* Desktop Dropdown */}

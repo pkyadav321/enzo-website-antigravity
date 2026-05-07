@@ -24,35 +24,101 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Structured Data for Local Business -->
+    <!-- Advanced Local SEO Schema for Multi-City Ranking -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "MarketingAgency",
       "name": "EnZo Media",
+      "alternateName": "The Enzo Media",
       "url": "https://theenzomedia.com/",
+      "logo": "https://theenzomedia.com/images/logodarktheme/logo.webp",
+      "image": "https://theenzomedia.com/images/logodarktheme/logo.webp",
+      "description": "Enzo Media is a premium digital marketing and creative agency. We specialize in performance marketing, social media growth, SEO, and brand scaling.",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Varanasi",
         "addressLocality": "Varanasi",
         "addressRegion": "UP",
         "postalCode": "221001",
         "addressCountry": "IN"
       },
       "telephone": "+919220797941",
-      "openingHours": "Mo-Sa 10:00-19:00",
-      "image": "https://theenzomedia.com/images/logodarktheme/logo.webp",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        }
+      ],
       "priceRange": "$$",
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 25.3176,
         "longitude": 82.9739
       },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Varanasi",
+          "sameAs": "https://en.wikipedia.org/wiki/Varanasi"
+        },
+        {
+          "@type": "City",
+          "name": "Gonda",
+          "sameAs": "https://en.wikipedia.org/wiki/Gonda_district"
+        },
+        {
+          "@type": "City",
+          "name": "Ayodhya",
+          "sameAs": "https://en.wikipedia.org/wiki/Ayodhya"
+        },
+        {
+          "@type": "City",
+          "name": "Delhi",
+          "sameAs": "https://en.wikipedia.org/wiki/Delhi"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Performance Marketing & Google Ads"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Social Media Marketing & Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Local SEO & Google Maps Ranking"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Brand Identity & Web Design"
+            }
+          }
+        ]
+      },
       "sameAs": [
         "https://www.facebook.com/theenzomedia",
         "https://www.instagram.com/theenzomedia",
         "https://www.linkedin.com/company/theenzomedia"
-      ],
-      "areaServed": ["Varanasi", "Gonda", "Ayodhya", "Delhi NCR", "Prayagraj", "Kanpur"]
+      ]
     }
     </script>
   </head>
