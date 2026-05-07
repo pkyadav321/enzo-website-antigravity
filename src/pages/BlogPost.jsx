@@ -72,6 +72,37 @@ const BlogPost = () => {
     window.scrollTo(0, 0);
   }, [postId]);
 
+  // Dynamic SEO: title + meta description + Article schema
+  useEffect(() => {
+    if (!post) return;
+    document.title = `${post.title} | Enzo Media Blog`;
+    
+    // Set meta description
+    let meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', post.excerpt || `Read "${post.title}" on The Enzo Media Blog. Expert insights on digital marketing, brand strategy, and performance advertising.`);
+
+    // Inject Article schema
+    const schemaId = 'blog-post-schema';
+    let existing = document.getElementById(schemaId);
+    if (existing) existing.remove();
+    const schema = document.createElement('script');
+    schema.id = schemaId;
+    schema.type = 'application/ld+json';
+    schema.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      'headline': post.title,
+      'description': post.excerpt || post.title,
+      'image': post.image,
+      'datePublished': post.date,
+      'author': { '@type': 'Organization', 'name': 'EnZo Media', 'url': 'https://theenzomedia.com' },
+      'publisher': { '@type': 'Organization', 'name': 'EnZo Media', 'logo': { '@type': 'ImageObject', 'url': 'https://theenzomedia.com/images/logodarktheme/logo.webp' } },
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': `https://theenzomedia.com/blog/${postId}` }
+    });
+    document.head.appendChild(schema);
+    return () => { let s = document.getElementById(schemaId); if (s) s.remove(); };
+  }, [post, postId]);
+
   if (!post) {
     return (
       <div style={{ color: '#fff', padding: '200px', textAlign: 'center' }}>

@@ -80,9 +80,19 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="footer-bottom" style={{ borderTop: '1px solid #1a1a1a', marginTop: '5rem', padding: '2rem 0', display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#444' }}>
+      <div className="footer-bottom" style={{ borderTop: '1px solid #1a1a1a', marginTop: '5rem', padding: '2rem 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', color: '#444', flexWrap: 'wrap', gap: '1rem' }}>
         <span>© {new Date().getFullYear()} The Enzo Media. All rights reserved.</span>
-        <span>Made in Varanasi</span>
+        <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+          <Link to="/privacy-policy" style={{ color: '#444', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = '#ff4d00'}
+            onMouseLeave={e => e.currentTarget.style.color = '#444'}
+          >Privacy Policy</Link>
+          <Link to="/terms-and-conditions" style={{ color: '#444', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = '#ff4d00'}
+            onMouseLeave={e => e.currentTarget.style.color = '#444'}
+          >Terms & Conditions</Link>
+          <span>Made in Varanasi</span>
+        </div>
       </div>
     </div>
   </footer>

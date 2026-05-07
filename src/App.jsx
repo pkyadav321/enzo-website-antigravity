@@ -13,6 +13,7 @@ const PortfolioMain = React.lazy(() => import('./pages/PortfolioMain'));
 const CategoryPage = React.lazy(() => import('./pages/CategoryPage'));
 const About = React.lazy(() => import('./pages/About'));
 const ServiceDetail = React.lazy(() => import('./pages/ServiceDetail'));
+const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
 const Blog = React.lazy(() => import('./pages/Blog'));
 const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 const GalleryPage = React.lazy(() => import('./pages/GalleryPage'));
@@ -21,6 +22,8 @@ const GoogleAds = React.lazy(() => import('./pages/GoogleAds'));
 const SocialMedia = React.lazy(() => import('./pages/SocialMedia'));
 const CityLandingPage = React.lazy(() => import('./pages/CityLandingPage'));
 const BrandingCaseStudy = React.lazy(() => import('./pages/BrandingCaseStudy'));
+const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
+const TermsAndConditions = React.lazy(() => import('./pages/TermsAndConditions'));
 import useScrollReveal from './hooks/useScrollReveal';
 
 // Scroll to top on route change
@@ -42,6 +45,12 @@ function ScrollToTop() {
   return null;
 }
 
+// Helper to set meta description
+function setMetaDescription(content) {
+  let meta = document.querySelector('meta[name="description"]');
+  if (meta) meta.setAttribute('content', content);
+}
+
 // Title management
 function TitleManager() {
   const location = useLocation();
@@ -49,31 +58,50 @@ function TitleManager() {
   useEffect(() => {
     const titles = {
       '/': 'Enzo Media | Best Digital Marketing Agency in Varanasi, Gonda, Ayodhya & Delhi NCR',
-      '/about': 'About Us | Enzo Media',
-      '/gallery': 'Work Gallery | Enzo Media',
-      '/blog': 'Insights & Blog | Enzo Media',
-      '/work': 'Portfolio | Enzo Media',
+      '/about': 'About Us | The Enzo Media — Our Story & Mission',
+      '/gallery': 'Work Gallery | Enzo Media Creative Portfolio',
+      '/blog': 'Blog & Insights | Digital Marketing Tips by Enzo Media',
+      '/work': 'Case Studies & Portfolio | Enzo Media',
+      '/services': 'All Services | EnZo Media — Digital Marketing Agency',
+      '/privacy-policy': 'Privacy Policy | EnZo Media',
+      '/terms-and-conditions': 'Terms & Conditions | EnZo Media',
       '/digital-marketing-varanasi': 'Digital Marketing Agency in Varanasi | The Enzo Media',
-      '/google-ads-agency': 'Google Ads Agency | High ROI PPC Management',
-      '/social-media-marketing': 'Social Media Marketing Services | Brand Growth',
+      '/google-ads-agency': 'Google Ads Agency | High ROI PPC Management | Enzo Media',
+      '/social-media-marketing': 'Social Media Marketing Services | Brand Growth | Enzo Media',
+    };
+
+    const descriptions = {
+      '/': 'Enzo Media is a premium digital marketing agency in Varanasi, Gonda, Ayodhya & Delhi NCR. We specialize in performance ads, social media, brand design, and AI-powered marketing.',
+      '/about': 'Learn about Enzo Media — a creative performance agency built for brands that refuse mediocre results. Serving businesses across UP and Delhi NCR.',
+      '/gallery': 'Explore our creative portfolio — branding, social media creatives, video ads, and more from The Enzo Media.',
+      '/blog': 'Read the latest digital marketing insights, brand strategy tips, and AI marketing guides from The Enzo Media team.',
+      '/work': 'Explore Enzo Media case studies and client results. See how we scale brands across Varanasi, Ayodhya, Gonda & Delhi NCR.',
+      '/services': 'Explore all services by Enzo Media — Performance Ads, Social Media, Brand Design, Video Production, SEO. Serving Varanasi, Gonda, Ayodhya & Delhi NCR.',
+      '/digital-marketing-varanasi': 'Best digital marketing agency in Varanasi. Enzo Media helps local businesses grow with Google Ads, Social Media, and SEO.',
+      '/google-ads-agency': 'High-ROI Google Ads management by Enzo Media. We turn ad spend into measurable results for businesses across India.',
+      '/social-media-marketing': 'Premium social media marketing services by Enzo Media. Build a loyal audience and drive real business growth.',
     };
 
     const path = location.pathname;
     
-    if (path.startsWith('/services/')) {
+    if (path.startsWith('/services/') && path !== '/services') {
       const serviceId = path.split('/')[2];
       const serviceName = serviceId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       document.title = `${serviceName} | Enzo Media`;
+      setMetaDescription(`${serviceName} services by Enzo Media. Premium digital marketing solutions in Varanasi, Gonda, Ayodhya & Delhi NCR.`);
     } else if (path.startsWith('/blog/')) {
-      document.title = 'Blog Post | Enzo Media';
+      // Blog posts set their own title via useEffect in BlogPost.jsx
     } else if (path.startsWith('/work/')) {
-      document.title = 'Category | Enzo Media';
+      document.title = 'Portfolio Category | Enzo Media';
+      setMetaDescription('Browse Enzo Media work by category — branding, social media, print, and more.');
     } else if (path.startsWith('/marketing-agency-')) {
       const cityId = path.replace('/marketing-agency-', '');
       const cityName = cityId.charAt(0).toUpperCase() + cityId.slice(1);
-      document.title = `${cityName} Marketing Agency | Enzo Media`;
+      document.title = `Best Marketing Agency in ${cityName} | Enzo Media`;
+      setMetaDescription(`Enzo Media is the top-rated digital marketing agency in ${cityName}. We help local businesses grow with performance ads, social media, and brand design.`);
     } else {
       document.title = titles[path] || 'Enzo Media';
+      if (descriptions[path]) setMetaDescription(descriptions[path]);
     }
   }, [location]);
 
@@ -169,10 +197,14 @@ function AppContent() {
               <Route path="/about" element={<About />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/work" element={<PortfolioMain />} />
+              <Route path="/portfolio" element={<PortfolioMain />} />
               <Route path="/work/:category" element={<CategoryPage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:postId" element={<BlogPost />} />
+              <Route path="/services" element={<ServicesPage />} />
               <Route path="/services/:serviceId" element={<ServiceDetail />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/digital-marketing-varanasi" element={<DigitalMarketing />} />
               <Route path="/google-ads-agency" element={<GoogleAds />} />
               <Route path="/social-media-marketing" element={<SocialMedia />} />
