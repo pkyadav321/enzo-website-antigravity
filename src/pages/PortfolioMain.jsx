@@ -2,20 +2,29 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const PortfolioMain = () => {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  const [windowWidth, setWindowWidth] = React.useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => { 
+    window.scrollTo(0, 0); 
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 768;
 
   return (
-    <main style={{ background: '#02040a', minHeight: '100vh', paddingTop: '80px' }}>
+    <main style={{ background: '#02040a', minHeight: '100vh', paddingTop: isMobile ? '60px' : '80px' }}>
       {/* ─── HEADER ─── */}
-      <section style={{ padding: '6rem 2rem 5rem', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+      <section style={{ padding: isMobile ? '4rem 1.5rem 3rem' : '6rem 2rem 5rem', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
         <Link to="/" style={{
           display: 'inline-flex',
           alignItems: 'center',
           gap: '0.5rem',
           color: '#666',
-          fontSize: '0.85rem',
+          fontSize: isMobile ? '0.75rem' : '0.85rem',
           textDecoration: 'none',
-          marginBottom: '3rem',
+          marginBottom: isMobile ? '2rem' : '3rem',
           fontFamily: "'Space Grotesk', sans-serif",
           letterSpacing: '0.05em',
           transition: 'color 0.2s'
@@ -41,24 +50,46 @@ const PortfolioMain = () => {
       </section>
 
       {/* ─── SAMBHALA CASE STUDY CARD ─── */}
-      <section style={{ padding: '0 2rem 8rem', maxWidth: '1300px', margin: '0 auto' }}>
+      <section style={{ padding: isMobile ? '0 1.5rem 4rem' : '0 2rem 8rem', maxWidth: '1300px', margin: '0 auto' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          borderRadius: '24px',
+          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+          borderRadius: isMobile ? '20px' : '24px',
           overflow: 'hidden',
           border: '1px solid rgba(255,255,255,0.06)',
           boxShadow: '0 40px 100px rgba(0,0,0,0.6)',
           background: '#0a0a0a',
-          minHeight: '520px'
+          minHeight: isMobile ? 'auto' : '520px'
         }}>
-          {/* Left — Text */}
+          {/* Top/Left — Image (Mobile moves image to top for better impact) */}
+          {isMobile && (
+            <div style={{
+              background: '#0e0e0e',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '3rem 2rem',
+              borderBottom: '1px solid rgba(255,255,255,0.04)'
+            }}>
+              <img
+                src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png"
+                alt="Sambhala Orchard & Agro Logo"
+                style={{
+                  width: '90%',
+                  maxWidth: '300px',
+                  filter: 'drop-shadow(0 15px 40px rgba(0,0,0,0.7))'
+                }}
+              />
+            </div>
+          )}
+
+          {/* Text Content */}
           <div style={{
-            padding: '5rem',
+            padding: isMobile ? '2.5rem 1.5rem' : '5rem',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            gap: '1.5rem'
+            gap: isMobile ? '1.2rem' : '1.5rem'
           }}>
             <span style={{
               fontFamily: "'Space Grotesk', sans-serif",
@@ -73,7 +104,7 @@ const PortfolioMain = () => {
 
             <h2 style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
+              fontSize: 'clamp(1.8rem, 3.5vw, 3.5rem)',
               fontWeight: 800,
               lineHeight: 1.1,
               color: '#fff',
@@ -84,7 +115,7 @@ const PortfolioMain = () => {
 
             <p style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: '1.05rem',
+              fontSize: isMobile ? '0.95rem' : '1.05rem',
               color: '#777',
               lineHeight: 1.7
             }}>
@@ -92,14 +123,14 @@ const PortfolioMain = () => {
             </p>
 
             {/* Tags */}
-            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
               {['Logo Design', 'Brand Identity', 'Guidelines', 'Packaging'].map(tag => (
                 <span key={tag} style={{
-                  padding: '0.35rem 0.9rem',
+                  padding: '0.3rem 0.8rem',
                   borderRadius: '100px',
                   border: '1px solid rgba(255,77,0,0.25)',
                   background: 'rgba(255,77,0,0.06)',
-                  fontSize: '0.75rem',
+                  fontSize: '0.7rem',
                   color: '#ccc',
                   fontFamily: "'Space Grotesk', sans-serif",
                   letterSpacing: '0.05em'
@@ -115,12 +146,12 @@ const PortfolioMain = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                padding: '0.9rem 2rem',
+                padding: isMobile ? '0.8rem 1.5rem' : '0.9rem 2rem',
                 background: 'linear-gradient(135deg, #ff2200, #ff4d00, #ff8c00)',
                 color: '#fff',
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 700,
-                fontSize: '0.75rem',
+                fontSize: isMobile ? '0.7rem' : '0.75rem',
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
                 borderRadius: '100px',
@@ -137,41 +168,43 @@ const PortfolioMain = () => {
             </Link>
           </div>
 
-          {/* Right — Logo visual */}
-          <div style={{
-            background: '#0e0e0e',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '4rem',
-            borderLeft: '1px solid rgba(255,255,255,0.04)'
-          }}>
-            <img
-              src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png"
-              alt="Sambhala Orchard & Agro Logo"
-              style={{
-                width: '85%',
-                maxWidth: '420px',
-                filter: 'drop-shadow(0 20px 50px rgba(0,0,0,0.7))'
-              }}
-            />
-          </div>
+          {/* Desktop — Right Logo visual */}
+          {!isMobile && (
+            <div style={{
+              background: '#0e0e0e',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '4rem',
+              borderLeft: '1px solid rgba(255,255,255,0.04)'
+            }}>
+              <img
+                src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png"
+                alt="Sambhala Orchard & Agro Logo"
+                style={{
+                  width: '85%',
+                  maxWidth: '420px',
+                  filter: 'drop-shadow(0 20px 50px rgba(0,0,0,0.7))'
+                }}
+              />
+            </div>
+          )}
         </div>
       </section>
 
       {/* ─── MORE COMING SOON ─── */}
       <section style={{
-        padding: '5rem 2rem 8rem',
+        padding: isMobile ? '4rem 1.5rem 6rem' : '5rem 2rem 8rem',
         textAlign: 'center',
         borderTop: '1px solid rgba(255,255,255,0.04)'
       }}>
         <p style={{
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: '0.8rem',
+          fontSize: isMobile ? '0.7rem' : '0.8rem',
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
           color: '#333',
-          marginBottom: '1.5rem'
+          marginBottom: '1rem'
         }}>
           More Case Studies Coming Soon
         </p>
@@ -180,7 +213,7 @@ const PortfolioMain = () => {
           fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
           fontWeight: 700,
           color: '#222',
-          marginBottom: '3rem'
+          marginBottom: isMobile ? '2rem' : '3rem'
         }}>
           Ready to build your brand?
         </h3>
@@ -191,13 +224,13 @@ const PortfolioMain = () => {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
-            padding: '0.9rem 2.5rem',
+            padding: isMobile ? '0.8rem 2rem' : '0.9rem 2.5rem',
             border: '1px solid rgba(255,77,0,0.3)',
             background: 'rgba(255,77,0,0.06)',
             color: '#ff4d00',
             fontFamily: "'Space Grotesk', sans-serif",
             fontWeight: 700,
-            fontSize: '0.75rem',
+            fontSize: isMobile ? '0.7rem' : '0.75rem',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
             borderRadius: '100px',
