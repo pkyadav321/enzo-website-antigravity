@@ -5,27 +5,55 @@
 @tailwind utilities;
 
 :root {
-  --background: #02040a;
+  /* Common variables */
   --primary: #ff4d00;
   --primary-light: #ff8c00;
   --primary-dark: #e64500;
   --accent: #ff4d00;
-  /* Red-Orange gradient stops */
   --grad-start: #ff2200;
   --grad-mid:   #ff4d00;
   --grad-end:   #ff8c00;
   --grad-full:  linear-gradient(135deg, #ff2200 0%, #ff4d00 50%, #ff8c00 100%);
-  --grad-glow:  radial-gradient(circle, rgba(255,77,0,0.25) 0%, rgba(255,140,0,0.08) 50%, transparent 70%);
+
+  /* Default (Dark Theme) */
+  --background: #02040a;
+  --text-main: #ffffff;
+  --text-muted: #666666;
+  --text-dim: #444444;
+  --glass-bg: rgba(255, 255, 255, 0.025);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --card-bg: linear-gradient(135deg, rgba(255,77,0,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  --nav-bg: rgba(10, 10, 10, 0.9);
+  --grad-glow: radial-gradient(circle, rgba(255,77,0,0.25) 0%, rgba(255,140,0,0.08) 50%, transparent 70%);
+  --orb-opacity: 0.08;
+  --grid-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Light Theme Overrides */
+.light-theme {
+  --background: #fdfdfd;
+  --text-main: #050505;
+  --text-muted: #555555;
+  --text-dim: #888888;
+  --glass-bg: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --card-bg: linear-gradient(135deg, rgba(255,77,0,0.05) 0%, rgba(0,0,0,0.01) 100%);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --grad-glow: radial-gradient(circle, rgba(255,77,0,0.15) 0%, rgba(255,140,0,0.05) 50%, transparent 70%);
+  --orb-opacity: 0.05;
+  --grid-color: rgba(0, 0, 0, 0.03);
 }
 
 @layer base {
   html, body {
     max-width: 100vw;
     overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
   body {
-    @apply bg-background text-white antialiased font-sans overflow-x-hidden;
+    @apply antialiased font-sans overflow-x-hidden;
     background-color: var(--background);
+    color: var(--text-main);
   }
   
   h1, h2, h3, h4 {
@@ -43,19 +71,19 @@
   }
 
   .glass-dark {
-    background: rgba(255, 255, 255, 0.025);
+    background: var(--glass-bg);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid var(--glass-border);
   }
 
   /* Premium glass card — heavier blur, gradient border */
   .glass-card {
-    background: linear-gradient(135deg, rgba(255,77,0,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    background: var(--card-bg);
     backdrop-filter: blur(32px) saturate(200%);
     -webkit-backdrop-filter: blur(32px) saturate(200%);
-    border: 1px solid rgba(255,77,0,0.12);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
     transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
   }
 
@@ -169,8 +197,8 @@
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
   background-size: 80px 80px;
   pointer-events: none;
   z-index: -1;
@@ -181,10 +209,11 @@
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-background;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/20 hover:bg-primary transition-colors rounded-full;
+  background: var(--primary);
+  border-radius: 100px;
 }
 
 /* Image Fixes - prevent overflow but allow explicit sizing */
@@ -427,10 +456,10 @@ h1, h2, h3, h4 {
   transition: background 0.4s, border-color 0.4s;
 }
 .navbar.scrolled {
-  background: rgba(10,10,10,0.9);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--glass-border);
 }
 .navbar-links {
   display: flex; align-items: center; gap: 3rem;
@@ -439,7 +468,7 @@ h1, h2, h3, h4 {
 .nav-dropdown-trigger span {
   font-size: 0.8rem; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: #999; 
+  color: var(--text-muted); 
   transition: all 0.3s ease;
 }
 .navbar-links a:hover,
@@ -466,15 +495,15 @@ h1, h2, h3, h4 {
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   width: 250px;
-  background: rgba(10, 10, 10, 0.95);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
   padding: 1rem 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   z-index: 100;
 }
 .nav-dropdown.open {
@@ -487,12 +516,12 @@ h1, h2, h3, h4 {
   padding: 0.8rem 2rem;
   font-size: 0.65rem !important;
   letter-spacing: 0.15em !important;
-  color: #666 !important;
+  color: var(--text-muted) !important;
   text-transform: uppercase !important;
   transition: all 0.2s !important;
 }
 .nav-dropdown-item:hover {
-  color: #fff !important;
+  color: var(--text-main) !important;
   background: rgba(232, 53, 42, 0.05);
   padding-left: 2.5rem !important;
 }
@@ -535,7 +564,7 @@ h1, h2, h3, h4 {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 24px;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--text-main);
   position: absolute;
   transition-property: transform;
   transition-duration: 0.2s;
@@ -592,9 +621,9 @@ h1, h2, h3, h4 {
   width: 340px;
   max-width: 85%;
   height: 100vh;
-  background: rgba(10, 10, 10, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
-  border-left: 1px solid rgba(255,255,255,0.05);
+  border-left: 1px solid var(--glass-border);
   z-index: 10000;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Sun, Moon } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,7 +99,7 @@ const Navbar = () => {
       <div className="navbar-logo">
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <img
-            src="/images/logodarktheme/logo.webp"
+            src={isDarkMode ? "/images/logodarktheme/logo.webp" : "/images/logobrightheme/logo.webp"}
             alt="The Enzo Media"
             style={{ height: '34px', width: 'auto', objectFit: 'contain' }}
           />
@@ -112,6 +113,19 @@ const Navbar = () => {
 
       {/* Action Area */}
       <div className="nav-actions">
+        <button 
+          onClick={toggleTheme}
+          className="theme-toggle"
+          style={{ 
+            background: 'none', border: 'none', color: 'var(--text-main)', 
+            cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: '8px', transition: 'all 0.3s ease'
+          }}
+          aria-label="Toggle Theme"
+        >
+          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+
         <Link to="/#contact" className="navbar-cta hide-mobile">Get in touch →</Link>
 
         {/* Hamburger */}
