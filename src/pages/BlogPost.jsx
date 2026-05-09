@@ -2,6 +2,36 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 const POSTS_CONTENT = {
+  'local-seo-ai-trends-2026': {
+    title: 'Top Digital Marketing Trends for Indian Businesses in 2026',
+    tagline: 'Growth // Local SEO & AI',
+    date: 'MAY 10, 2026',
+    readTime: '7 MIN READ',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    content: (
+      <>
+        <p style={{ marginBottom: '2.5rem' }}>
+          As we enter 2026, the Indian digital landscape is undergoing a massive transformation. With rising ad costs and an increasingly mobile-first audience, local businesses in cities like Varanasi, Gonda, and Delhi NCR can no longer rely on traditional spray-and-pray advertising. The future belongs to hyper-local search intent and AI-powered automation.
+        </p>
+        
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Power of the Google 3-Pack.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>
+          Did you know that 46% of all Google searches now carry local intent? If your clinic, real estate firm, or retail shop isn't ranking in the coveted "Google 3-Pack" (the top three local map results), you are practically invisible. In 2026, Local SEO relies heavily on dynamic Google Business Profile management, consistent local citations, and a continuous stream of verified customer reviews.
+        </p>
+
+        <div style={{ padding: '3rem', background: '#111', borderRadius: '20px', borderLeft: '4px solid #e8352a', margin: '4rem 0' }}>
+          <p style={{ color: '#fff', fontStyle: 'italic', fontSize: '1.5rem', fontWeight: 500, lineHeight: 1.5 }}>
+            "In a world of global noise, local relevance is your ultimate competitive advantage."
+          </p>
+        </div>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>AI-Driven Regional Content.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>
+          Tier-2 and Tier-3 cities are driving the next wave of digital consumption in India. Brands that win in 2026 are those using AI to instantly localize and personalize their video content and ad copy into regional languages. At Enzo Media, we deploy AI models to predict local sentiment, ensuring your brand speaks directly to your customer's cultural context, ultimately driving higher conversions and building deeper trust.
+        </p>
+      </>
+    )
+  },
   'ai-importance-2026': {
     title: 'Why AI is the Backbone of Creative Strategy in 2026',
     tagline: 'Editorial // AI & Strategy',

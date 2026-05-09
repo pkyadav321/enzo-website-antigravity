@@ -3,6 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 const blogPosts = [
   {
+    id: 'local-seo-ai-trends-2026',
+    title: 'Top Digital Marketing Trends for Indian Businesses in 2026',
+    date: 'May 10, 2026',
+    excerpt: 'The 2026 playbook for Indian businesses: Why dominating Google\'s 3-Pack and shifting to AI-driven regional marketing is the key to local supremacy.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
+  },
+  {
     id: 'ai-importance-2026',
     title: 'Why AI is the Backbone of Creative Strategy in 2026',
     date: 'May 4, 2026',
