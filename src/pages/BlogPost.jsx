@@ -44,45 +44,45 @@ const POSTS_CONTENT = {
       </>
     )
   },
-  'real-estate-investment-trends-india-2026': {
-    title: 'Real Estate Investment Trends in India 2026: Where to Buy',
-    tagline: 'Market Data // Investment',
+  'website-performance-seo-2026': {
+    title: 'Why Website Speed is the Ultimate SEO Ranking Factor in 2026',
+    tagline: 'Technical // SEO & Web Dev',
     date: 'MAY 11, 2026',
     readTime: '6 MIN READ',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>Understanding the "Real estate investment trends in India 2026" is crucial for any smart buyer. The current shift is towards Tier-2 cities in UP where property appreciation rates are skyrocketing.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Commercial vs Residential.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>Are you looking for a "Buy 2BHK flat" scenario, or are you hunting for a "Commercial property for investment"? RERA approved projects near highway corridors are currently yielding the highest returns.</p>
+        <p style={{ marginBottom: '2.5rem' }}>You can have the most beautiful website in your industry, but if it takes more than 2 seconds to load, you have already lost the customer. In 2026, Google's algorithm heavily penalizes slow websites.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Cost of Lag.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>Every additional second of load time drops conversion rates by up to 20%. Our technical SEO audits focus heavily on removing heavy scripts, optimizing server responses, and ensuring brutalist-level performance across all devices.</p>
       </>
     )
   },
-  'buying-new-flat-checklist-2026': {
-    title: 'The 2026 Checklist for Buying a New Flat: Don\'t Get Scammed',
-    tagline: 'Buyer Guide // Property',
+  'brand-identity-scaling-business': {
+    title: 'Beyond Logos: How to Build a Brand Identity That Scales',
+    tagline: 'Creative // Brand Strategy',
     date: 'MAY 10, 2026',
     readTime: '8 MIN READ',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>Before you search for "Luxury apartments for sale", you need the ultimate "Checklist for buying a new flat in 2026". The rules have changed, and so have the risks.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Under Construction vs Ready to Move.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>Always verify that you are looking at "RERA approved projects near me". While under-construction flats offer better pricing, ready-to-move apartments eliminate possession delays. Choose based on your capital readiness.</p>
+        <p style={{ marginBottom: '2.5rem' }}>Many businesses confuse a logo with a brand. A logo is an identifier; a brand is a reputation. As businesses scale, a fragmented brand identity creates friction, whereas a unified brand identity commands premium pricing.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Psychology of Trust.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>Consumers buy from brands that feel coherent. From the typography on your website to the tone of your cold emails, consistency breeds trust. Investing in a comprehensive design system is the highest ROI decision a scaling business can make.</p>
       </>
     )
   },
-  'how-to-calculate-home-loan-emi': {
-    title: 'How to Calculate Home Loan EMI Easily: A Buyer\'s Guide',
-    tagline: 'Finance // Real Estate',
+  'b2b-lead-generation-strategies': {
+    title: 'B2B Lead Generation: Cold Outreach Strategies That Actually Work',
+    tagline: 'Sales // B2B Growth',
     date: 'MAY 9, 2026',
     readTime: '4 MIN READ',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2036&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>One of the most searched queries by new buyers is "How to calculate home loan EMI easily". Whether you want to "Buy 2BHK flat" or a luxury penthouse, understanding your cash flow is step one.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The EMI Formula.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>Your EMI depends on the principal amount, interest rate, and tenure. We highly recommend using a dynamic EMI calculator before locking into any real estate investment to ensure you aren't over-leveraged.</p>
+        <p style={{ marginBottom: '2.5rem' }}>Generic LinkedIn spam and templated cold emails are dead. If you want to close high-ticket B2B clients in 2026, you need a highly personalized, multi-touch outreach strategy.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Value-First Outreach.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>Do not pitch in the first message. Instead, offer an immediate piece of value—a free audit, an industry report, or an insight about their specific company. Build the relationship first, and the transaction will follow organically.</p>
       </>
     )
   },

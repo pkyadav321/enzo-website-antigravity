@@ -24,25 +24,25 @@ const blogPosts = [
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    id: 'real-estate-investment-trends-india-2026',
-    title: 'Real Estate Investment Trends in India 2026: Where to Buy',
+    id: 'website-performance-seo-2026',
+    title: 'Why Website Speed is the Ultimate SEO Ranking Factor in 2026',
     date: 'May 11, 2026',
-    excerpt: 'Discover the fastest-growing commercial and residential property hubs in UP. See the latest property appreciation rates and where smart investors are putting their money.',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop'
+    excerpt: 'Beautiful designs don\'t matter if your website is slow. Discover why Google penalizes slow websites and how technical SEO drives revenue.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    id: 'buying-new-flat-checklist-2026',
-    title: 'The 2026 Checklist for Buying a New Flat: Don\'t Get Scammed',
+    id: 'brand-identity-scaling-business',
+    title: 'Beyond Logos: How to Build a Brand Identity That Scales',
     date: 'May 10, 2026',
-    excerpt: 'Buying a 2BHK or luxury apartment? Read this complete checklist covering RERA approvals, under-construction vs ready-to-move, and legal checks.',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop'
+    excerpt: 'Your brand is not just a logo; it is how your customers feel. Learn the psychology of premium branding and how it commands higher prices.',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    id: 'how-to-calculate-home-loan-emi',
-    title: 'How to Calculate Home Loan EMI Easily: A Buyer\'s Guide',
+    id: 'b2b-lead-generation-strategies',
+    title: 'B2B Lead Generation: Cold Outreach Strategies That Actually Work',
     date: 'May 9, 2026',
-    excerpt: 'Planning to buy a luxury apartment or commercial property? Learn exactly how to calculate your home loan EMIs and budget your next big investment.',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2036&auto=format&fit=crop'
+    excerpt: 'Struggling to close high-ticket clients? Stop spamming and start connecting. Here is our exact blueprint for high-converting B2B lead generation.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'real-estate-digital-marketing-seo-2026',
