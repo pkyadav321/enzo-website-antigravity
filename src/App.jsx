@@ -110,22 +110,7 @@ function TitleManager() {
 
 function AppContent() {
   const location = useLocation();
-  const [isDarkMode, setIsDarkMode] = React.useState(() => {
-    const saved = localStorage.getItem('theme');
-    return saved ? saved === 'dark' : true;
-  });
-
   useScrollReveal(location.pathname);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('light-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.add('light-theme');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDarkMode]);
 
   useEffect(() => {
     // Initialize Lenis
@@ -156,10 +141,10 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="selection:bg-primary selection:text-white" style={{ cursor: 'none', backgroundColor: 'var(--background)', color: 'var(--text-main)', minHeight: '100vh', transition: 'background-color 0.4s ease, color 0.4s ease' }}>
+    <div className="bg-background text-white selection:bg-primary selection:text-white" style={{ cursor: 'none' }}>
       {/* Animated gradient orbs */}
-      <div className="mesh-bg" aria-hidden="true" style={{ opacity: 'var(--orb-opacity)' }} />
-      <div className="orb-3" aria-hidden="true" style={{ opacity: 'var(--orb-opacity)' }} />
+      <div className="mesh-bg" aria-hidden="true" />
+      <div className="orb-3" aria-hidden="true" />
 
       {/* Grain/noise texture overlay */}
       <div
@@ -168,7 +153,7 @@ function AppContent() {
           position: 'fixed',
           inset: 0,
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          opacity: 0.02,
+          opacity: 0.035,
           pointerEvents: 'none',
           zIndex: 9990,
           mixBlendMode: 'overlay',
@@ -176,13 +161,24 @@ function AppContent() {
       />
 
       {/* Subtle grid lines */}
-      <div className="grid-lines" aria-hidden="true" />
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundImage:
+            'linear-gradient(to right, rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.018) 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+          pointerEvents: 'none',
+          zIndex: -1,
+        }}
+      />
 
       {/* Mouse follow glow */}
       <div className="mouse-glow" aria-hidden="true" />
 
       <Cursor />
-      <Navbar isDarkMode={isDarkMode} toggleTheme={() => setIsDarkMode(!isDarkMode)} />
+      <Navbar />
       <PopupModal />
       <ScrollToTop />
       <TitleManager />
@@ -195,7 +191,7 @@ function AppContent() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeInOut' }}
         >
-          <React.Suspense fallback={<div style={{ height: '100vh', background: 'var(--background)' }} />}>
+          <React.Suspense fallback={<div style={{ height: '100vh', background: '#02040a' }} />}>
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -220,7 +216,7 @@ function AppContent() {
         </motion.main>
       </AnimatePresence>
       
-      <Footer isDarkMode={isDarkMode} />
+      <Footer />
     </div>
   );
 }

@@ -50,8 +50,7 @@ const Hero = () => (
         position: 'absolute', top: '50%', left: '50%',
         transform: 'translate(-50%, -50%)',
         width: '700px', height: '700px',
-        background: 'radial-gradient(circle, rgba(255,77,0,0.12) 0%, rgba(255,140,0,0.04) 40%, transparent 70%)',
-        opacity: 'var(--orb-opacity)',
+        background: 'radial-gradient(circle, rgba(255,77,0,0.10) 0%, rgba(255,140,0,0.04) 40%, transparent 70%)',
         borderRadius: '50%', filter: 'blur(20px)',
         zIndex: -1, pointerEvents: 'none',
         animation: 'orb-float-3 20s ease-in-out infinite',
@@ -59,7 +58,7 @@ const Hero = () => (
     />
 
     {/* Top-right coord marker */}
-    <div className="reveal" style={{ position: 'absolute', top: '40px', right: '40px', opacity: 0.2, color: 'var(--text-main)', fontSize: '0.6rem', letterSpacing: '0.2em', pointerEvents: 'none', textAlign: 'right' }}>
+    <div className="reveal" style={{ position: 'absolute', top: '40px', right: '40px', opacity: 0.2, color: '#fff', fontSize: '0.6rem', letterSpacing: '0.2em', pointerEvents: 'none', textAlign: 'right' }}>
       <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style={{ marginLeft: 'auto' }}>
         <path d="M30 0V60M0 30H60" stroke="currentColor" strokeWidth="0.5" />
         <circle cx="30" cy="30" r="2" fill="currentColor" />
@@ -68,7 +67,7 @@ const Hero = () => (
     </div>
 
     {/* Bottom-left system marker */}
-    <div className="reveal" style={{ position: 'absolute', bottom: '60px', left: '40px', opacity: 0.15, color: 'var(--text-main)', fontSize: '0.6rem', pointerEvents: 'none', textAlign: 'left' }}>
+    <div className="reveal" style={{ position: 'absolute', bottom: '60px', left: '40px', opacity: 0.15, color: '#fff', fontSize: '0.6rem', pointerEvents: 'none', textAlign: 'left' }}>
       <svg width="100" height="20" viewBox="0 0 100 20" fill="none">
         {[...Array(20)].map((_, i) => (
           <rect key={i} x={i * 5} y="0" width="1" height={i % 5 === 0 ? '20' : '10'} fill="currentColor" />
@@ -84,13 +83,13 @@ const Hero = () => (
         className="reveal stagger-2 hero-main-title"
         style={{
           fontFamily: "'Inter', sans-serif",
-          fontSize: 'clamp(1.2rem, 5vw, 6rem)', 
+          fontSize: 'clamp(1.2rem, 5vw, 6rem)', /* Scaled down minimum to guarantee 2-line fit on tiny screens */
           fontWeight: 900,
           lineHeight: 1.1,
           letterSpacing: '-0.04em',
-          color: 'var(--text-main)',
+          color: '#fff',
           margin: '0 auto 2.5rem',
-          maxWidth: '1400px',
+          maxWidth: '1400px', // Increased width to prevent 3rd line
         }}
       >
         <span style={{ whiteSpace: 'nowrap' }}>Building Scalable Brands</span> <br />
@@ -115,10 +114,10 @@ const Hero = () => (
         style={{
           display: 'flex', flexDirection: 'column', alignItems: 'center',
           gap: '3rem', paddingBottom: '5rem',
-          borderBottom: '1px solid var(--glass-border)',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
         }}
       >
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '600px', fontWeight: 400 }}>
+        <p style={{ fontSize: '1.2rem', color: '#666', lineHeight: 1.7, maxWidth: '600px', fontWeight: 400 }}>
           The leading AI-powered creative performance agency scaling brands across{' '}
           <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b>.
           We turn ad spend into measurable profit. Stop guessing. Start scaling.
@@ -157,7 +156,7 @@ const Hero = () => (
             }}>
               <CountUp end={s.end} suffix={s.suffix} />
             </div>
-            <div style={{ fontSize: '0.65rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--text-dim)', marginTop: '0.4rem' }}>
+            <div style={{ fontSize: '0.65rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#444', marginTop: '0.4rem' }}>
               {s.label}
             </div>
           </div>
