@@ -3,6 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 const blogPosts = [
   {
+    id: 'real-estate-digital-marketing-seo-2026',
+    title: 'Real Estate Marketing in 2026: The Ultimate SEO & Lead Gen Guide',
+    date: 'May 12, 2026',
+    excerpt: 'Stop wasting money on dead leads. Learn the exact high-intent keywords, voice search trends, and local SEO strategies top property builders use to dominate in 2026.',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop'
+  },
+  {
     id: 'local-seo-ai-trends-2026',
     title: 'Top Digital Marketing Trends for Indian Businesses in 2026',
     date: 'May 10, 2026',
