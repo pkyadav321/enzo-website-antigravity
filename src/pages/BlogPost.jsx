@@ -3,37 +3,71 @@ import { useParams, Link } from 'react-router-dom';
 
 const POSTS_CONTENT = {
   'real-estate-digital-marketing-seo-2026': {
-    title: 'Real Estate Marketing in 2026: The Ultimate SEO & Lead Gen Guide',
-    tagline: 'Strategy // Real Estate SEO',
+    title: 'The Ultimate 2026 SEO Keyword Masterlist for Agencies & Real Estate',
+    tagline: 'Strategy // Master Keyword List',
     date: 'MAY 12, 2026',
     readTime: '8 MIN READ',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop',
     content: (
       <>
         <p style={{ marginBottom: '2.5rem' }}>
-          The real estate market in 2026 is aggressively competitive. Buyers are no longer persuaded by generic billboards or standard property listings. Today's high-intent property buyer starts their journey on Google and ends it on a meticulously optimized landing page. If you are a builder or developer, your digital presence is the difference between sold-out projects and empty sites.
+          Here is the complete, exhaustive masterlist of the highest-converting SEO keywords for 2026. This list is divided into two major sectors: Digital Marketing Agencies and Real Estate Developers. Use these exact phrases in your H1 tags, meta descriptions, and ad copy to dominate search rankings.
         </p>
         
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The "High-Intent" Keyword Strategy.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>
-          Stop optimizing for broad terms like "flats." The highest converting real estate leads come from long-tail, hyper-specific search queries. According to our latest data, queries like <b>"Buy 2BHK flat in [City Name]"</b>, <b>"Luxury apartments for sale near me"</b>, and <b>"RERA approved projects in UP"</b> have an 8x higher conversion rate. You must build specific landing pages targeting these exact terms.
-        </p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>1. Digital Marketing Agency Keywords</h2>
+        
+        <h3 style={{ color: '#e8352a', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', marginTop: '2rem' }}>High-Intent (Ready to Buy)</h3>
+        <ul style={{ marginBottom: '2rem', listStyleType: 'disc', paddingLeft: '2rem', lineHeight: 1.8 }}>
+          <li><b>"Best digital marketing agency in Varanasi"</b></li>
+          <li><b>"Top social media marketing agency Delhi NCR"</b></li>
+          <li><b>"Google Ads expert for local business UP"</b></li>
+          <li><b>"Lead generation agency in Ayodhya"</b></li>
+          <li><b>"Performance marketing services near me"</b></li>
+          <li><b>"E-commerce marketing agency India"</b></li>
+        </ul>
+
+        <h3 style={{ color: '#e8352a', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', marginTop: '2rem' }}>Informational / Long-Tail (Research Phase)</h3>
+        <ul style={{ marginBottom: '2.5rem', listStyleType: 'disc', paddingLeft: '2rem', lineHeight: 1.8 }}>
+          <li><b>"How to rank my local business on Google in 2026"</b></li>
+          <li><b>"Cost of social media management in India"</b></li>
+          <li><b>"Why Facebook ads are not working 2026"</b></li>
+          <li><b>"Digital marketing strategy for real estate businesses"</b></li>
+          <li><b>"AI marketing tools for small business growth"</b></li>
+        </ul>
+
+        <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.1)', margin: '4rem 0' }} />
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>2. Real Estate & Property Builders Keywords</h2>
+        
+        <h3 style={{ color: '#e8352a', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', marginTop: '2rem' }}>High-Intent (Ready to Invest/Buy)</h3>
+        <ul style={{ marginBottom: '2rem', listStyleType: 'disc', paddingLeft: '2rem', lineHeight: 1.8 }}>
+          <li><b>"Buy 2BHK flat in [City Name]"</b></li>
+          <li><b>"Luxury apartments for sale in [City Name]"</b></li>
+          <li><b>"Best real estate developers in [City Name]"</b></li>
+          <li><b>"Commercial property for investment in UP"</b></li>
+          <li><b>"RERA approved projects near me"</b></li>
+          <li><b>"Plots for sale in [Location/Highway Name]"</b></li>
+        </ul>
+
+        <h3 style={{ color: '#e8352a', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', marginTop: '2rem' }}>Informational / Long-Tail (Market Research)</h3>
+        <ul style={{ marginBottom: '2.5rem', listStyleType: 'disc', paddingLeft: '2rem', lineHeight: 1.8 }}>
+          <li><b>"Real estate investment trends in India 2026"</b></li>
+          <li><b>"How to calculate home loan EMI easily"</b></li>
+          <li><b>"Checklist for buying a new flat in 2026"</b></li>
+          <li><b>"Under construction vs Ready to move apartments"</b></li>
+          <li><b>"Property appreciation rates in [City Name]"</b></li>
+        </ul>
 
         <div style={{ padding: '3rem', background: '#111', borderRadius: '20px', borderLeft: '4px solid #e8352a', margin: '4rem 0' }}>
-          <p style={{ color: '#fff', fontStyle: 'italic', fontSize: '1.5rem', fontWeight: 500, lineHeight: 1.5 }}>
-            "In real estate marketing, traffic without intent is just an expensive vanity metric."
+          <h3 style={{ color: '#fff', fontSize: '1.5rem', fontWeight: 900, marginBottom: '1rem' }}>🎙️ Pro Tip: Voice Search Optimization</h3>
+          <p style={{ color: '#aaa', fontStyle: 'italic', fontSize: '1.1rem', lineHeight: 1.6 }}>
+            Over 40% of queries are spoken, not typed. Include conversational exact-matches like:
+            <br/><br/>
+            • <i>"Google, find the best digital marketing agency near me."</i><br/>
+            • <i>"Where is the best place to invest in property right now?"</i><br/>
+            • <i>"Top marketing experts in Varanasi contact number."</i>
           </p>
         </div>
-
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Informational Queries: Build the Funnel.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>
-          Not every user is ready to buy today. Many are investors researching the market. Creating content around queries like <b>"Real estate investment trends in India 2026"</b> or <b>"How to calculate home loan EMI easily"</b> brings these users into your ecosystem. By providing them an EMI calculator or an investment guide, you capture their contact information months before they are ready to transact.
-        </p>
-
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Voice Search Revolution.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>
-          Over 40% of local property searches are now done via voice. Buyers are asking their phones: <i>"Google, find the best real estate developers near me."</i> To capture this traffic, your website's FAQ sections must be written in natural, conversational language. Incorporate direct questions and answers that mirror how real people speak.
-        </p>
       </>
     )
   },
