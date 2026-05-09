@@ -2,6 +2,90 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 const POSTS_CONTENT = {
+  'best-digital-marketing-varanasi-2026': {
+    title: 'How to Find the Best Digital Marketing Agency in Varanasi in 2026',
+    tagline: 'Agency Insights // Local SEO',
+    date: 'MAY 14, 2026',
+    readTime: '6 MIN READ',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    content: (
+      <>
+        <p style={{ marginBottom: '2.5rem' }}>If you are searching for the "Best digital marketing agency in Varanasi," you have likely noticed that everyone promises the #1 spot on Google. However, in 2026, performance marketing is no longer about vanity metrics. It is about acquiring high-intent leads.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Look for ROI, Not Just Likes.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>The top agencies in UP do not sell you social media posts; they sell you revenue growth. Look for a Google Ads expert who understands local business nuances in Varanasi, Ayodhya, and Delhi NCR.</p>
+      </>
+    )
+  },
+  'facebook-ads-failing-2026': {
+    title: 'Why Facebook Ads Are Failing in 2026 (And What to Do Instead)',
+    tagline: 'Performance // Paid Media',
+    date: 'MAY 13, 2026',
+    readTime: '5 MIN READ',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop',
+    content: (
+      <>
+        <p style={{ marginBottom: '2.5rem' }}>Many businesses are searching "Why Facebook ads are not working in 2026." The truth is, the algorithms have shifted. Broad targeting without AI is essentially burning cash.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Shift to AI Marketing Tools.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>To survive the rising cost of social media management in India, agencies must adopt AI marketing tools for small business growth. AI predicts customer sentiment before you spend a single rupee on an ad.</p>
+      </>
+    )
+  },
+  'real-estate-marketing-strategy-2026': {
+    title: 'Digital Marketing Strategy for Real Estate Businesses: The 2026 Playbook',
+    tagline: 'Strategy // Real Estate',
+    date: 'MAY 12, 2026',
+    readTime: '7 MIN READ',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+    content: (
+      <>
+        <p style={{ marginBottom: '2.5rem' }}>Building a robust digital marketing strategy for real estate businesses requires moving beyond static 3D renders. As a leading lead generation agency in Ayodhya and UP, we know that today's buyers demand interactive experiences.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Targeted Lead Gen.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>Stop chasing unqualified leads. Optimize your landing pages specifically for high-intent search queries like "Commercial property for investment in UP" to double your closing rates.</p>
+      </>
+    )
+  },
+  'real-estate-investment-trends-india-2026': {
+    title: 'Real Estate Investment Trends in India 2026: Where to Buy',
+    tagline: 'Market Data // Investment',
+    date: 'MAY 11, 2026',
+    readTime: '6 MIN READ',
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop',
+    content: (
+      <>
+        <p style={{ marginBottom: '2.5rem' }}>Understanding the "Real estate investment trends in India 2026" is crucial for any smart buyer. The current shift is towards Tier-2 cities in UP where property appreciation rates are skyrocketing.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Commercial vs Residential.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>Are you looking for a "Buy 2BHK flat" scenario, or are you hunting for a "Commercial property for investment"? RERA approved projects near highway corridors are currently yielding the highest returns.</p>
+      </>
+    )
+  },
+  'buying-new-flat-checklist-2026': {
+    title: 'The 2026 Checklist for Buying a New Flat: Don\'t Get Scammed',
+    tagline: 'Buyer Guide // Property',
+    date: 'MAY 10, 2026',
+    readTime: '8 MIN READ',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
+    content: (
+      <>
+        <p style={{ marginBottom: '2.5rem' }}>Before you search for "Luxury apartments for sale", you need the ultimate "Checklist for buying a new flat in 2026". The rules have changed, and so have the risks.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Under Construction vs Ready to Move.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>Always verify that you are looking at "RERA approved projects near me". While under-construction flats offer better pricing, ready-to-move apartments eliminate possession delays. Choose based on your capital readiness.</p>
+      </>
+    )
+  },
+  'how-to-calculate-home-loan-emi': {
+    title: 'How to Calculate Home Loan EMI Easily: A Buyer\'s Guide',
+    tagline: 'Finance // Real Estate',
+    date: 'MAY 9, 2026',
+    readTime: '4 MIN READ',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2036&auto=format&fit=crop',
+    content: (
+      <>
+        <p style={{ marginBottom: '2.5rem' }}>One of the most searched queries by new buyers is "How to calculate home loan EMI easily". Whether you want to "Buy 2BHK flat" or a luxury penthouse, understanding your cash flow is step one.</p>
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The EMI Formula.</h2>
+        <p style={{ marginBottom: '2.5rem' }}>Your EMI depends on the principal amount, interest rate, and tenure. We highly recommend using a dynamic EMI calculator before locking into any real estate investment to ensure you aren't over-leveraged.</p>
+      </>
+    )
+  },
   'real-estate-digital-marketing-seo-2026': {
     title: 'The Ultimate 2026 SEO Keyword Masterlist for Agencies & Real Estate',
     tagline: 'Strategy // Master Keyword List',

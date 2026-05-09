@@ -3,6 +3,48 @@ import { useNavigate } from 'react-router-dom';
 
 const blogPosts = [
   {
+    id: 'best-digital-marketing-varanasi-2026',
+    title: 'How to Find the Best Digital Marketing Agency in Varanasi in 2026',
+    date: 'May 14, 2026',
+    excerpt: 'Stop wasting ad spend on agencies that don\'t deliver. Here is the ultimate guide to finding the top performance marketing and SEO experts in UP.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
+  },
+  {
+    id: 'facebook-ads-failing-2026',
+    title: 'Why Facebook Ads Are Failing in 2026 (And What to Do Instead)',
+    date: 'May 13, 2026',
+    excerpt: 'Are your Facebook Ads dying? Discover why traditional social media marketing is failing in India and the AI tools you must use to recover your ROI.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop'
+  },
+  {
+    id: 'real-estate-marketing-strategy-2026',
+    title: 'Digital Marketing Strategy for Real Estate Businesses: The 2026 Playbook',
+    date: 'May 12, 2026',
+    excerpt: 'The exact digital marketing blueprint that top real estate developers in Delhi NCR and UP are using to generate high-quality home buyer leads.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'
+  },
+  {
+    id: 'real-estate-investment-trends-india-2026',
+    title: 'Real Estate Investment Trends in India 2026: Where to Buy',
+    date: 'May 11, 2026',
+    excerpt: 'Discover the fastest-growing commercial and residential property hubs in UP. See the latest property appreciation rates and where smart investors are putting their money.',
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop'
+  },
+  {
+    id: 'buying-new-flat-checklist-2026',
+    title: 'The 2026 Checklist for Buying a New Flat: Don\'t Get Scammed',
+    date: 'May 10, 2026',
+    excerpt: 'Buying a 2BHK or luxury apartment? Read this complete checklist covering RERA approvals, under-construction vs ready-to-move, and legal checks.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop'
+  },
+  {
+    id: 'how-to-calculate-home-loan-emi',
+    title: 'How to Calculate Home Loan EMI Easily: A Buyer\'s Guide',
+    date: 'May 9, 2026',
+    excerpt: 'Planning to buy a luxury apartment or commercial property? Learn exactly how to calculate your home loan EMIs and budget your next big investment.',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2036&auto=format&fit=crop'
+  },
+  {
     id: 'real-estate-digital-marketing-seo-2026',
     title: 'Real Estate Marketing in 2026: The Ultimate SEO & Lead Gen Guide',
     date: 'May 12, 2026',
