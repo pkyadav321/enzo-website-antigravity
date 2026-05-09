@@ -115,17 +115,18 @@ function AppContent() {
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0, // Reduced from 1.2 for faster feel
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
 
+    let rafId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // Mouse glow logic
     const handleMouseMove = (e) => {
@@ -135,6 +136,7 @@ function AppContent() {
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -146,19 +148,7 @@ function AppContent() {
       <div className="mesh-bg" aria-hidden="true" />
       <div className="orb-3" aria-hidden="true" />
 
-      {/* Grain/noise texture overlay */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'fixed',
-          inset: 0,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          opacity: 0.035,
-          pointerEvents: 'none',
-          zIndex: 9990,
-          mixBlendMode: 'overlay',
-        }}
-      />
+      {/* Grain/noise texture removed for scroll performance */}
 
       {/* Subtle grid lines */}
       <div
