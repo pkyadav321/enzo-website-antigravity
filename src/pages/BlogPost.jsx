@@ -10,9 +10,28 @@ const POSTS_CONTENT = {
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>If you are searching for the "Best digital marketing agency in Varanasi," you have likely noticed that everyone promises the #1 spot on Google. However, in 2026, performance marketing is no longer about vanity metrics. It is about acquiring high-intent leads.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Look for ROI, Not Just Likes.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>The top agencies in UP do not sell you social media posts; they sell you revenue growth. Look for a Google Ads expert who understands local business nuances in Varanasi, Ayodhya, and Delhi NCR.</p>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          If you are searching for the <strong>"Best digital marketing agency in Varanasi,"</strong> you have likely noticed that everyone promises the #1 spot on Google. However, as we move through 2026, performance marketing is no longer about vanity metrics like followers or likes. It is entirely about acquiring high-intent leads and generating measurable revenue.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Shift from Vanity to Velocity</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          In the past, local businesses in UP could survive by simply posting a graphic on Facebook once a day. Today, consumer attention is hyper-fragmented. The top agencies in Varanasi and Ayodhya do not sell you social media posts; they sell you revenue growth through advanced funnels.
+        </p>
+
+        <div style={{ padding: '3rem', background: '#111', borderRadius: '20px', borderLeft: '4px solid #e8352a', margin: '4rem 0' }}>
+          <h3 style={{ color: '#fff', fontSize: '1.5rem', fontWeight: 900, marginBottom: '1rem' }}>What to Look For in an Agency:</h3>
+          <ul style={{ color: '#aaa', listStyleType: 'none', padding: 0, lineHeight: '2' }}>
+            <li>✅ <strong>Data-Driven Decisions:</strong> Do they talk about CPA (Cost Per Acquisition) or just "reach"?</li>
+            <li>✅ <strong>Local SEO Expertise:</strong> Can they rank you in the Google 3-Pack for local searches?</li>
+            <li>✅ <strong>Omnichannel Approach:</strong> Are they integrating WhatsApp marketing, Google Ads, and Meta Ads?</li>
+          </ul>
+        </div>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Why Local Context Matters</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          A generic agency sitting in Mumbai might not understand the cultural nuances of a consumer in Eastern UP. Look for a Google Ads expert who understands local business nuances in Varanasi, Ayodhya, and Delhi NCR. The ad copy must speak the local language, target the right micro-geographies, and appeal to regional pain points.
+        </p>
       </>
     )
   },
@@ -24,9 +43,25 @@ const POSTS_CONTENT = {
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>Many businesses are searching "Why Facebook ads are not working in 2026." The truth is, the algorithms have shifted. Broad targeting without AI is essentially burning cash.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Shift to AI Marketing Tools.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>To survive the rising cost of social media management in India, agencies must adopt AI marketing tools for small business growth. AI predicts customer sentiment before you spend a single rupee on an ad.</p>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Many businesses are searching <strong>"Why Facebook ads are not working in 2026."</strong> The truth is, the algorithms have shifted dramatically. Broad targeting and generic creatives without the backing of AI is essentially burning cash in today's landscape.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Death of the "Boost Post" Button</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Hitting "Boost Post" on a static image used to yield returns in 2019. In 2026, Meta's algorithm requires heavy signals. If your pixel data is weak, your ads will fail. The cost of social media management in India has risen because the technical barrier to entry has increased.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Shift to AI Marketing Tools</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          To survive, agencies must adopt AI marketing tools for small business growth. AI predicts customer sentiment before you spend a single rupee on an ad. Here is what is working right now:
+        </p>
+
+        <ul style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9', paddingLeft: '2rem' }}>
+          <li><strong>Predictive Audiences:</strong> Letting AI find the 1% of users most likely to buy based on behavioral mapping.</li>
+          <li><strong>Dynamic Creative Optimization (DCO):</strong> Showing 50 different variations of a video to 50 different micro-segments automatically.</li>
+          <li><strong>First-Party Data:</strong> Relying on your own email and WhatsApp lists rather than depending solely on Meta's algorithm.</li>
+        </ul>
       </>
     )
   },
@@ -38,9 +73,27 @@ const POSTS_CONTENT = {
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>Building a robust digital marketing strategy for real estate businesses requires moving beyond static 3D renders. As a leading lead generation agency in Ayodhya and UP, we know that today's buyers demand interactive experiences.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Targeted Lead Gen.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>Stop chasing unqualified leads. Optimize your landing pages specifically for high-intent search queries like "Commercial property for investment in UP" to double your closing rates.</p>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Building a robust digital marketing strategy for real estate businesses requires moving beyond static 3D renders and generic newspaper ads. As a leading lead generation agency in Ayodhya, Varanasi, and UP, we know that today's high-net-worth buyers demand premium, interactive digital experiences.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Stop Chasing Unqualified Leads</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          The biggest complaint from real estate developers is: <em>"We get 500 leads a month, but no one answers the phone."</em> This happens when you optimize for volume rather than intent. You must optimize your landing pages specifically for high-intent search queries like <strong>"Commercial property for investment in UP"</strong> or <strong>"RERA approved luxury apartments."</strong>
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The 2026 Real Estate Funnel</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          The buyer's journey takes months. Your strategy must reflect that:
+        </p>
+
+        <div style={{ padding: '3rem', background: '#111', borderRadius: '20px', borderLeft: '4px solid #e8352a', margin: '4rem 0' }}>
+          <ul style={{ color: '#aaa', listStyleType: 'none', padding: 0, lineHeight: '2' }}>
+            <li>🏗️ <strong>Top of Funnel (Awareness):</strong> High-production drone videos of the location infrastructure and neighborhood growth (YouTube Shorts/Instagram Reels).</li>
+            <li>🏗️ <strong>Middle of Funnel (Consideration):</strong> Lead magnets like "ROI Calculators" or "Investment Guides for [City Name]" to capture emails.</li>
+            <li>🏗️ <strong>Bottom of Funnel (Decision):</strong> Retargeting ads showing verified customer testimonials and limited-period possession offers.</li>
+          </ul>
+        </div>
       </>
     )
   },
@@ -52,9 +105,25 @@ const POSTS_CONTENT = {
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>You can have the most beautiful website in your industry, but if it takes more than 2 seconds to load, you have already lost the customer. In 2026, Google's algorithm heavily penalizes slow websites.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Cost of Lag.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>Every additional second of load time drops conversion rates by up to 20%. Our technical SEO audits focus heavily on removing heavy scripts, optimizing server responses, and ensuring brutalist-level performance across all devices.</p>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          You can have the most beautiful, award-winning website in your industry, but if it takes more than 2.5 seconds to load, you have already lost the customer. In 2026, Google's algorithm heavily penalizes slow websites under its updated Core Web Vitals criteria.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Hidden Cost of Lag</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Every additional second of load time drops conversion rates by up to 20%. Let that sink in. If you are spending ₹1,000,000 on Google Ads, a slow website could literally be burning ₹200,000 of that budget because users click the back button before the page even renders.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Our Technical SEO Framework</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Our technical SEO audits at Enzo Media focus heavily on removing heavy scripts, optimizing server responses, and ensuring brutalist-level performance across all devices. Here is what we implement:
+        </p>
+
+        <ul style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9', paddingLeft: '2rem' }}>
+          <li><strong>Asset Delivery:</strong> Compressing all media to next-gen formats (WebP, AVIF) and serving via edge CDNs.</li>
+          <li><strong>Render Blocking:</strong> Eliminating synchronous JavaScript execution that freezes the browser.</li>
+          <li><strong>Code Splitting:</strong> Ensuring users only download the code they need for the specific page they are viewing.</li>
+        </ul>
       </>
     )
   },
@@ -66,9 +135,27 @@ const POSTS_CONTENT = {
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>Many businesses confuse a logo with a brand. A logo is an identifier; a brand is a reputation. As businesses scale, a fragmented brand identity creates friction, whereas a unified brand identity commands premium pricing.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Psychology of Trust.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>Consumers buy from brands that feel coherent. From the typography on your website to the tone of your cold emails, consistency breeds trust. Investing in a comprehensive design system is the highest ROI decision a scaling business can make.</p>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Many businesses confuse a logo with a brand. A logo is simply a visual identifier; a brand is a reputation. It is how your customers <em>feel</em> when they interact with your business. As businesses scale, a fragmented brand identity creates severe market friction, whereas a unified brand identity commands premium pricing.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Psychology of Trust</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Consumers inherently buy from brands that feel coherent. If your Instagram looks premium, but your website looks like it was built in 2010, the consumer's brain registers a lack of trust. Consistency breeds authority. From the typography on your website to the tone of your cold emails, every touchpoint must align.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Building a Design System</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Investing in a comprehensive design system is the highest ROI decision a scaling business can make. A design system includes:
+        </p>
+
+        <div style={{ padding: '3rem', background: '#111', borderRadius: '20px', borderLeft: '4px solid #e8352a', margin: '4rem 0' }}>
+          <ul style={{ color: '#aaa', listStyleType: 'none', padding: 0, lineHeight: '2' }}>
+            <li>📐 <strong>Visual Guidelines:</strong> Strict rules for color palettes, spacing, and typography hierarchies.</li>
+            <li>🗣️ <strong>Verbal Identity:</strong> A defined tone of voice (e.g., authoritative, witty, empathetic) used across all copywriting.</li>
+            <li>🔄 <strong>Component Libraries:</strong> Reusable digital assets that ensure your developers and marketers never go off-brand.</li>
+          </ul>
+        </div>
       </>
     )
   },
@@ -80,9 +167,26 @@ const POSTS_CONTENT = {
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
     content: (
       <>
-        <p style={{ marginBottom: '2.5rem' }}>Generic LinkedIn spam and templated cold emails are dead. If you want to close high-ticket B2B clients in 2026, you need a highly personalized, multi-touch outreach strategy.</p>
-        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Value-First Outreach.</h2>
-        <p style={{ marginBottom: '2.5rem' }}>Do not pitch in the first message. Instead, offer an immediate piece of value—a free audit, an industry report, or an insight about their specific company. Build the relationship first, and the transaction will follow organically.</p>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Generic LinkedIn spam and templated cold emails are completely dead. Decision-makers have developed an immunity to the standard <em>"Hi [Name], we offer X services..."</em> pitch. If you want to close high-ticket B2B clients in 2026, you need a highly personalized, multi-touch outreach strategy.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>Value-First Outreach</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          Do not pitch your services in the first message. Instead, offer an immediate piece of upfront value. This could be a free technical audit of their website, a custom industry report, or an insight about their specific company's recent funding round. Build the relationship first, and the transaction will follow organically.
+        </p>
+
+        <h2 style={{ color: '#fff', fontSize: '2.2rem', fontWeight: 900, marginBottom: '1.5rem', marginTop: '4rem' }}>The Omnichannel Sequence</h2>
+        <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9' }}>
+          A modern B2B lead generation campaign doesn't rely on one channel. It looks like this:
+        </p>
+
+        <ul style={{ marginBottom: '2.5rem', fontSize: '1.2rem', lineHeight: '1.9', paddingLeft: '2rem' }}>
+          <li><strong>Day 1:</strong> Engage with their recent LinkedIn post (insightful comment, not just "great post").</li>
+          <li><strong>Day 3:</strong> Send a highly personalized cold email referencing the post and offering a free, custom asset.</li>
+          <li><strong>Day 7:</strong> Send a LinkedIn connection request referencing the email.</li>
+          <li><strong>Day 14:</strong> A soft follow-up email providing another piece of value without asking for a call.</li>
+        </ul>
       </>
     )
   },
