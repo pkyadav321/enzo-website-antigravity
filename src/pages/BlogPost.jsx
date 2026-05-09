@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const POSTS_CONTENT = {
   'best-digital-marketing-varanasi-2026': {
@@ -354,9 +356,25 @@ const POSTS_CONTENT = {
 const BlogPost = () => {
   const { postId } = useParams();
   const post = POSTS_CONTENT[postId];
+  const [markdownContent, setMarkdownContent] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [postId]);
+
+  useEffect(() => {
+    // Attempt to dynamically load a markdown file if it exists
+    const loadMarkdown = async () => {
+      try {
+        // Vite specific dynamic import for raw string
+        const mdModule = await import(`../content/blogs/${postId}.md?raw`);
+        setMarkdownContent(mdModule.default);
+      } catch (err) {
+        // Fallback to empty string if no md file exists, it will use post.content instead
+        setMarkdownContent('');
+      }
+    };
+    loadMarkdown();
   }, [postId]);
 
   // Dynamic SEO: title + meta description + Article schema
@@ -420,9 +438,17 @@ const BlogPost = () => {
         </div>
 
         <div className="reveal stagger-2" style={{ color: '#aaa', fontSize: '1.2rem', lineHeight: 1.9, textAlign: 'left' }}>
-          {post.content}
+          {markdownContent ? (
+            <div className="markdown-body" style={{ color: '#aaa', fontSize: '1.2rem', lineHeight: 1.9 }}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {markdownContent}
+              </ReactMarkdown>
+            </div>
+          ) : (
+            post.content
+          )}
           
-          <p style={{ marginBottom: '2.5rem' }}>
+          <p style={{ marginBottom: '2.5rem', marginTop: '2.5rem' }}>
             The conclusion is simple: Brands that prioritize creative excellence combined with data-driven strategy will compound their growth at a rate that traditional agencies simply cannot match.
           </p>
         </div>
