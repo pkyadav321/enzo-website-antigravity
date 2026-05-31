@@ -9,7 +9,7 @@ const WhyChooseUs = () => (
           Tired of agencies that overpromise <br className="hide-mobile" />
           and <span className="text-accent">underdeliver?</span>
         </h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
+        <p style={{ color: '#3f3f46', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
           You don't need another report showing "impressions". You need qualified leads, foot traffic, and measurable revenue. We exist to fix the broken agency model.
         </p>
         <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
