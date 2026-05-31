@@ -35,7 +35,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" style={{ background: '#02040a', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
+    <section id="process" style={{ background: 'transparent', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
       {/* Background Decorative elements */}
       <div style={{
         position: 'absolute',
@@ -69,7 +69,7 @@ const Process = () => {
               fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
               fontWeight: 900, 
               lineHeight: 1, 
-              color: '#fff', 
+              color: 'var(--text-primary)', 
               marginBottom: '2rem',
               letterSpacing: '-0.04em'
             }}
@@ -147,9 +147,9 @@ const Process = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 style={{
                   width: '45%',
-                  background: 'rgba(255, 255, 255, 0.02)',
+                  background: 'var(--card-bg)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
+                  border: '1px solid var(--border-color)',
                   borderRadius: '32px',
                   padding: '3rem',
                   position: 'relative',
@@ -164,7 +164,7 @@ const Process = () => {
                   right: '10px',
                   fontSize: '8rem',
                   fontWeight: 900,
-                  color: 'rgba(255, 255, 255, 0.02)',
+                  color: 'var(--border-color)',
                   zIndex: -1,
                   fontFamily: "'Outfit', sans-serif"
                 }}>{step.num}</div>
@@ -184,7 +184,7 @@ const Process = () => {
                 </div>
 
                 <h4 style={{ 
-                  color: '#fff', 
+                  color: 'var(--text-primary)', 
                   fontSize: '1.8rem', 
                   fontWeight: 800, 
                   marginBottom: '1rem',

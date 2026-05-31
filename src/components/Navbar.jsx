@@ -55,7 +55,7 @@ const Navbar = () => {
         {/* Desktop Dropdown */}
         {!mobile && (
           <div className={`nav-dropdown ${isServicesOpen ? 'open' : ''}`}>
-            <Link to="/#services" className="nav-dropdown-item" onClick={() => { window.scrollTo(0, 0); setIsMenuOpen(false); setIsServicesOpen(false); }} style={{ fontWeight: 800, color: '#fff' }}>
+            <Link to="/#services" className="nav-dropdown-item" onClick={() => { window.scrollTo(0, 0); setIsMenuOpen(false); setIsServicesOpen(false); }} style={{ fontWeight: 800, color: 'var(--primary)' }}>
               All Services
             </Link>
             {servicesLinks.map((s) => (
@@ -98,7 +98,7 @@ const Navbar = () => {
       <div className="navbar-logo">
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <img
-            src="/images/logodarktheme/logo.webp"
+            src="/images/logobrightheme/logo.webp"
             alt="The Enzo Media"
             style={{ height: '34px', width: 'auto', objectFit: 'contain' }}
           />

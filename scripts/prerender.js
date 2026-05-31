@@ -51,7 +51,8 @@ const routes = [
   '/blog/brand-identity-scaling-business',
   '/blog/b2b-lead-generation-strategies',
   '/blog/real-estate-digital-marketing-seo-2026',
-  '/blog/local-seo-ai-trends-2026'
+  '/blog/local-seo-ai-trends-2026',
+  '/casestudy/sambhala-orchard'
 ];
 
 (async () => {

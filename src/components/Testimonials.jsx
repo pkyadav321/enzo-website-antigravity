@@ -34,7 +34,7 @@ const Testimonials = () => (
       {/* Centered header */}
       <div className="reveal" style={{ marginBottom: '5rem', textAlign: 'center' }}>
         <span className="section-label">Client Stories</span>
-        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 6rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
+        <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 6rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: 'var(--text-primary)', marginBottom: '2.5rem' }}>
           What They Say.
         </h2>
         <p style={{ color: '#666', fontSize: '1.1rem', lineHeight: 1.7, maxWidth: '500px', margin: '0 auto' }}>

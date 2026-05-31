@@ -32,12 +32,20 @@ function ScrollToTop() {
   
   useEffect(() => {
     if (!hash) {
-      window.scrollTo(0, 0);
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
     } else {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        if (window.lenis) {
+          window.lenis.scrollTo(element, { duration: 1.2 });
+        } else {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   }, [pathname, hash]);
@@ -51,13 +59,24 @@ function setMetaDescription(content) {
   if (meta) meta.setAttribute('content', content);
 }
 
+// Helper to set canonical link dynamically
+function setCanonicalLink(href) {
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', href);
+}
+
 // Title management
 function TitleManager() {
   const location = useLocation();
   
   useEffect(() => {
     const titles = {
-      '/': 'Enzo Media | Best Digital Marketing Agency in Varanasi, Gonda, Ayodhya & Delhi NCR',
+      '/': 'Enzo Media | Best Digital Marketing Agency in Gonda, Ayodhya & Varanasi (Banaras)',
       '/about': 'About Us | The Enzo Media — Our Story & Mission',
       '/gallery': 'Work Gallery | Enzo Media Creative Portfolio',
       '/blog': 'Blog & Insights | Digital Marketing Tips by Enzo Media',
@@ -65,30 +84,34 @@ function TitleManager() {
       '/services': 'All Services | EnZo Media — Digital Marketing Agency',
       '/privacy-policy': 'Privacy Policy | EnZo Media',
       '/terms-and-conditions': 'Terms & Conditions | EnZo Media',
-      '/digital-marketing-varanasi': 'Digital Marketing Agency in Varanasi | The Enzo Media',
+      '/digital-marketing-varanasi': 'Digital Marketing Agency in Varanasi (Banaras) | The Enzo Media',
       '/google-ads-agency': 'Google Ads Agency | High ROI PPC Management | Enzo Media',
       '/social-media-marketing': 'Social Media Marketing Services | Brand Growth | Enzo Media',
     };
 
     const descriptions = {
-      '/': 'Enzo Media is a premium digital marketing agency in Varanasi, Gonda, Ayodhya & Delhi NCR. We specialize in performance ads, social media, brand design, and AI-powered marketing.',
-      '/about': 'Learn about Enzo Media — a creative performance agency built for brands that refuse mediocre results. Serving businesses across UP and Delhi NCR.',
+      '/': 'Enzo Media is a premium digital marketing agency in Gonda, Ayodhya, Delhi NCR & Varanasi (Banaras). We specialize in performance ads, school admissions marketing, real estate lead gen, and SEO.',
+      '/about': 'Learn about Enzo Media — a creative performance agency built for brands that refuse mediocre results. Serving Gonda, Ayodhya, Varanasi (Banaras), and Delhi NCR.',
       '/gallery': 'Explore our creative portfolio — branding, social media creatives, video ads, and more from The Enzo Media.',
       '/blog': 'Read the latest digital marketing insights, brand strategy tips, and AI marketing guides from The Enzo Media team.',
-      '/work': 'Explore Enzo Media case studies and client results. See how we scale brands across Varanasi, Ayodhya, Gonda & Delhi NCR.',
-      '/services': 'Explore all services by Enzo Media — Performance Ads, Social Media, Brand Design, Video Production, SEO. Serving Varanasi, Gonda, Ayodhya & Delhi NCR.',
-      '/digital-marketing-varanasi': 'Best digital marketing agency in Varanasi. Enzo Media helps local businesses grow with Google Ads, Social Media, and SEO.',
+      '/work': 'Explore Enzo Media case studies and client results. See how we scale brands across Gonda, Ayodhya, Varanasi & Delhi NCR.',
+      '/services': 'Explore all services by Enzo Media — Performance Ads, Social Media, Brand Design, Video Production, SEO. Serving Gonda, Ayodhya, Varanasi (Banaras), and Delhi NCR.',
+      '/digital-marketing-varanasi': 'Best digital marketing agency in Varanasi & Banaras. Enzo Media helps local businesses grow with Google Ads, Social Media, and SEO.',
       '/google-ads-agency': 'High-ROI Google Ads management by Enzo Media. We turn ad spend into measurable results for businesses across India.',
       '/social-media-marketing': 'Premium social media marketing services by Enzo Media. Build a loyal audience and drive real business growth.',
     };
 
     const path = location.pathname;
     
+    // Dynamically update self-referential canonical URL
+    const canonicalUrl = `https://theenzomedia.com${path === '/' ? '' : path}`;
+    setCanonicalLink(canonicalUrl);
+    
     if (path.startsWith('/services/') && path !== '/services') {
       const serviceId = path.split('/')[2];
       const serviceName = serviceId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       document.title = `${serviceName} | Enzo Media`;
-      setMetaDescription(`${serviceName} services by Enzo Media. Premium digital marketing solutions in Varanasi, Gonda, Ayodhya & Delhi NCR.`);
+      setMetaDescription(`${serviceName} services by Enzo Media. Premium digital marketing solutions in Gonda, Ayodhya, Varanasi (Banaras) & Delhi NCR.`);
     } else if (path.startsWith('/blog/')) {
       // Blog posts set their own title via useEffect in BlogPost.jsx
     } else if (path.startsWith('/work/')) {
@@ -97,8 +120,14 @@ function TitleManager() {
     } else if (path.startsWith('/marketing-agency-')) {
       const cityId = path.replace('/marketing-agency-', '');
       const cityName = cityId.charAt(0).toUpperCase() + cityId.slice(1);
-      document.title = `Best Marketing Agency in ${cityName} | Enzo Media`;
-      setMetaDescription(`Enzo Media is the top-rated digital marketing agency in ${cityName}. We help local businesses grow with performance ads, social media, and brand design.`);
+      
+      if (cityId === 'varanasi') {
+        document.title = `Best Digital Marketing Agency in Varanasi (Banaras) | Enzo Media`;
+        setMetaDescription(`Top-rated digital marketing & SEO agency in Varanasi (Banaras). Enzo Media helps local businesses scale with maps ranking, social media, and Google Ads.`);
+      } else {
+        document.title = `Best Marketing Agency in ${cityName} | Enzo Media`;
+        setMetaDescription(`Enzo Media is the top-rated digital marketing agency in ${cityName}. We help local businesses grow with performance ads, social media, and brand design.`);
+      }
     } else {
       document.title = titles[path] || 'Enzo Media';
       if (descriptions[path]) setMetaDescription(descriptions[path]);
@@ -119,6 +148,7 @@ function AppContent() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+    window.lenis = lenis;
 
     let rafId;
     function raf(time) {
@@ -138,12 +168,13 @@ function AppContent() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      window.lenis = null;
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   return (
-    <div className="bg-background text-white selection:bg-primary selection:text-white" style={{ cursor: 'none' }}>
+    <div className="bg-background selection:bg-primary selection:text-white" style={{ cursor: 'none', color: 'var(--text-primary)' }}>
       {/* Animated gradient orbs */}
       <div className="mesh-bg" aria-hidden="true" />
       <div className="orb-3" aria-hidden="true" />
@@ -157,7 +188,7 @@ function AppContent() {
           position: 'fixed',
           inset: 0,
           backgroundImage:
-            'linear-gradient(to right, rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.018) 1px, transparent 1px)',
+            'linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
           pointerEvents: 'none',
           zIndex: -1,
@@ -181,7 +212,7 @@ function AppContent() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeInOut' }}
         >
-          <React.Suspense fallback={<div style={{ height: '100vh', background: '#02040a' }} />}>
+          <React.Suspense fallback={<div style={{ height: '100vh', background: 'var(--background)' }} />}>
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -198,7 +229,13 @@ function AppContent() {
               <Route path="/digital-marketing-varanasi" element={<DigitalMarketing />} />
               <Route path="/google-ads-agency" element={<GoogleAds />} />
               <Route path="/social-media-marketing" element={<SocialMedia />} />
-              <Route path="/marketing-agency-:cityId" element={<CityLandingPage />} />
+              <Route path="/marketing-agency-varanasi" element={<CityLandingPage />} />
+              <Route path="/marketing-agency-gonda" element={<CityLandingPage />} />
+              <Route path="/marketing-agency-ayodhya" element={<CityLandingPage />} />
+              <Route path="/marketing-agency-delhi" element={<CityLandingPage />} />
+              <Route path="/marketing-agency-prayagraj" element={<CityLandingPage />} />
+              <Route path="/marketing-agency-ghaziabad" element={<CityLandingPage />} />
+              <Route path="/marketing-agency/:cityId" element={<CityLandingPage />} />
               <Route path="/casestudy/sambhala-orchard" element={<BrandingCaseStudy />} />
               <Route path="*" element={<Home />} />
             </Routes>

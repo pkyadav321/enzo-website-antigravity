@@ -23,7 +23,7 @@ const ServicesPage = () => {
   }, []);
 
   return (
-    <main style={{ background: '#02040a', minHeight: '100vh', paddingTop: '80px' }}>
+    <main style={{ background: 'var(--background)', minHeight: '100vh', paddingTop: '80px' }}>
       {/* Header */}
       <section style={{ padding: 'clamp(4rem, 8vw, 8rem) 2rem 4rem', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
         <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#666', fontSize: '0.85rem', textDecoration: 'none', marginBottom: '3rem', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.05em' }}
@@ -34,10 +34,10 @@ const ServicesPage = () => {
         <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#ff4d00', display: 'block', marginBottom: '1.5rem' }}>
           What We Do
         </span>
-        <h1 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', fontWeight: 900, lineHeight: 1.05, color: '#fff', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
+        <h1 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', fontWeight: 900, lineHeight: 1.05, color: 'var(--text-primary)', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
           Our <span style={{ color: '#ff4d00' }}>Services.</span>
         </h1>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: '#666', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
           Every service is built around one outcome — measurable, compounding growth for your business across Varanasi, Gonda, Ayodhya, and Delhi NCR.
         </p>
       </section>
@@ -50,12 +50,12 @@ const ServicesPage = () => {
             return (
               <Link key={s.num} to={s.path} style={{ textDecoration: 'none' }}>
                 <div
-                  style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '24px', padding: '2.5rem', cursor: 'pointer', transition: 'all 0.3s', position: 'relative', overflow: 'hidden', height: '100%' }}
+                  style={{ background: 'var(--card-bg)', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '2.5rem', cursor: 'pointer', transition: 'all 0.3s', position: 'relative', overflow: 'hidden', height: '100%' }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,77,0,0.3)'; e.currentTarget.style.background = 'rgba(255,77,0,0.04)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.background = 'var(--card-bg)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
                   {/* Number bg */}
-                  <div style={{ position: 'absolute', top: '-10px', right: '15px', fontSize: '6rem', fontWeight: 900, color: 'rgba(255,255,255,0.02)', fontFamily: "'Outfit', sans-serif", pointerEvents: 'none' }}>{s.num}</div>
+                  <div style={{ position: 'absolute', top: '-10px', right: '15px', fontSize: '6rem', fontWeight: 900, color: 'rgba(0,0,0,0.015)', fontFamily: "'Outfit', sans-serif", pointerEvents: 'none' }}>{s.num}</div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
                     <div style={{ width: '52px', height: '52px', background: 'rgba(255,77,0,0.08)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ff4d00' }}>
@@ -64,8 +64,8 @@ const ServicesPage = () => {
                     <ArrowUpRight size={18} color="#ff4d00" style={{ opacity: 0.6 }} />
                   </div>
 
-                  <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>{s.title}</h2>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', color: '#777', lineHeight: 1.7 }}>{s.desc}</p>
+                  <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>{s.title}</h2>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.7 }}>{s.desc}</p>
 
                   <div style={{ marginTop: '2rem', fontSize: '0.75rem', fontWeight: 700, color: '#ff4d00', fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                     Explore Service →
@@ -78,11 +78,11 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '5rem 2rem 8rem', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-        <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, color: '#fff', marginBottom: '1rem' }}>
+      <section style={{ padding: '5rem 2rem 8rem', textAlign: 'center', borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '1rem' }}>
           Not sure which service you need?
         </h2>
-        <p style={{ color: '#666', marginBottom: '2.5rem', fontSize: '1.1rem' }}>Let's have a free 30-minute strategy call and find out.</p>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem', fontSize: '1.1rem' }}>Let's have a free 30-minute strategy call and find out.</p>
         <Link to="/#contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2.5rem', background: 'linear-gradient(135deg, #ff2200, #ff4d00, #ff8c00)', color: '#fff', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', borderRadius: '100px', textDecoration: 'none', boxShadow: '0 8px 32px rgba(255,77,0,0.35)' }}>
           Get a Free Audit ↗
         </Link>

@@ -22,14 +22,15 @@ const staticPages = [
   { url: '/work', priority: '0.7', changefreq: 'weekly' },
   { url: '/gallery', priority: '0.6', changefreq: 'weekly' },
   { url: '/blog', priority: '0.8', changefreq: 'daily' },
-  { url: '/digital-marketing-varanasi', priority: '0.9', changefreq: 'weekly' },
+  { url: '/marketing-agency-gonda', priority: '0.95', changefreq: 'weekly' },
+  { url: '/marketing-agency-ayodhya', priority: '0.95', changefreq: 'weekly' },
+  { url: '/marketing-agency-varanasi', priority: '0.7', changefreq: 'weekly' },
+  { url: '/digital-marketing-varanasi', priority: '0.7', changefreq: 'weekly' },
   { url: '/google-ads-agency', priority: '0.9', changefreq: 'weekly' },
   { url: '/social-media-marketing', priority: '0.9', changefreq: 'weekly' },
-  { url: '/marketing-agency-varanasi', priority: '0.9', changefreq: 'weekly' },
-  { url: '/marketing-agency-ayodhya', priority: '0.9', changefreq: 'weekly' },
-  { url: '/marketing-agency-gonda', priority: '0.9', changefreq: 'weekly' },
   { url: '/marketing-agency-prayagraj', priority: '0.9', changefreq: 'weekly' },
   { url: '/marketing-agency-ghaziabad', priority: '0.9', changefreq: 'weekly' },
+  { url: '/casestudy/sambhala-orchard', priority: '0.8', changefreq: 'weekly' },
 ];
 
 // Dynamic Services (based on servicesData.js)
@@ -42,8 +43,16 @@ const dynamicServices = [
   'ecommerce-listing'
 ].map(id => ({ url: `/services/${id}`, priority: '0.7', changefreq: 'monthly' }));
 
-// Dynamic Blog Posts (based on Blog.jsx)
+// Dynamic Blog Posts (based on Blog.jsx / BlogPost.jsx)
 const dynamicBlogs = [
+  'best-digital-marketing-varanasi-2026',
+  'facebook-ads-failing-2026',
+  'real-estate-marketing-strategy-2026',
+  'website-performance-seo-2026',
+  'brand-identity-scaling-business',
+  'b2b-lead-generation-strategies',
+  'real-estate-digital-marketing-seo-2026',
+  'local-seo-ai-trends-2026',
   'ai-importance-2026',
   'performance-creative'
 ].map(id => ({ url: `/blog/${id}`, priority: '0.6', changefreq: 'monthly' }));

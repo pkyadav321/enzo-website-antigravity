@@ -58,7 +58,7 @@ const Hero = () => (
     />
 
     {/* Top-right coord marker */}
-    <div className="reveal" style={{ position: 'absolute', top: '40px', right: '40px', opacity: 0.2, color: '#fff', fontSize: '0.6rem', letterSpacing: '0.2em', pointerEvents: 'none', textAlign: 'right' }}>
+    <div className="reveal" style={{ position: 'absolute', top: '40px', right: '40px', opacity: 0.15, color: 'var(--text-tertiary)', fontSize: '0.6rem', letterSpacing: '0.2em', pointerEvents: 'none', textAlign: 'right' }}>
       <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style={{ marginLeft: 'auto' }}>
         <path d="M30 0V60M0 30H60" stroke="currentColor" strokeWidth="0.5" />
         <circle cx="30" cy="30" r="2" fill="currentColor" />
@@ -67,7 +67,7 @@ const Hero = () => (
     </div>
 
     {/* Bottom-left system marker */}
-    <div className="reveal" style={{ position: 'absolute', bottom: '60px', left: '40px', opacity: 0.15, color: '#fff', fontSize: '0.6rem', pointerEvents: 'none', textAlign: 'left' }}>
+    <div className="reveal" style={{ position: 'absolute', bottom: '60px', left: '40px', opacity: 0.12, color: 'var(--text-tertiary)', fontSize: '0.6rem', pointerEvents: 'none', textAlign: 'left' }}>
       <svg width="100" height="20" viewBox="0 0 100 20" fill="none">
         {[...Array(20)].map((_, i) => (
           <rect key={i} x={i * 5} y="0" width="1" height={i % 5 === 0 ? '20' : '10'} fill="currentColor" />
@@ -87,7 +87,7 @@ const Hero = () => (
           fontWeight: 900,
           lineHeight: 1.1,
           letterSpacing: '-0.04em',
-          color: '#fff',
+          color: 'var(--text-primary)',
           margin: '0 auto 2.5rem',
           maxWidth: '1400px', // Increased width to prevent 3rd line
         }}
@@ -114,12 +114,12 @@ const Hero = () => (
         style={{
           display: 'flex', flexDirection: 'column', alignItems: 'center',
           gap: '3rem', paddingBottom: '5rem',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid var(--border-color)',
         }}
       >
-        <p style={{ fontSize: '1.2rem', color: '#666', lineHeight: 1.7, maxWidth: '600px', fontWeight: 400 }}>
+        <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '600px', fontWeight: 400 }}>
           The leading AI-powered creative performance agency scaling brands across{' '}
-          <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b>.
+          <b>Gonda</b>, <b>Ayodhya</b>, <b>Varanasi (Banaras)</b>, and <b>Delhi NCR</b>.
           We turn ad spend into measurable profit. Stop guessing. Start scaling.
         </p>
         <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>

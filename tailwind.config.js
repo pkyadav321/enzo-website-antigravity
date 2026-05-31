@@ -10,20 +10,20 @@ export default {
       },
       zIndex: { "-5": "-5" },
       colors: {
-        background: "#02040a",
+        background: "var(--background)",
         primary: {
-          DEFAULT: "#ff4d00",
-          light:   "#ff8c00",
-          dark:    "#e64500",
-          start:   "#ff2200",
+          DEFAULT: "var(--primary)",
+          light:   "var(--primary-light)",
+          dark:    "var(--primary-dark)",
+          start:   "var(--grad-start)",
         },
-        accent: "#ff4d00",
+        accent: "var(--accent)",
       },
       backgroundImage: {
         // Full red→orange gradient — use as bg-gradient-primary
-        "gradient-primary": "linear-gradient(135deg, #ff2200 0%, #ff4d00 50%, #ff8c00 100%)",
-        "gradient-dark":    "linear-gradient(180deg, rgba(2,4,10,0) 0%, #02040a 100%)",
-        "gradient-glow":    "radial-gradient(circle, rgba(255,77,0,0.25) 0%, rgba(255,140,0,0.08) 50%, transparent 70%)",
+        "gradient-primary": "var(--grad-full)",
+        "gradient-dark":    "linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--background) 100%)",
+        "gradient-glow":    "var(--grad-glow)",
       },
       animation: {
         first:              "moveVertical 30s ease infinite",

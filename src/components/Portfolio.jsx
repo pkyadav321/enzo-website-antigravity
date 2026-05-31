@@ -49,7 +49,7 @@ const PortfolioCard = ({ src, cfg, index, isExploded, isMobile }) => {
   // On mobile, we bypass the absolute "explosion" layout and use normal flex layout in a horizontal scroll container
   if (isMobile) {
     return (
-      <div style={{ flexShrink: 0, width: '280px', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ flexShrink: 0, width: '280px', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
         <img src={src} alt="Portfolio Item" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', display: 'block' }} />
       </div>
     );
@@ -104,14 +104,14 @@ const PortfolioCard = ({ src, cfg, index, isExploded, isMobile }) => {
         style={{
           borderRadius: '16px',
           overflow: 'hidden',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05)',
-          background: '#111',
+          boxShadow: '0 20px 50px rgba(0,0,0,0.06), 0 0 0 1px var(--border-color)',
+          background: 'var(--card-bg)',
           width: '100%'
         }}
         whileHover={{
           y: -10,
           scale: 1.05,
-          boxShadow: '0 30px 70px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,77,0,0.4)',
+          boxShadow: '0 30px 70px rgba(255,77,0,0.1), 0 0 0 1px rgba(255,77,0,0.4)',
           transition: { duration: 0.3 }
         }}
       >
@@ -159,7 +159,7 @@ const Portfolio = () => {
         <h2 style={{
           fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
           fontWeight: 900,
-          color: '#fff',
+          color: 'var(--text-primary)',
           marginTop: '1.5rem',
           lineHeight: 1.1,
           letterSpacing: '-0.04em'
@@ -167,7 +167,7 @@ const Portfolio = () => {
           Work we're{' '}
           <span className="text-accent">proud of.</span>
         </h2>
-        <p style={{ color: '#555', marginTop: '1rem' }}>
+        <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>
           Scroll-stopping creatives engineered for performance.
         </p>
       </div>

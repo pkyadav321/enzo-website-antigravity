@@ -7,7 +7,7 @@ const blogPosts = [
     title: 'How to Find the Best Digital Marketing Agency in Varanasi in 2026',
     date: 'May 14, 2026',
     excerpt: 'Stop wasting ad spend on agencies that don\'t deliver. Here is the ultimate guide to finding the top performance marketing and SEO experts in UP.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1561361513-2d000a50f0db?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'facebook-ads-failing-2026',
@@ -21,7 +21,7 @@ const blogPosts = [
     title: 'Digital Marketing Strategy for Real Estate Businesses: The 2026 Playbook',
     date: 'May 12, 2026',
     excerpt: 'The exact digital marketing blueprint that top real estate developers in Delhi NCR and UP are using to generate high-quality home buyer leads.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'website-performance-seo-2026',
@@ -56,7 +56,7 @@ const blogPosts = [
     title: 'Top Digital Marketing Trends for Indian Businesses in 2026',
     date: 'May 10, 2026',
     excerpt: 'The 2026 playbook for Indian businesses: Why dominating Google\'s 3-Pack and shifting to AI-driven regional marketing is the key to local supremacy.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1596495577886-d925f1b75389?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 'ai-importance-2026',
@@ -82,7 +82,7 @@ const Blog = () => {
       <div className="container">
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '8rem' }}>
           <span className="section-label">Editorial Blog</span>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: 'var(--text-primary)' }}>
             Thoughts on <span className="text-accent">Growth.</span>
           </h1>
         </div>
@@ -94,9 +94,9 @@ const Blog = () => {
                 <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
               </div>
               <div style={{ padding: '2.5rem' }}>
-                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#444', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{post.date}</div>
-                <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: '1.5rem', lineHeight: 1.2 }}>{post.title}</h2>
-                <p style={{ color: '#666', lineHeight: 1.7, marginBottom: '2rem' }}>{post.excerpt}</p>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-tertiary)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{post.date}</div>
+                <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: 'var(--text-primary)', marginBottom: '1.5rem', lineHeight: 1.2 }}>{post.title}</h2>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '2rem' }}>{post.excerpt}</p>
                 <span style={{ color: '#e8352a', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Read Post ↗</span>
               </div>
             </div>

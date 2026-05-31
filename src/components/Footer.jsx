@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => (
   <footer className="footer" style={{ overflowX: 'hidden' }}>
     {/* Big footer marquee - Full Width (Edge to Edge) */}
-    <div className="footer-marquee-container" style={{ borderBottom: '1px solid #1a1a1a', padding: '3rem 0', marginBottom: '5rem', overflow: 'hidden', background: '#050505' }}>
+    <div className="footer-marquee-container" style={{ borderBottom: '1px solid var(--border-color)', padding: '3rem 0', marginBottom: '5rem', overflow: 'hidden', background: 'var(--section-bg)' }}>
       <div className="marquee-container" style={{ position: 'relative', opacity: 1 }}>
         <div className="marquee-content" style={{ fontSize: 'clamp(2rem, 8vw, 10rem)', fontWeight: 900, lineHeight: 1 }}>
           {[...Array(5)].map((_, i) => (
@@ -20,10 +20,10 @@ const Footer = () => (
       <div className="footer-grid">
         <div className="footer-brand">
           <Link to="/" style={{ display: 'inline-flex', marginBottom: '1.25rem' }}>
-            <img src="/images/logodarktheme/logo.webp" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
+            <img src="/images/logobrightheme/logo.webp" alt="The Enzo Media" style={{ height: '34px', width: 'auto', objectFit: 'contain' }} />
           </Link>
           <p style={{ color: '#666', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
-            A premium creative performance agency helping brands across <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b> scale with data-driven marketing and creative excellence.
+            A premium creative performance agency helping brands across <b>Gonda</b>, <b>Ayodhya</b>, <b>Varanasi (Banaras)</b>, and <b>Delhi NCR</b> scale with data-driven marketing and creative excellence.
           </p>
           <div className="footer-socials" style={{ display: 'flex', gap: '1rem' }}>
             <a href="https://www.instagram.com/theenzomedia" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
@@ -40,7 +40,7 @@ const Footer = () => (
         </div>
 
         <div className="footer-col">
-          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Quick Links</h4>
+          <h4 style={{ color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Quick Links</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.75rem' }}><Link to="/#services" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>All Services</Link></li>
             <li style={{ marginBottom: '0.75rem' }}><Link to="/work" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Case Studies</Link></li>
@@ -51,7 +51,7 @@ const Footer = () => (
         </div>
 
         <div className="footer-col">
-          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Core Solutions</h4>
+          <h4 style={{ color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Core Solutions</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.75rem' }}><Link to="/digital-marketing-varanasi" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Digital Marketing</Link></li>
             <li style={{ marginBottom: '0.75rem' }}><Link to="/google-ads-agency" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Google Ads</Link></li>
@@ -61,26 +61,26 @@ const Footer = () => (
         </div>
 
         <div className="footer-col">
-          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Service Areas</h4>
+          <h4 style={{ color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Service Areas</h4>
           <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-varanasi" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Varanasi</Link></li>
-            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-ayodhya" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Ayodhya</Link></li>
             <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-gonda" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Gonda</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-ayodhya" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Ayodhya</Link></li>
+            <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-varanasi" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Varanasi (Banaras)</Link></li>
             <li style={{ marginBottom: '0.75rem' }}><Link to="/marketing-agency-delhi" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.3s' }}>Delhi NCR</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
-          <h4 style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Location</h4>
+          <h4 style={{ color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>Location</h4>
           <div className="footer-location" style={{ color: '#666' }}>
             <div className="loc-label" style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: '#444', marginBottom: '0.3rem' }}>Headquarters</div>
-            <div className="loc-city" style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff' }}>Varanasi, UP</div>
+            <div className="loc-city" style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>Varanasi, UP</div>
             <div className="loc-country">India</div>
           </div>
         </div>
       </div>
 
-      <div className="footer-bottom" style={{ borderTop: '1px solid #1a1a1a', marginTop: '5rem', padding: '2rem 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', color: '#444', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="footer-bottom" style={{ borderTop: '1px solid var(--border-color)', marginTop: '5rem', padding: '2rem 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', color: 'var(--text-tertiary)', flexWrap: 'wrap', gap: '1rem' }}>
         <span>© {new Date().getFullYear()} The Enzo Media. All rights reserved.</span>
         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
           <Link to="/privacy-policy" style={{ color: '#444', textDecoration: 'none', transition: 'color 0.2s' }}

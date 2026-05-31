@@ -30,7 +30,7 @@ const FAQItem = ({ question, answer, index }) => {
     <div 
       className={`reveal stagger-${index + 1}`} 
       style={{ 
-        borderBottom: '1px solid #1a1a1a', 
+        borderBottom: '1px solid var(--border-color)', 
         padding: '2rem 0', 
         textAlign: 'left', 
         cursor: 'pointer' 
@@ -42,14 +42,14 @@ const FAQItem = ({ question, answer, index }) => {
           fontFamily: "'Inter', sans-serif", 
           fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', 
           fontWeight: 800, 
-          color: isOpen ? '#e8352a' : '#fff',
+          color: isOpen ? 'var(--primary)' : 'var(--text-primary)',
           transition: 'color 0.3s'
         }}>
           {question}
         </h4>
         <span style={{ 
           fontSize: '1.5rem', 
-          color: isOpen ? '#e8352a' : '#222', 
+          color: isOpen ? 'var(--primary)' : 'var(--text-tertiary)', 
           transform: isOpen ? 'rotate(45deg)' : 'rotate(0)', 
           transition: 'all 0.3s' 
         }}>+</span>
@@ -61,7 +61,7 @@ const FAQItem = ({ question, answer, index }) => {
         opacity: isOpen ? 1 : 0,
         marginTop: isOpen ? '1.5rem' : '0'
       }}>
-        <p style={{ color: '#666', fontSize: '1rem', lineHeight: 1.7, maxWidth: '800px' }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.7, maxWidth: '800px' }}>
           {answer}
         </p>
       </div>
@@ -85,13 +85,13 @@ const FAQ = () => {
           fontWeight: 900, 
           lineHeight: 1.15, 
           letterSpacing: '-0.05em', 
-          color: '#fff', 
+          color: 'var(--text-primary)', 
           marginBottom: '2.5rem' 
         }}>
           Frequently<br />
           <span className="text-italic-accent">Asked Questions.</span>
         </h2>
-        <p style={{ color: '#666', fontSize: '1.1rem', lineHeight: 1.7, maxWidth: '500px', margin: '0 auto' }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, maxWidth: '500px', margin: '0 auto' }}>
           Everything you need to know before we start scaling your business.
         </p>
       </div>

@@ -23,7 +23,7 @@ const plans = [
 ];
 
 const Plans = () => (
-  <section id="pricing" style={{ background: '#0d0d0d' }}>
+  <section id="pricing" style={{ background: 'var(--section-bg)', padding: '120px 0' }}>
     <div className="container">
       <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '4rem', marginBottom: '4rem', alignItems: 'flex-end' }}>
         <div>

@@ -14,7 +14,7 @@ const PortfolioMain = () => {
   const isMobile = windowWidth < 768;
 
   return (
-    <main style={{ background: '#02040a', minHeight: '100vh', paddingTop: isMobile ? '60px' : '80px' }}>
+    <main style={{ background: 'var(--background)', minHeight: '100vh', paddingTop: isMobile ? '60px' : '80px' }}>
       {/* ─── HEADER ─── */}
       <section style={{ padding: isMobile ? '4rem 1.5rem 3rem' : '6rem 2rem 5rem', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
         <Link to="/" style={{
@@ -40,7 +40,7 @@ const PortfolioMain = () => {
           fontSize: 'clamp(2.5rem, 5vw, 5rem)',
           fontWeight: 800,
           lineHeight: 1.05,
-          color: '#fff',
+          color: 'var(--text-primary)',
           letterSpacing: '-0.03em',
           marginBottom: '1.5rem',
           textTransform: 'uppercase'
@@ -56,20 +56,20 @@ const PortfolioMain = () => {
           gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
           borderRadius: isMobile ? '20px' : '24px',
           overflow: 'hidden',
-          border: '1px solid rgba(255,255,255,0.06)',
-          boxShadow: '0 40px 100px rgba(0,0,0,0.6)',
-          background: '#0a0a0a',
+          border: '1px solid var(--border-color)',
+          boxShadow: '0 40px 100px rgba(0,0,0,0.06)',
+          background: 'var(--card-bg)',
           minHeight: isMobile ? 'auto' : '520px'
         }}>
           {/* Top/Left — Image (Mobile moves image to top for better impact) */}
           {isMobile && (
             <div style={{
-              background: '#0e0e0e',
+              background: 'var(--section-bg)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               padding: '3rem 2rem',
-              borderBottom: '1px solid rgba(255,255,255,0.04)'
+              borderBottom: '1px solid var(--border-color)'
             }}>
               <img
                 src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png"
@@ -107,7 +107,7 @@ const PortfolioMain = () => {
               fontSize: 'clamp(1.8rem, 3.5vw, 3.5rem)',
               fontWeight: 800,
               lineHeight: 1.1,
-              color: '#fff',
+              color: 'var(--text-primary)',
               letterSpacing: '-0.02em'
             }}>
               Sambhala <span style={{ color: '#ff4d00' }}>Orchard & Agro.</span>
@@ -116,7 +116,7 @@ const PortfolioMain = () => {
             <p style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: isMobile ? '0.95rem' : '1.05rem',
-              color: '#777',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7
             }}>
               A full brand identity system for a premium agricultural brand — from logo design and color systems to brand guidelines and packaging identity.
@@ -131,7 +131,7 @@ const PortfolioMain = () => {
                   border: '1px solid rgba(255,77,0,0.25)',
                   background: 'rgba(255,77,0,0.06)',
                   fontSize: '0.7rem',
-                  color: '#ccc',
+                  color: 'var(--text-secondary)',
                   fontFamily: "'Space Grotesk', sans-serif",
                   letterSpacing: '0.05em'
                 }}>
@@ -171,12 +171,12 @@ const PortfolioMain = () => {
           {/* Desktop — Right Logo visual */}
           {!isMobile && (
             <div style={{
-              background: '#0e0e0e',
+              background: 'var(--section-bg)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               padding: '4rem',
-              borderLeft: '1px solid rgba(255,255,255,0.04)'
+              borderLeft: '1px solid var(--border-color)'
             }}>
               <img
                 src="/branding/SAMBHALAORCHARD&AGROENGLISHFinal.png"
@@ -196,14 +196,14 @@ const PortfolioMain = () => {
       <section style={{
         padding: isMobile ? '4rem 1.5rem 6rem' : '5rem 2rem 8rem',
         textAlign: 'center',
-        borderTop: '1px solid rgba(255,255,255,0.04)'
+        borderTop: '1px solid var(--border-color)'
       }}>
         <p style={{
           fontFamily: "'Space Grotesk', sans-serif",
           fontSize: isMobile ? '0.7rem' : '0.8rem',
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
-          color: '#333',
+          color: 'var(--text-tertiary)',
           marginBottom: '1rem'
         }}>
           More Case Studies Coming Soon
@@ -212,7 +212,7 @@ const PortfolioMain = () => {
           fontFamily: "'Outfit', sans-serif",
           fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
           fontWeight: 700,
-          color: '#222',
+          color: 'var(--text-primary)',
           marginBottom: isMobile ? '2rem' : '3rem'
         }}>
           Ready to build your brand?

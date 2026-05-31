@@ -94,7 +94,7 @@ const Services = () => {
               fontWeight: 900,
               lineHeight: 1.15,
               letterSpacing: '-0.05em',
-              color: '#fff',
+              color: 'var(--text-primary)',
               marginBottom: '2.5rem',
             }}
           >
@@ -110,7 +110,7 @@ const Services = () => {
               Do.
             </span>
           </h2>
-          <p style={{ color: '#666', fontSize: '1.1rem', lineHeight: 1.7, maxWidth: '500px', margin: '0 auto' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, maxWidth: '500px', margin: '0 auto' }}>
             Every service is built around one outcome — measurable growth for your business.
           </p>
         </div>

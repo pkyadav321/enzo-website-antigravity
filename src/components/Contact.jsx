@@ -33,12 +33,12 @@ const Contact = () => {
         {/* Centered editorial CTA */}
         <div className="reveal section-header" style={{ textAlign: 'center' }}>
           <span className="section-label">Let's Talk</span>
-          <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(1.5rem, 6vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: '#fff', marginBottom: '2.5rem' }}>
+          <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(1.5rem, 6vw, 7rem)', fontWeight: 900, lineHeight: 1.15, letterSpacing: '-0.05em', color: 'var(--text-primary)', marginBottom: '2.5rem' }}>
             <span style={{ whiteSpace: 'nowrap' }}>Ready to</span><br />
             <span className="text-accent" style={{ whiteSpace: 'nowrap' }}>Dominate Your Market?</span>
           </h2>
-          <p style={{ color: '#666', fontSize: '1.2rem', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
-            Reaching out is free. We're currently helping businesses in <b>Varanasi</b>, <b>Gonda</b>, <b>Ayodhya</b>, and <b>Delhi NCR</b> scale. You'll walk away with a clear growth roadmap — even if we don't end up working together.
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
+            Reaching out is free. We're currently helping businesses in <b>Gonda</b>, <b>Ayodhya</b>, <b>Varanasi (Banaras)</b>, and <b>Delhi NCR</b> scale. You'll walk away with a clear growth roadmap — even if we don't end up working together.
           </p>
         </div>
 
@@ -82,17 +82,17 @@ const Contact = () => {
         </div>
 
         {/* Contact links */}
-        <div className="reveal stagger-3 contact-links-container" style={{ display: 'flex', justifyContent: 'center', gap: '6rem', flexWrap: 'wrap', paddingTop: '6rem', marginTop: '6rem', borderTop: '1px solid #1a1a1a', textAlign: 'center' }}>
+        <div className="reveal stagger-3 contact-links-container" style={{ display: 'flex', justifyContent: 'center', gap: '6rem', flexWrap: 'wrap', paddingTop: '6rem', marginTop: '6rem', borderTop: '1px solid var(--border-color)', textAlign: 'center' }}>
           {[
             { label: 'Call Us', value: '+91 9220797941', href: 'tel:+919220797941' },
             { label: 'Email', value: 'theenzomedia@gmail.com', href: 'mailto:theenzomedia@gmail.com' },
             { label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/919220797941' },
           ].map((c) => (
             <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', minWidth: '200px' }}>
-              <div style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#444', marginBottom: '0.75rem' }}>{c.label}</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', transition: 'color 0.2s' }}
-                onMouseEnter={e => e.currentTarget.style.color = '#e8352a'}
-                onMouseLeave={e => e.currentTarget.style.color = '#fff'}>
+              <div style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-tertiary)', marginBottom: '0.75rem' }}>{c.label}</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)', transition: 'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color = 'var(--primary)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'var(--text-primary)'}>
                 {c.value}
               </div>
             </a>

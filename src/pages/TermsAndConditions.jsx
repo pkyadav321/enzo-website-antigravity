@@ -8,11 +8,11 @@ const TermsAndConditions = () => {
   }, []);
 
   const sectionStyle = { marginBottom: '3rem' };
-  const headingStyle = { fontFamily: "'Outfit', sans-serif", fontSize: '1.5rem', fontWeight: 800, color: '#fff', marginBottom: '1rem' };
-  const paraStyle = { fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#777', lineHeight: 1.8 };
+  const headingStyle = { fontFamily: "'Outfit', sans-serif", fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '1rem' };
+  const paraStyle = { fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.8 };
 
   return (
-    <main style={{ background: '#02040a', minHeight: '100vh', paddingTop: '80px' }}>
+    <main style={{ background: 'var(--background)', minHeight: '100vh', paddingTop: '80px' }}>
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: 'clamp(4rem, 8vw, 7rem) 2rem 8rem' }}>
 
         <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#666', fontSize: '0.85rem', textDecoration: 'none', marginBottom: '3rem', fontFamily: "'Space Grotesk', sans-serif" }}
@@ -21,10 +21,10 @@ const TermsAndConditions = () => {
         >← Back to Home</Link>
 
         <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#ff4d00', display: 'block', marginBottom: '1.5rem' }}>Legal</span>
-        <h1 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, color: '#fff', marginBottom: '1rem', letterSpacing: '-0.03em' }}>Terms &amp; Conditions</h1>
-        <p style={{ color: '#555', fontSize: '0.9rem', marginBottom: '4rem', fontFamily: "'Space Grotesk', sans-serif" }}>Last updated: May 7, 2026</p>
+        <h1 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, color: 'var(--text-primary)', marginBottom: '1rem', letterSpacing: '-0.03em' }}>Terms &amp; Conditions</h1>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '4rem', fontFamily: "'Space Grotesk', sans-serif" }}>Last updated: May 7, 2026</p>
 
-        <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', marginBottom: '3rem' }} />
+        <div style={{ borderBottom: '1px solid var(--border-color)', marginBottom: '3rem' }} />
 
         <div style={sectionStyle}>
           <h2 style={headingStyle}>1. Acceptance of Terms</h2>
@@ -70,7 +70,7 @@ const TermsAndConditions = () => {
           <h2 style={headingStyle}>9. Contact</h2>
           <p style={paraStyle}>For any questions regarding these Terms, please contact us:</p>
           <div style={{ ...paraStyle, marginTop: '1rem', padding: '1.5rem 2rem', background: 'rgba(255,77,0,0.04)', border: '1px solid rgba(255,77,0,0.15)', borderRadius: '16px' }}>
-            <strong style={{ color: '#fff' }}>EnZo Media</strong><br />
+            <strong style={{ color: 'var(--text-primary)' }}>EnZo Media</strong><br />
             Email: <a href="mailto:theenzomedia@gmail.com" style={{ color: '#ff4d00', textDecoration: 'none' }}>theenzomedia@gmail.com</a><br />
             Phone: <a href="tel:+919220797941" style={{ color: '#ff4d00', textDecoration: 'none' }}>+91 9220797941</a><br />
             Location: Varanasi, Uttar Pradesh, India
