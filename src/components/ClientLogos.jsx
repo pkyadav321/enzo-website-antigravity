@@ -10,7 +10,7 @@ const clients = [
 ];
 
 const ClientLogos = () => (
-  <section style={{ padding: '60px 0', background: 'var(--section-bg)', position: 'relative' }}>
+  <section style={{ padding: '60px 0', background: 'var(--section-bg)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
     <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
       <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-tertiary)' }}>
         TRUSTED BY AMBITIOUS BRANDS

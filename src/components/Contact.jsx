@@ -1,43 +1,5 @@
 import React, { useState } from 'react';
 
-const MandalaBg = ({ style }) => (
-  <div 
-    style={{ 
-      position: 'absolute', 
-      width: '380px', 
-      height: '380px', 
-      opacity: 0.025, 
-      pointerEvents: 'none', 
-      color: 'var(--primary)',
-      zIndex: 0,
-      ...style 
-    }}
-  >
-    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-      <circle cx="50" cy="50" r="46" />
-      <circle cx="50" cy="50" r="38" />
-      <circle cx="50" cy="50" r="30" />
-      <circle cx="50" cy="50" r="22" />
-      <circle cx="50" cy="50" r="14" />
-      <circle cx="50" cy="50" r="6" />
-      {/* Radiant spokes */}
-      {[...Array(16)].map((_, i) => {
-        const angle = (i * Math.PI) / 8;
-        const x2 = 50 + 46 * Math.cos(angle);
-        const y2 = 50 + 46 * Math.sin(angle);
-        return <line key={i} x1="50" y1="50" x2={x2} y2={y2} strokeLinecap="round" />;
-      })}
-      {/* Concentric rings dots */}
-      {[...Array(24)].map((_, i) => {
-        const angle = (i * Math.PI) / 12;
-        const cx = 50 + 38 * Math.cos(angle);
-        const cy = 50 + 38 * Math.sin(angle);
-        return <circle key={i} cx={cx} cy={cy} r="0.8" fill="currentColor" />;
-      })}
-    </svg>
-  </div>
-);
-
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -65,12 +27,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" style={{ background: 'transparent', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
-      {/* Heritage Mandala Outlines */}
-      <MandalaBg style={{ top: '-10%', right: '-10%' }} />
-      <MandalaBg style={{ bottom: '-10%', left: '-10%' }} />
-      
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+    <section id="contact" style={{ background: 'transparent', padding: '120px 0' }}>
+      <div className="container">
 
         {/* Centered editorial CTA */}
         <div className="reveal section-header" style={{ textAlign: 'center' }}>
