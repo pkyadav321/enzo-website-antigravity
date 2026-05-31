@@ -41,86 +41,13 @@ const FloatingMockup = () => (
       <div className="address-bar">enzo-performance-core.io</div>
     </div>
     
-    {/* Dashboard Body */}
-    <div className="mockup-body">
-      {/* Mini Sidebar */}
-      <div className="mockup-sidebar">
-        <div className="sidebar-icon active"></div>
-        <div className="sidebar-icon"></div>
-        <div className="sidebar-icon"></div>
-      </div>
-      
-      {/* Dashboard Screen */}
-      <div className="mockup-content">
-        <div className="content-header">
-          <span>Live Campaign Scaling</span>
-          <span className="pulse-indicator"></span>
-        </div>
-        
-        {/* Main Panel Grid */}
-        <div className="panel-grid">
-          {/* Map Node Visualization */}
-          <div className="panel-map-box">
-            <span className="map-label">Focus Hubs (UP &amp; NCR)</span>
-            <svg viewBox="0 0 200 120" style={{ width: '100%', height: '80px', marginTop: '6px' }}>
-              {/* Connection Lines */}
-              <line x1="40" y1="40" x2="90" y2="70" stroke="rgba(255, 77, 0, 0.2)" strokeWidth="1.5" />
-              <line x1="90" y1="70" x2="130" y2="80" stroke="rgba(255, 77, 0, 0.2)" strokeWidth="1.5" />
-              <line x1="130" y1="80" x2="170" y2="40" stroke="rgba(255, 77, 0, 0.2)" strokeWidth="1.5" />
-              
-              {/* Delhi NCR Node */}
-              <circle cx="40" cy="40" r="4" fill="#ff4d00" />
-              <circle cx="40" cy="40" r="8" fill="none" stroke="#ff4d00" strokeWidth="1" className="node-pulse" />
-              <text x="35" y="28" fill="var(--text-primary)" fontSize="6" fontWeight="bold" fontFamily="monospace">DELHI NCR</text>
-              
-              {/* Gonda Node */}
-              <circle cx="90" cy="70" r="4" fill="#ff4d00" />
-              <circle cx="90" cy="70" r="8" fill="none" stroke="#ff4d00" strokeWidth="1" className="node-pulse-delay-1" />
-              <text x="75" y="60" fill="var(--text-primary)" fontSize="6" fontWeight="bold" fontFamily="monospace">GONDA</text>
-              
-              {/* Ayodhya Node */}
-              <circle cx="130" cy="80" r="4" fill="#ff4d00" />
-              <circle cx="130" cy="80" r="8" fill="none" stroke="#ff4d00" strokeWidth="1" className="node-pulse-delay-2" />
-              <text x="125" y="93" fill="var(--text-primary)" fontSize="6" fontWeight="bold" fontFamily="monospace">AYODHYA</text>
-              
-              {/* Varanasi Node */}
-              <circle cx="170" cy="40" r="4" fill="#ff4d00" />
-              <circle cx="170" cy="40" r="8" fill="none" stroke="#ff4d00" strokeWidth="1" className="node-pulse" />
-              <text x="155" y="28" fill="var(--text-primary)" fontSize="6" fontWeight="bold" fontFamily="monospace">VARANASI</text>
-            </svg>
-          </div>
-          
-          {/* Charts/ROI Panels */}
-          <div className="panel-side-charts">
-            <div className="chart-card">
-              <span className="card-lbl">AVG ROAS</span>
-              <span className="card-val">4.8x</span>
-            </div>
-            <div className="chart-card">
-              <span className="card-lbl">REVENUE SCALE</span>
-              <svg viewBox="0 0 80 30" style={{ width: '100%', height: '24px', marginTop: '3px' }}>
-                <path d="M0,25 Q20,20 40,10 T80,2" fill="none" stroke="url(#hero-card-grad)" strokeWidth="2" strokeLinecap="round" />
-                <defs>
-                  <linearGradient id="hero-card-grad" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#cc1e00" />
-                    <stop offset="100%" stopColor="#f57c00" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-        </div>
-        
-        {/* Ticker bar */}
-        <div className="mockup-ticker">
-          <div className="ticker-track">
-            <span>• Gonda Edu: +140 Admissions Driven</span>
-            <span>• Ayodhya RE: ₹150 Cr+ High-Intent Leads</span>
-            <span>• Varanasi Silk: 3.5x DTC Orders Scaled</span>
-            <span>• Delhi NCR: +48% ROAS Growth Driven</span>
-          </div>
-        </div>
-      </div>
+    {/* Dashboard Image */}
+    <div className="mockup-body-img-wrapper" style={{ overflow: 'hidden', lineHeight: 0, position: 'relative' }}>
+      <img 
+        src="/images/up_marketing_dashboard_mockup.png" 
+        alt="Enzo Digital Campaign Performance Dashboard for UP & NCR" 
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+      />
     </div>
   </div>
 );
