@@ -43,6 +43,37 @@ const Hero = () => (
       textAlign: 'center',
     }}
   >
+    {/* Background Video */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        zIndex: -2,
+        pointerEvents: 'none',
+      }}
+    >
+      <source src="/Video/13263912_3840_2160_60fps.mp4" type="video/mp4" />
+    </video>
+
+    {/* Video Overlay (Cream overlay for light theme contrast) */}
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(to bottom, rgba(250, 248, 245, 0.82) 0%, rgba(250, 248, 245, 0.95) 100%)',
+        zIndex: -1,
+        pointerEvents: 'none',
+      }}
+    />
+
     {/* Ambient aura */}
     <div
       className="reveal stagger-1 floating-bg"
@@ -50,7 +81,7 @@ const Hero = () => (
         position: 'absolute', top: '50%', left: '50%',
         transform: 'translate(-50%, -50%)',
         width: '700px', height: '700px',
-        background: 'radial-gradient(circle, rgba(255,77,0,0.10) 0%, rgba(255,140,0,0.04) 40%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(255,77,0,0.08) 0%, rgba(255,140,0,0.03) 40%, transparent 70%)',
         borderRadius: '50%', filter: 'blur(20px)',
         zIndex: -1, pointerEvents: 'none',
         animation: 'orb-float-3 20s ease-in-out infinite',
