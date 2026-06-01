@@ -13,9 +13,9 @@ import CitiesSection from '../components/CitiesSection';
 const Home = () => (
   <main>
     <Hero />
-    <ClientLogos />
     <Services />
     <Portfolio />
+    <ClientLogos />
     <Process />
     <WhyChooseUs />
     <CitiesSection />

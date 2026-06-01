@@ -27,7 +27,7 @@ const services = [
   {
     num: '03', title: 'High-Converting Video',
     desc: 'Stop the scroll. Short-form reels and video ads scripted, shot, and edited to convert.',
-    path: '/services/high-converting-video',   // ← FIXED (was /google-ads-agency)
+    path: '/services/high-converting-video',
   },
   {
     num: '04', title: 'Conversion Web Design',
@@ -117,30 +117,28 @@ const Services = () => {
 
         {/* Bento Grid */}
         <div className="services-grid">
-          {services.map((s, i) => {
-            return (
-              <div
-                key={s.num}
-                className={`service-card reveal stagger-${i + 1}`}
-                onClick={() => navigate(s.path)}
-              >
-                <div className="service-card-top">
-                  <div className="service-card-icon-main">{getIcon(s.title)}</div>
-                  <div className="service-card-arrow">
-                    <ArrowUpRight size={20} strokeWidth={2.5} />
-                  </div>
-                </div>
-                <div className="service-card-body">
-                  <span className="service-card-number">{s.num}</span>
-                  <h3 className="service-card-title">{s.title}</h3>
-                  <p className="service-card-description">{s.desc}</p>
-                </div>
-                <div className="service-card-footer">
-                  <span className="service-card-link">Explore Service</span>
+          {services.map((s, i) => (
+            <div
+              key={s.num}
+              className={`service-card reveal stagger-${i + 1}`}
+              onClick={() => navigate(s.path)}
+            >
+              <div className="service-card-top">
+                <div className="service-card-icon-main">{getIcon(s.title)}</div>
+                <div className="service-card-arrow">
+                  <ArrowUpRight size={20} strokeWidth={2.5} />
                 </div>
               </div>
-            );
-          })}
+              <div className="service-card-body">
+                <span className="service-card-number">{s.num}</span>
+                <h3 className="service-card-title">{s.title}</h3>
+                <p className="service-card-description">{s.desc}</p>
+              </div>
+              <div className="service-card-footer">
+                <span className="service-card-link">Explore Service</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

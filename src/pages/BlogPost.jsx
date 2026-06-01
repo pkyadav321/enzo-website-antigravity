@@ -401,7 +401,7 @@ const BlogPost = () => {
       'image': post.image,
       'datePublished': post.date,
       'author': { '@type': 'Organization', 'name': 'EnZo Media', 'url': 'https://theenzomedia.com' },
-      'publisher': { '@type': 'Organization', 'name': 'EnZo Media', 'logo': { '@type': 'ImageObject', 'url': 'https://theenzomedia.com/images/logobrightheme/logo.webp' } },
+      'publisher': { '@type': 'Organization', 'name': 'EnZo Media', 'logo': { '@type': 'ImageObject', 'url': 'https://theenzomedia.com/images/logodarktheme/logo.webp' } },
       'mainEntityOfPage': { '@type': 'WebPage', '@id': `https://theenzomedia.com/blog/${postId}` }
     });
     document.head.appendChild(schema);

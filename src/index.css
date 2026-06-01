@@ -5,26 +5,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #faf8f5; /* Warm alabaster bright background */
-  --text-primary: #0f0f11; /* Warm dark gray for high readability */
-  --text-secondary: #55555d; /* Dark gray for secondary elements */
-  --text-tertiary: #8a8990; /* Medium gray for muted text */
-  --border-color: rgba(0, 0, 0, 0.08); /* Soft dark border on white background */
-  --card-bg: #ffffff; /* White cards */
-  --card-hover-bg: rgba(255, 77, 0, 0.03);
-  --section-bg: #f3f1ec; /* Warm light gray for alternating section backgrounds */
+  --background: #09090b; /* Carbon black background */
+  --text-primary: #ffffff; /* Crisp white for text */
+  --text-secondary: #a1a1aa; /* Light zinc/grey for body text */
+  --text-tertiary: #52525b; /* Muted zinc for small tags */
+  --border-color: rgba(255, 255, 255, 0.08); /* White borders with opacity */
+  --card-bg: rgba(255, 255, 255, 0.02); /* Glass card background */
+  --card-hover-bg: rgba(255, 77, 0, 0.05); /* Saffron glow hover */
+  --section-bg: #121215; /* Lighter carbon black for sections */
   
-  --primary: #d44000; /* Darkened warm saffron-orange for high contrast */
-  --primary-light: #ff6a00;
-  --primary-dark: #b82a00;
-  --accent: #d44000;
+  --primary: #ff4d00; /* Saffron-orange */
+  --primary-light: #ff7300;
+  --primary-dark: #cc3d00;
+  --accent: #ff4d00;
   
   /* Red-Orange gradient stops */
-  --grad-start: #cc1e00;
-  --grad-mid:   #d44000;
-  --grad-end:   #f57c00;
-  --grad-full:  linear-gradient(135deg, #cc1e00 0%, #d44000 50%, #f57c00 100%);
-  --grad-glow:  radial-gradient(circle, rgba(212,64,0,0.12) 0%, rgba(245,124,0,0.04) 50%, transparent 70%);
+  --grad-start: #ff2200;
+  --grad-mid:   #ff4d00;
+  --grad-end:   #ff8c00;
+  --grad-full:  linear-gradient(135deg, #ff2200 0%, #ff4d00 50%, #ff8c00 100%);
+  --grad-glow:  radial-gradient(circle, rgba(255,77,0,0.18) 0%, rgba(255,140,0,0.06) 50%, transparent 70%);
 }
 
 @layer base {
@@ -32,9 +32,9 @@
     max-width: 100vw;
     overflow-x: hidden;
   }
-  body {
-    @apply bg-background antialiased font-sans overflow-x-hidden;
-    background-color: var(--background);
+  body, .bg-background, main {
+    @apply antialiased font-sans overflow-x-hidden;
+    background: linear-gradient(135deg, #09090b 0%, #020204 50%, #0f0400 100%) !important;
     color: var(--text-primary);
   }
   
@@ -1763,9 +1763,9 @@ textarea.form-control { resize: vertical; min-height: 150px; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(300px, auto);
-  gap: 1.5rem;
-  margin-top: 4rem;
+  grid-auto-rows: minmax(200px, auto);
+  gap: 0.75rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 1100px) {
@@ -1776,65 +1776,41 @@ textarea.form-control { resize: vertical; min-height: 150px; }
 
 @media (max-width: 768px) {
   .services-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns like desktop arrangement */
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
-    gap: 0.6rem; /* much tighter gap for dense bento look */
+    gap: 0.6rem;
   }
-  
-  /* Authentic Mobile Bento Structure */
-  .service-card:nth-child(1) { grid-column: span 2; } /* Wide */
-  .service-card:nth-child(2) { grid-column: span 1; } /* Half */
-  .service-card:nth-child(3) { grid-column: span 1; } /* Half */
-  .service-card:nth-child(4) { grid-column: span 2; } /* Wide */
-  .service-card:nth-child(5) { grid-column: span 1; grid-row: span 2; } /* Tall */
-  .service-card:nth-child(6) { grid-column: span 1; } /* Half */
-  .service-card:nth-child(7) { grid-column: span 1; } /* Half */
-  .service-card:nth-child(8) { grid-column: span 2; } /* Wide */
-  .service-card:nth-child(9) { grid-column: span 2; } /* Wide */
-
-  .service-card {
-    padding: 1rem; /* minimal padding for compact boxes */
-    border-radius: 16px; /* sharper corners for small size */
-  }
-  .service-card-top {
-    margin-bottom: 0.75rem !important; /* crush the massive desktop 2rem gap */
-  }
-  .service-card-number {
-    font-size: 0.55rem !important;
-    margin-bottom: 0.2rem;
-    display: block;
-  }
-  .service-card-title {
-    font-size: 0.85rem; /* tiny, elegant title */
-    line-height: 1.15;
-    margin-bottom: 0.35rem;
-  }
-  .service-card-description {
-    font-size: 0.65rem; /* tiny description */
-    line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* constrain to 2 lines so boxes don't get tall */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .service-card-icon-main svg {
-    width: 20px;
-    height: 20px;
-  }
-  .service-card-arrow {
-    width: 26px !important;
-    height: 26px !important;
-  }
-  .service-card-arrow svg {
-    width: 14px;
-    height: 14px;
-  }
+  .service-card:nth-child(1) { grid-column: span 2; }
+  .service-card:nth-child(2) { grid-column: span 1; }
+  .service-card:nth-child(3) { grid-column: span 1; }
+  .service-card:nth-child(4) { grid-column: span 2; }
+  .service-card:nth-child(5) { grid-column: span 1; grid-row: span 2; }
+  .service-card:nth-child(6) { grid-column: span 1; }
+  .service-card:nth-child(7) { grid-column: span 1; }
+  .service-card:nth-child(8) { grid-column: span 2; }
+  .service-card:nth-child(9) { grid-column: span 2; }
+  .service-card { padding: 1rem; border-radius: 16px; }
+  .service-card-top { margin-bottom: 0.75rem !important; }
+  .service-card-number { font-size: 0.55rem !important; margin-bottom: 0.2rem; display: block; }
+  .service-card-title { font-size: 0.85rem; line-height: 1.15; margin-bottom: 0.35rem; }
+  .service-card-description { font-size: 0.65rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .service-card-icon-main svg { width: 20px; height: 20px; }
+  .service-card-arrow { width: 26px !important; height: 26px !important; }
+  .service-card-arrow svg { width: 14px; height: 14px; }
 }
+
+/* Bento Spans for Desktop (3-col) */
+@media (min-width: 1101px) {
+  .service-card:nth-child(1) { grid-column: span 2; }
+  .service-card:nth-child(4) { grid-row: span 2; }
+  .service-card:nth-child(8) { grid-column: span 2; }
+}
+
 
 .service-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 2.5rem;
+  padding: 1.5rem;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -1842,7 +1818,7 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 24px; /* Rounded corners */
+  border-radius: 18px; /* Rounded corners */
 }
 
 /* Bento Spans for Desktop (3-col) */
@@ -1863,7 +1839,7 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .service-card-number {
@@ -1907,7 +1883,7 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   font-weight: 900;
   color: var(--text-primary);
   letter-spacing: -0.03em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
   line-height: 1.2;
 }
 
@@ -1919,7 +1895,7 @@ textarea.form-control { resize: vertical; min-height: 150px; }
 }
 
 .service-card-footer {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 .service-card-link {
@@ -2003,3 +1979,134 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   text-shadow: 0 0 40px rgba(255,34,0,0.3), 0 0 80px rgba(255,140,0,0.15);
   transform: scale(1.02);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL DARK THEME OVERRIDES
+   Fixes all hardcoded light colors across the site
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Cards — white → dark glass */
+.service-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 77, 0, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255,77,0,0.08) !important;
+}
+.service-card-description { color: #a1a1aa !important; }
+.service-card-number      { color: #52525b !important; }
+.service-card-link        { color: #a1a1aa !important; }
+
+/* Navbar */
+.navbar { background: transparent; }
+.navbar.scrolled {
+  background: rgba(9, 9, 11, 0.85) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+.navbar-links a,
+.nav-dropdown-trigger span { color: #a1a1aa !important; }
+.nav-dropdown {
+  background: rgba(15, 15, 18, 0.98) !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+.nav-dropdown-item        { color: #a1a1aa !important; }
+.nav-dropdown-item:hover  { color: #fff !important; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  background-color: #fff !important;
+}
+.sidebar-nav {
+  background: rgba(9, 9, 11, 0.95) !important;
+  border-left-color: rgba(255,255,255,0.06) !important;
+}
+.sidebar-links > a { color: #a1a1aa !important; }
+
+/* Footer */
+footer, .footer         { color: #a1a1aa; }
+.footer-marquee-container { background: #121215 !important; }
+.footer a               { color: #71717a !important; }
+.footer a:hover         { color: #ff4d00 !important; }
+.footer .footer-bottom  { color: #52525b !important; }
+.footer h4              { color: #fff !important; }
+.footer p               { color: #71717a !important; }
+.footer .loc-label      { color: #52525b !important; }
+.footer .loc-city       { color: #fff !important; }
+
+/* Sections that still have light section-bg */
+#services, #process, #contact, #faq,
+.process-section { background: transparent !important; }
+
+/* Testimonial cards */
+.testimonial-card, .review-card {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.07) !important;
+  color: #a1a1aa !important;
+}
+
+/* FAQ */
+.faq-item {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.07) !important;
+}
+.faq-question { color: #fff !important; }
+.faq-answer   { color: #a1a1aa !important; }
+
+/* Portfolio cards */
+.portfolio-card, .work-card {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.07) !important;
+}
+
+/* Process steps */
+.process-step-desc, .step-description,
+p[style*="color: '#666'"],
+p[style*="color: '#555'"] { color: #a1a1aa !important; }
+
+/* Contact form */
+.form-control, input, textarea, select {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+}
+.form-control::placeholder,
+input::placeholder,
+textarea::placeholder { color: #52525b !important; }
+.form-label, label { color: #a1a1aa !important; }
+
+/* Client logos strip */
+#clients, .client-logos-section {
+  background: #121215 !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+.client-logos-marquee img { filter: brightness(0) invert(1) !important; opacity: 0.5; }
+
+/* Plans / Pricing */
+.plan-card, .pricing-card {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.07) !important;
+  color: #a1a1aa !important;
+}
+
+/* Global text fallback — catch any remaining #555 / #666 */
+[style*="color: #555"],
+[style*="color:#555"],
+[style*="color: #666"],
+[style*="color:#666"],
+[style*="color: #444"],
+[style*="color:#444"],
+[style*="color: #333"],
+[style*="color:#333"],
+[style*="color: #0f0f11"],
+[style*="color:#0f0f11"] {
+  color: #a1a1aa !important;
+}
+
+/* Popup modal */
+.popup-modal-overlay { background: rgba(0,0,0,0.7) !important; }
+.popup-modal {
+  background: rgba(12, 12, 14, 0.98) !important;
+  border-color: rgba(255,255,255,0.07) !important;
+  color: #fff !important;
+}
+

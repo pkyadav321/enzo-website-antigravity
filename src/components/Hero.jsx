@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { animate } from 'framer-motion';
+import ParticleWave from './ParticleWave';
 
 /* ── CountUp using framer-motion animate ── */
 const CountUp = ({ end, duration = 2000, suffix = '' }) => {
@@ -28,51 +29,63 @@ const CountUp = ({ end, duration = 2000, suffix = '' }) => {
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
-const Hero = () => (
-  <section
-    id="hero"
-    style={{
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      padding: '0',
-      background: 'transparent',
-      position: 'relative',
-      overflow: 'hidden',
-      textAlign: 'center',
-    }}
-  >
-    {/* Background Video */}
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
+class ParticleErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("ParticleWave rendering failed:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Sleek backup gradient background in case WebGL is blocked
+      return (
+        <div 
+          style={{ 
+            position: 'absolute', 
+            top: 0, 
+            left: 0, 
+            width: '100%', 
+            height: '100%', 
+            zIndex: -2, 
+            background: 'linear-gradient(135deg, #09090b 0%, #1e0900 100%)',
+            pointerEvents: 'none'
+          }} 
+        />
+      );
+    }
+    return this.props.children;
+  }
+}
+
+const Hero = () => {
+  return (
+    <section
+      id="hero"
       style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        zIndex: -2,
-        pointerEvents: 'none',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: '0',
+        background: 'transparent',
+        position: 'relative',
+        overflow: 'hidden',
+        textAlign: 'center',
+        isolation: 'isolate',
       }}
     >
-      <source src="/Video/hero-bg.webm" type="video/webm" />
-    </video>
-
-    {/* Video Overlay (Cream overlay for light theme contrast) */}
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'linear-gradient(to bottom, rgba(250, 248, 245, 0.82) 0%, rgba(250, 248, 245, 0.95) 100%)',
-        zIndex: -1,
-        pointerEvents: 'none',
-      }}
-    />
+      {/* Interactive 3D Particle Wave Background */}
+      <ParticleErrorBoundary>
+        <ParticleWave />
+      </ParticleErrorBoundary>
 
     {/* Ambient aura */}
     <div
@@ -89,7 +102,7 @@ const Hero = () => (
     />
 
     {/* Top-right coord marker */}
-    <div className="reveal" style={{ position: 'absolute', top: '40px', right: '40px', opacity: 0.15, color: 'var(--text-tertiary)', fontSize: '0.6rem', letterSpacing: '0.2em', pointerEvents: 'none', textAlign: 'right' }}>
+    <div className="reveal" style={{ position: 'absolute', top: '40px', right: '40px', opacity: 0.2, color: '#ffffff', fontSize: '0.6rem', letterSpacing: '0.2em', pointerEvents: 'none', textAlign: 'right' }}>
       <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style={{ marginLeft: 'auto' }}>
         <path d="M30 0V60M0 30H60" stroke="currentColor" strokeWidth="0.5" />
         <circle cx="30" cy="30" r="2" fill="currentColor" />
@@ -98,7 +111,7 @@ const Hero = () => (
     </div>
 
     {/* Bottom-left system marker */}
-    <div className="reveal" style={{ position: 'absolute', bottom: '60px', left: '40px', opacity: 0.12, color: 'var(--text-tertiary)', fontSize: '0.6rem', pointerEvents: 'none', textAlign: 'left' }}>
+    <div className="reveal" style={{ position: 'absolute', bottom: '60px', left: '40px', opacity: 0.2, color: '#ffffff', fontSize: '0.6rem', pointerEvents: 'none', textAlign: 'left' }}>
       <svg width="100" height="20" viewBox="0 0 100 20" fill="none">
         {[...Array(20)].map((_, i) => (
           <rect key={i} x={i * 5} y="0" width="1" height={i % 5 === 0 ? '20' : '10'} fill="currentColor" />
@@ -118,7 +131,7 @@ const Hero = () => (
           fontWeight: 900,
           lineHeight: 1.1,
           letterSpacing: '-0.04em',
-          color: 'var(--text-primary)',
+          color: '#ffffff',
           margin: '0 auto 2.5rem',
           maxWidth: '1400px', // Increased width to prevent 3rd line
         }}
@@ -145,10 +158,10 @@ const Hero = () => (
         style={{
           display: 'flex', flexDirection: 'column', alignItems: 'center',
           gap: '3rem', paddingBottom: '5rem',
-          borderBottom: '1px solid var(--border-color)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.15)',
         }}
       >
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '600px', fontWeight: 400 }}>
+        <p style={{ fontSize: '1.2rem', color: '#ffffff', lineHeight: 1.7, maxWidth: '600px', fontWeight: 400 }}>
           The leading AI-powered creative performance agency scaling brands across{' '}
           <b>Gonda</b>, <b>Ayodhya</b>, <b>Varanasi (Banaras)</b>, and <b>Delhi NCR</b>.
           We turn ad spend into measurable profit. Stop guessing. Start scaling.
@@ -157,7 +170,15 @@ const Hero = () => (
           <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             Get a Free Audit ↗
           </button>
-          <button className="btn-ghost" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}>
+          <button
+            className="btn-ghost"
+            style={{
+              color: '#ffffff',
+              borderColor: 'rgba(255, 255, 255, 0.3)',
+              background: 'rgba(255, 255, 255, 0.08)',
+            }}
+            onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             See Our Results
           </button>
         </div>
@@ -187,7 +208,7 @@ const Hero = () => (
             }}>
               <CountUp end={s.end} suffix={s.suffix} />
             </div>
-            <div style={{ fontSize: '0.65rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#444', marginTop: '0.4rem' }}>
+            <div style={{ fontSize: '0.65rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#ffffff', marginTop: '0.4rem' }}>
               {s.label}
             </div>
           </div>
@@ -195,6 +216,7 @@ const Hero = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Hero;

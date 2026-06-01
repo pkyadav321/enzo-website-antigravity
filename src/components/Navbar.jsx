@@ -98,7 +98,7 @@ const Navbar = () => {
       <div className="navbar-logo">
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <img
-            src="/images/logobrightheme/logo.webp"
+            src="/images/logodarktheme/logo.webp"
             alt="The Enzo Media"
             style={{ height: '34px', width: 'auto', objectFit: 'contain' }}
           />
