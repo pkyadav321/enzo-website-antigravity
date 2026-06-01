@@ -15,10 +15,10 @@ const X_NEAR = 30;
 // linear growth: xExtent(zi) = X_NEAR + (Z_NEAR - pz) * X_GROW
 const X_GROW = 0.74;  // calibrated: 30 + (12+82)*0.74 ≈ 99.6 → enough for corners
 
-const WAVE_AMP   = 0.50;
-const RIPPLE_AMP = 2.8;
+const WAVE_AMP   = 0.28;   // subtle idle wave
+const RIPPLE_AMP = 0.9;    // gentle cursor ripple
 const RIPPLE_R   = 9.0;
-const WAVE_SPEED = 1.0;
+const WAVE_SPEED = 0.65;   // slow, calm movement
 const Z_STEP     = (Z_NEAR - Z_FAR) / (ROWS - 1);
 
 /* ─── Shared raycaster objects ────────────────────────────────── */
@@ -40,10 +40,11 @@ function screenToWorld(cx, cy, camera) {
 
 /* ─── Particle mesh ───────────────────────────────────────────── */
 const WaveParticles = () => {
-  const pointsRef   = useRef();
-  const { camera }  = useThree();
-  const cameraRef   = useRef(camera);
-  const cursor      = useRef(new THREE.Vector3(9999, 0, 9999));
+  const pointsRef    = useRef();
+  const { camera }   = useThree();
+  const cameraRef    = useRef(camera);
+  const cursorTarget = useRef(new THREE.Vector3(9999, 0, 9999)); // raw mouse pos
+  const cursor       = useRef(new THREE.Vector3(9999, 0, 9999)); // smoothed pos
 
   // Always keep camera ref current
   useEffect(() => { cameraRef.current = camera; });
@@ -75,12 +76,13 @@ const WaveParticles = () => {
         pos[i + 1] = 0;
         pos[i + 2] = pz;
 
-        // Color gradient: hot-orange near → golden → fades to near-invisible at horizon
+        // Fade: bright near bottom, FULLY invisible above 65% depth
         const t    = zi / (ROWS - 1);
-        const fade = 1 - Math.pow(t, 1.1) * 0.94; // aggressive fade: top ~6% brightness
-        const mix  = t < 0.5
-          ? c1.clone().lerp(c2, t * 2)
-          : c2.clone().lerp(c3, (t - 0.5) * 2);
+        const fade = t < 0.2
+          ? 1.0
+          : Math.max(0, 1 - Math.pow((t - 0.2) / 0.45, 0.9));
+        // Keep color as orange→golden only (no white at horizon)
+        const mix  = c1.clone().lerp(c2, Math.min(t * 2, 1));
 
         col[i]     = mix.r * fade;
         col[i + 1] = mix.g * fade;
@@ -100,11 +102,12 @@ const WaveParticles = () => {
     geo.setAttribute('color',    new THREE.BufferAttribute(colors,    3));
   }, [positions, colors]);
 
-  // Global mouse tracker (works even with pointerEvents:none on canvas wrapper)
+  // Global mouse tracker → writes to cursorTarget (raw)
+  // useFrame below lerps cursor → cursorTarget for smooth follow
   useEffect(() => {
     const onMove = (e) => {
       const w = screenToWorld(e.clientX, e.clientY, cameraRef.current);
-      cursor.current.set(w.x, 0, w.z);
+      cursorTarget.current.set(w.x, 0, w.z);
     };
     window.addEventListener('mousemove', onMove, { passive: true });
     return () => window.removeEventListener('mousemove', onMove);
@@ -117,8 +120,11 @@ const WaveParticles = () => {
 
     const time = state.clock.getElapsedTime();
     const arr  = geo.attributes.position.array;
-    const cx   = cursor.current.x;
-    const cz   = cursor.current.z;
+
+    // Very slow lerp → cursor ripple trails behind smoothly
+    cursor.current.lerp(cursorTarget.current, 0.02);
+    const cx = cursor.current.x;
+    const cz = cursor.current.z;
 
     let i = 0;
     for (let zi = 0; zi < ROWS; zi++) {
@@ -187,6 +193,17 @@ export default function ParticleWave() {
       >
         <WaveParticles />
       </Canvas>
+
+      {/* Gradient overlay — fades particles from top downward */}
+      <div style={{
+        position: 'absolute',
+        top: 0, left: 0,
+        width: '100%',
+        height: '52%',
+        background: 'linear-gradient(to bottom, #09090b 0%, #09090b 18%, rgba(9,9,11,0.75) 35%, transparent 100%)',
+        pointerEvents: 'none',
+      }} />
     </div>
   );
 }
+
