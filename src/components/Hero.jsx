@@ -60,7 +60,7 @@ const Hero = () => (
         pointerEvents: 'none',
       }}
     >
-      <source src="/Video/13263912_3840_2160_60fps.mp4" type="video/mp4" />
+      <source src="/Video/13263912_3840_2160_60fps_1 (1).webm" type="video/webm" />
     </video>
 
     {/* Video Overlay (Cream overlay for light theme contrast) */}
