@@ -102,7 +102,17 @@ const PopupModal = () => {
             }}
           />
 
-          {/* Modal card */}
+          {/* Centering wrapper — flexbox centers modal, Framer Motion handles animation */}
+          <div style={{
+            position: 'fixed',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 10000,
+            pointerEvents: 'none',
+            padding: '1rem',
+          }}>
           <motion.div
             key="modal"
             initial={{ opacity: 0, scale: 0.88, y: 30 }}
@@ -110,13 +120,9 @@ const PopupModal = () => {
             exit={{ opacity: 0, scale: 0.88, y: 30 }}
             transition={{ type: 'spring', damping: 26, stiffness: 320 }}
             style={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
+              pointerEvents: 'auto',
               width: '100%',
               maxWidth: '420px',
-              zIndex: 10000,
               background: 'rgba(12, 12, 14, 0.97)',
               backdropFilter: 'blur(20px)',
               border: '1px solid rgba(255,255,255,0.09)',
@@ -294,6 +300,7 @@ const PopupModal = () => {
               </>
             )}
           </motion.div>
+          </div>
         </>
       )}
     </AnimatePresence>
