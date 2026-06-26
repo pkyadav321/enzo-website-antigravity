@@ -10,6 +10,7 @@ import {
   Sparkles, 
   Map, 
   ShoppingBag,
+  Globe,
   ArrowUpRight
 } from 'lucide-react';
 
@@ -59,6 +60,11 @@ const services = [
     desc: 'Slick, persuasive product infographics and A+ content that drive sales on Amazon & Flipkart.',
     path: '/services/ecommerce-listing',
   },
+  {
+    num: '10', title: 'Website Development',
+    desc: 'Custom, blazing-fast websites and web apps built to rank, convert, and scale your business 24/7.',
+    path: '/services/website-development',
+  },
 ];
 
 const Services = () => {
@@ -76,6 +82,7 @@ const Services = () => {
       case 'AI-Powered Product Imagery': return <Sparkles {...props} />;
       case 'OOH Advertising': return <Map {...props} />;
       case 'Ecommerce Listing Designs': return <ShoppingBag {...props} />;
+      case 'Website Development': return <Globe {...props} />;
       default: return <Sparkles {...props} />;
     }
   };
