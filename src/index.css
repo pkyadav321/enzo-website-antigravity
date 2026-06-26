@@ -1763,9 +1763,9 @@ textarea.form-control { resize: vertical; min-height: 150px; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;           /* rows grow freely with content — no clipping */
+  grid-auto-rows: auto;
   grid-auto-flow: dense;
-  gap: 0.75rem;
+  gap: 1.25rem;                   /* enough negative space between cards */
   margin-top: 2rem;
 }
 
@@ -1812,6 +1812,21 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   .service-card:nth-child(10) { grid-column: span 2; }
 }
 
+
+/* ── Service card base ── */
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 2rem;                  /* generous internal breathing room */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 18px;
+}
 
 .service-card:hover {
   border-color: rgba(212,64,0,0.35);
