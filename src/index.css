@@ -1780,15 +1780,16 @@ textarea.form-control { resize: vertical; min-height: 150px; }
     grid-auto-rows: auto;
     gap: 0.6rem;
   }
-  .service-card:nth-child(1) { grid-column: span 2; }
-  .service-card:nth-child(2) { grid-column: span 1; }
-  .service-card:nth-child(3) { grid-column: span 1; }
-  .service-card:nth-child(4) { grid-column: span 2; }
-  .service-card:nth-child(5) { grid-column: span 1; grid-row: span 2; }
-  .service-card:nth-child(6) { grid-column: span 1; }
-  .service-card:nth-child(7) { grid-column: span 1; }
-  .service-card:nth-child(8) { grid-column: span 2; }
-  .service-card:nth-child(9) { grid-column: span 2; }
+  .service-card:nth-child(1)  { grid-column: span 2; }
+  .service-card:nth-child(2)  { grid-column: span 1; }
+  .service-card:nth-child(3)  { grid-column: span 1; }
+  .service-card:nth-child(4)  { grid-column: span 2; }
+  .service-card:nth-child(5)  { grid-column: span 1; }
+  .service-card:nth-child(6)  { grid-column: span 1; }
+  .service-card:nth-child(7)  { grid-column: span 2; }
+  .service-card:nth-child(8)  { grid-column: span 1; }
+  .service-card:nth-child(9)  { grid-column: span 1; }
+  .service-card:nth-child(10) { grid-column: span 2; }
   .service-card { padding: 1rem; border-radius: 16px; }
   .service-card-top { margin-bottom: 0.75rem !important; }
   .service-card-number { font-size: 0.55rem !important; margin-bottom: 0.2rem; display: block; }
@@ -1799,33 +1800,16 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   .service-card-arrow svg { width: 14px; height: 14px; }
 }
 
-/* Bento Spans for Desktop (3-col) */
+/* Bento Spans for Desktop (3-col) — 10 services
+   Row 1: [1──wide──][2]         2+1
+   Row 2: [3][4──tall──][5]      1+1+1 (4 spans 2 rows)
+   Row 3: [6][4─cont──][7]      1+1+1
+   Row 4: [8][9][10───wide──]    1+1+2
+*/
 @media (min-width: 1101px) {
-  .service-card:nth-child(1) { grid-column: span 2; }
-  .service-card:nth-child(4) { grid-row: span 2; }
-  .service-card:nth-child(8) { grid-column: span 2; }
-}
-
-
-.service-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  padding: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 18px; /* Rounded corners */
-}
-
-/* Bento Spans for Desktop (3-col) */
-@media (min-width: 1101px) {
-  .service-card:nth-child(1) { grid-column: span 2; } /* Wide */
-  .service-card:nth-child(4) { grid-row: span 2; }    /* Tall */
-  .service-card:nth-child(8) { grid-column: span 2; } /* Wide */
+  .service-card:nth-child(1)  { grid-column: span 2; } /* Wide */
+  .service-card:nth-child(4)  { grid-row: span 2; }    /* Tall */
+  .service-card:nth-child(10) { grid-column: span 2; } /* Wide - anchors bottom right */
 }
 
 .service-card:hover {
