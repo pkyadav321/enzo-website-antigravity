@@ -1990,6 +1990,13 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   background: rgba(255, 255, 255, 0.03) !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
   min-height: 200px;              /* baseline height without clipping */
+  padding: 2.25rem !important;    /* generous internal padding so text doesn't touch edges */
+  box-sizing: border-box !important;
+}
+@media (max-width: 768px) {
+  .service-card {
+    padding: 1.25rem !important;  /* mobile adjusted padding */
+  }
 }
 .service-card:hover {
   background: rgba(255, 255, 255, 0.06) !important;
